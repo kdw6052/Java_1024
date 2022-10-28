@@ -11,6 +11,8 @@ public class ForCharEx01 {
 		for(;ch != 'q';) {
 			System.out.print("문자를 입력하세요 : ");
 			ch=sc.next().charAt(0);
+			sc.close();
+		
 		}
 		System.out.println("프로그램을 종료합니다.");
 		sc.close();
