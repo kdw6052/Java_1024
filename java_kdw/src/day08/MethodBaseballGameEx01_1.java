@@ -81,6 +81,7 @@ public class MethodBaseballGameEx01_1 {
 		}
 		int strike = 0;
 		int size = arr1.length<arr2.length ? arr1.length : arr2.length;
+		//strike를 찾는 코드에서 더작은 값(size)을 정해서 코드를 안정적으로 실행하기 위해 위와 같은 코드를 사용
 		for(int i=0; i<size;i++) {
 			if(arr1[i]==arr2[i]) {
 				strike++;
