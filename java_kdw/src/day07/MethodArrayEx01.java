@@ -19,4 +19,6 @@ public class MethodArrayEx01 {
 		}
 		System.out.println();
 	}
+	
+	
 }
