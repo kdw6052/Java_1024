@@ -27,7 +27,7 @@ public class BaseballManager {
 			//메뉴를 선택
 			select();
 			//선택한 메뉴 실행
-			playgame(menu);
+			//playgame(menu);
 		}while(true);
 	}
 	public static void gameMenu(){
@@ -42,7 +42,7 @@ public class BaseballManager {
 		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
 	}
-	public static int playGame (int menu) {
+	/*public static int playGame (int menu) {
 		Scanner sc = new Scanner(System.in);
 		int min=1,max=9,size=3;
 		int strike = 0,ball;
@@ -74,29 +74,21 @@ public class BaseballManager {
 			break;
 		default :
 		}
-	}
-	public static String [] record(Scanner sc, int count) {
+	}*/
+	public static int [] record(Scanner sc, int count) {
 		if(count<=0) {
 			return null;
 		}
-		String [] arr = new String [5];
+		int [] arr = new int [5];
 		for(int i =0; i<count; i++) {
-			arr[i]=sc.next()+", "+count;
+			if(arr[i]<count) {
+			arr[i]=count;
+			}
 		}
 		return arr;
 	}
 	
-	public static boolean contain(int[]arr,int num) {
-		if(arr==null||arr.length==0) {
-			return false;
-		}
-		for(int tmp : arr) {
-			if(num==tmp) {
-				return true;
-			}
-		}
-		return false;
-	}
+	
 	
 	
 	
