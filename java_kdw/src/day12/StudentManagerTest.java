@@ -29,21 +29,21 @@ public class StudentManagerTest {
 		//반복
 		int menu;
 		HighStudent[] list = new HighStudent[30];
-		int stdNum=0;
+		int count=0;
 		do {
 			//메뉴출력
 			printMenu();
 			//메뉴선택
 			menu=selectMenu();
 			//선택한메뉴에 따른 기능실행
-			runMenu(menu,list,stdNum);
+			runMenu(menu,list,count);
 		}while(menu!=4);
 	}
-	public static void runMenu(int menu,HighStudent[]list,int stdNum) {
+	public static void runMenu(int menu,HighStudent[]list,int count) {
 		int grade,classNum,num;
 		String name;
 		Scanner sc = new Scanner(System.in);
-		stdNum=0;
+		count=0;
 		switch(menu) {
 		case 1 :
 			//학생 정보 추가
@@ -53,27 +53,53 @@ public class StudentManagerTest {
 			num=sc.nextInt();
 			name = sc.next();
 			//학생 정보를 입력(학년,반,번호,이름)
-			list[stdNum]= new HighStudent(grade,classNum,num,name);
-			stdNum++;
+			
+			
 			//입력한 학생 정보가 없으면 추가
-			for(int i=1;i<list.length;i++) {
-				if(list[i].equals(list[stdNum])) {
-					System.out.println("이미 등록된 학생입니다.");
+			//학생 정보들 중에서 하나씩 비교하여 학년,반, 번호가 같은 학생이 있는지 확인해서
+			//없으면 마지막 학생 뒤에 추가
+			for(HighStudent tmp : list) {
+				if(tmp==null) {
 					break;
 				}
-					
+				if(tmp.equals(list[count])) {
+					System.out.println("이미 등록된 학생입니다.");
+					continue;
+				}
+				list[count]= new HighStudent(grade,classNum,num,name);
 			}
+			
+			count++;
 			break;
 		case 2 :
 			//학생 성적 추가
 			//학생 정보를 입력(학년,반,번호)
+			System.out.println("성적을 추가할 학생 정보 입력하세요 : 학년, 반, 번호");
+			grade=sc.nextInt();
+			classNum = sc.nextInt();
+			num=sc.nextInt();
 			//입력한 학생 정보가 없으면 끝
-			
+			//학생 정보들 중에서 하나씩 비교하여 학년,반,번호가 같은 학생이 있는지 확인
+			//없으면 조건문 종료
 			//성적 정보를 입력(과목, 학기, 중간, 기말, 수행평가)
+			System.out.println("성적 정보를 입력하세요.");
+			System.out.println("과목 : ");
+			String title = sc.next();
+			System.out.println("중간 : ");
+			int midScore = sc.nextInt();
+			System.out.println("기말 : ");
+			int finalScore = sc.nextInt();
+			System.out.println("수행평가 : ");
+			int performace = sc.nextInt();
 			//입력한 성적 정보가 없으면 추가
+			//선택한 학생의 성적 정보들 중에서 과목, 학기가 같은 성적 정보가 없으면 추가
 			break;
 		case 3 :
 			//학생 정보 출력
+			for(int i = 0;i<list.length;i++) {
+				System.out.println(list[i]);
+				System.out.println("-------------");
+			}
 			//저장된 학생 정보를 출력
 			break;
 		case 4 :
@@ -102,6 +128,9 @@ public class StudentManagerTest {
 class HighStudent {
 	public int grade,classNum,num;
 	public String name;
+	public void print() {
+		System.out.println(grade+"학년 "+classNum+"반 "+num+"번 "+name);
+	}
 	
 	
 
