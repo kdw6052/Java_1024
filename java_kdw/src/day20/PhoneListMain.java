@@ -3,6 +3,8 @@ package day20;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import example.phonebook.PhoneBook;
+
 public class PhoneListMain {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
@@ -70,59 +72,76 @@ public class PhoneListMain {
 			}while(choice !=2);
 			//전화번호부에 추가 =>PhoneBook 개체를 생성
 			
-			PhoneBook book =new PhoneBook(lastName, name, rectal, numbers);
-			list.add(book);
+			//PhoneBook book =new PhoneBook(lastName, name, rectal, numbers);
+			//list.add(book);
 			System.out.println(list);
 			break;
 		case 2 :
-			//전화번호 수정
-				//이름을 입력
-				System.out.print("이름 : ");
-				name = sc.next();
-				//이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
-				ArrayList<PhoneBook>tmps = new ArrayList<PhoneBook>();
-				for(int i =0;i<list.size();i++) {
-					for(PhoneBook tmp : list) {
-						if(tmp.getName().contains(name)) {
-							System.out.println((i+1)+". "+tmp);
-							tmps.add(tmp);
-						}
-						
+			/*//이름을 입력
+			System.out.print("수정할 이름 : ");
+			String name1 = sc.next();
+			ArrayList<PhoneBook>list2 = new ArrayList<PhoneBook>();
+			//이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
+			for(PhoneBook tmp : list) {
+				for(int i = 0;i<list.size();i++) {
+					if(tmp.getName().contains(name1)||tmp.getPnList().contains(name1)||tmp.getCompany().contains(name)) {
+						System.out.println(i+1+". "+tmp);
+						list2.add(tmp);
 					}
 				}
-				//수정할 전화번호부를 선택
-				//서브 메뉴 출력
-				printSubMenu();
-				//서브 메뉴 선택
-				int subMenu = sc.nextInt();
-				//서브 메뉴 실행
-				switch(subMenu){
-				case 1 :
-					//1.이름,직장 수정
-						//이름 직장 입력
-						//이름,직장 수정
-					break;
-				case 2 :
-					//2.기존 전화번호 수정
-						//기존 전화번로들을 출력
-						//수정할 전화번호를 선택
-						//이름, 번호를 입력
-						//선택한 전화번호 이름, 번호를 수정
-					break;
-				case 3 :
-					//3.새 전화번호 추가
-						//이름 번호를 입력
-						//새 전화번호를 추가
-					break;
-				default :
-				}
-			break;
+			}
+			//수정할 전화번호부를 선택
+			System.out.print("수정할 전화번호부 : ");
+			int index = sc.nextInt()-1;
+			//서브 메뉴 출력
+			printSubMenu();
+			//서브 메뉴 선택
+			int subMenu = sc.nextInt();
+			//서브 메뉴 실행
+			switch(subMenu){
+			case 1 : //1.이름,직장 수정
+				//이름 직장 입력
+				sc.nextLine();
+				System.out.print("수정할 성명 : ");
+				String name = sc.nextLine();
+				System.out.print("수정할 직장 : ");
+				String company1 = sc.nextLine();
+				//이름,직장 수정
+				
+				list2.get(index).getCompany().indexOf(company1);
+				System.out.println(list);
+				
+				break;
+			case 2 : //2.기존 전화번호 수정
+				//기존 전화번로들을 출력
+				//수정할 전화번호를 선택
+				//이름, 번호를 입력
+				//선택한 전화번호 이름, 번호를 수정
+				break;
+			case 3 : //3.새 전화번호 추가
+				//이름 번호를 입력
+				//새 전화번호를 추가
+				break;
+			}
+			break;*/
 		case 3 :
+			//이름이 포함된 전화번호부를 검색하여 번지를 확인
+			/* ArrayList<PhoneBook>list2 = new ArrayList<PhoneBook>();
+			 * for(PhoneBook tmp : list) {
+				for(int i = 0;i<list.size();i++) {
+					if(tmp.getName().contains(name)||tmp.getPnList().contains(name)||tmp.getCompany().contains(name)) {
+						System.out.println(i+1+". "+tmp);
+						list2.add(tmp);
+					}
+				}
+			}
+			//확인된 번지에 있는 번호들을 출력(번호와 함께)
+			//삭제할 전화번호부를 선택
+			System.out.print("삭제할 전화번호부 : ");
+			int index = sc.nextInt()-1;
 			//전화번호 삭제
-				//이름을 입력
-				//이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
-				//수정할 전화번호부를 선택
-				//전화번호 삭제
+			list.remove(list2.get(index));
+			System.out.println(list);*/
 			break;
 		case 4 :
 			//전화번호 조회
