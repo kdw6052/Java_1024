@@ -4,16 +4,16 @@ import lombok.Data;
 
 @Data
 public class PhoneNumbers {
-	private String phoneNumber,name;
+	private String phoneNumber,pName;
 
-	public PhoneNumbers(String phoneNumber, String name) {
+	public PhoneNumbers(String phoneNumber, String pName) {
 		this.phoneNumber = phoneNumber;
-		this.name = name;
+		this.pName = pName;
 	}
 
 	@Override
 	public String toString() {
-		return name + " : "  + phoneNumber;
+		return pName + " : "  + phoneNumber;
 	}
 
 	

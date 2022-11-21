@@ -154,7 +154,6 @@ public class PhoneListMain {
 			break;
 		case 3 : //3. 새 전화번호 등록
 			//이름 번호를 입력
-			
 			ArrayList<PhoneNumber>pnList = inputPhoneNumbers();
 			//새 전화번호를 추가
 			pb.getPnList().addAll(pnList);//addAll = 리스트에 리스트 추가

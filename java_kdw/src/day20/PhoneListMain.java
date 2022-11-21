@@ -37,7 +37,7 @@ public class PhoneListMain {
 		}while(menu !=5);
 	}
 	private static void runMenu(int menu,ArrayList<PhoneBook> list) {
-		String lastName, name,rectal;
+		String name, pName,company;
 		String phoneNumbertmp;
 		ArrayList<PhoneNumbers> numbers = new ArrayList<PhoneNumbers>();
 		switch(menu) {
@@ -45,19 +45,19 @@ public class PhoneListMain {
 			//전화번호 추가(성, 이름,직장, 전화번호들(이름 : 번호)
 			//성명, 직장 입력
 			System.out.print("성명 : ");
-			lastName = sc.next();
+			name = sc.next();
 			sc.nextLine();
 			System.out.print("직장 : ");
-			rectal = sc.nextLine();
+			company = sc.nextLine();
 			//전화 번호를 입력(이름 : 번호) => PhoneNumber
 			int choice = -1;
 			//전화번호를 더 입력할건지 물어봄
 			do{
 				System.out.print("이름 : ");
-				name = sc.next();
+				pName = sc.next();
 				System.out.print("전화번호 : ");
 				phoneNumbertmp = sc.next();
-				PhoneNumbers tmp = new PhoneNumbers(phoneNumbertmp, name);
+				PhoneNumbers tmp = new PhoneNumbers(phoneNumbertmp, pName);
 				numbers.add(tmp);
 				sc.nextLine();
 				System.out.println(numbers);
@@ -72,19 +72,19 @@ public class PhoneListMain {
 			}while(choice !=2);
 			//전화번호부에 추가 =>PhoneBook 개체를 생성
 			
-			//PhoneBook book =new PhoneBook(lastName, name, rectal, numbers);
+			//PhoneBook book =new PhoneBook(name, pName, company, numbers);
 			//list.add(book);
 			System.out.println(list);
 			break;
 		case 2 :
 			/*//이름을 입력
 			System.out.print("수정할 이름 : ");
-			String name1 = sc.next();
+			String pName1 = sc.next();
 			ArrayList<PhoneBook>list2 = new ArrayList<PhoneBook>();
 			//이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
 			for(PhoneBook tmp : list) {
 				for(int i = 0;i<list.size();i++) {
-					if(tmp.getName().contains(name1)||tmp.getPnList().contains(name1)||tmp.getCompany().contains(name)) {
+					if(tmp.getpName().contains(pName1)||tmp.getPnList().contains(pName1)||tmp.getCompany().contains(pName)) {
 						System.out.println(i+1+". "+tmp);
 						list2.add(tmp);
 					}
@@ -103,7 +103,7 @@ public class PhoneListMain {
 				//이름 직장 입력
 				sc.nextLine();
 				System.out.print("수정할 성명 : ");
-				String name = sc.nextLine();
+				String pName = sc.nextLine();
 				System.out.print("수정할 직장 : ");
 				String company1 = sc.nextLine();
 				//이름,직장 수정
@@ -129,7 +129,7 @@ public class PhoneListMain {
 			/* ArrayList<PhoneBook>list2 = new ArrayList<PhoneBook>();
 			 * for(PhoneBook tmp : list) {
 				for(int i = 0;i<list.size();i++) {
-					if(tmp.getName().contains(name)||tmp.getPnList().contains(name)||tmp.getCompany().contains(name)) {
+					if(tmp.getpName().contains(name)||tmp.getPnList().contains(name)||tmp.getCompany().contains(name)) {
 						System.out.println(i+1+". "+tmp);
 						list2.add(tmp);
 					}
