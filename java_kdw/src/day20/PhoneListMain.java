@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import example.phonebook.PhoneBook;
+import example.phonebook.PhoneNumber;
 
 public class PhoneListMain {
 	static Scanner sc = new Scanner(System.in);
@@ -38,7 +39,7 @@ public class PhoneListMain {
 	}
 	private static void runMenu(int menu,ArrayList<PhoneBook> list) {
 		String name, pName,company;
-		String phoneNumbertmp;
+		String phoneNumber;
 		ArrayList<PhoneNumbers> numbers = new ArrayList<PhoneNumbers>();
 		switch(menu) {
 		case 1 :
@@ -50,29 +51,24 @@ public class PhoneListMain {
 			System.out.print("직장 : ");
 			company = sc.nextLine();
 			//전화 번호를 입력(이름 : 번호) => PhoneNumber
-			int choice = -1;
-			//전화번호를 더 입력할건지 물어봄
+			int select = -1;
 			do{
 				System.out.print("이름 : ");
 				pName = sc.next();
 				System.out.print("전화번호 : ");
-				phoneNumbertmp = sc.next();
-				PhoneNumbers tmp = new PhoneNumbers(phoneNumbertmp, pName);
-				numbers.add(tmp);
+				phoneNumber = sc.next();
+				numbers.add(new PhoneNumbers(phoneNumber, pName));
 				sc.nextLine();
 				System.out.println(numbers);
+				//전화번호를 더 입력할건지 물어봄
 				System.out.println("추가로 전화번호를 추가 하시겠습니가?");
 				System.out.print("1. 예");
 				System.out.print("2. 아니요");
-				choice = sc.nextInt();
-				if(choice ==1) {
-					continue;
-				}
-				
-			}while(choice !=2);
+				select = sc.nextInt();
+			}while(select !=2);
 			//전화번호부에 추가 =>PhoneBook 개체를 생성
 			
-			//PhoneBook book =new PhoneBook(name, pName, company, numbers);
+			//PhoneBook book = new PhoneBook(name, company, numbers)
 			//list.add(book);
 			System.out.println(list);
 			break;
