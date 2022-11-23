@@ -85,7 +85,7 @@ public class AttendanceMain {
 			}
 			
 			
-			log.add(new Log(list, date));
+			//log.add(new Log(list, date));
 			System.out.println(log);
 			
 			break;
