@@ -3,8 +3,8 @@ package day20;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import example.phonebook.PhoneBook;
-import example.phonebook.PhoneNumber;
+import day21.PhoneBook;
+import day21.PhoneNumber;
 
 public class PhoneListMain {
 	static Scanner sc = new Scanner(System.in);
