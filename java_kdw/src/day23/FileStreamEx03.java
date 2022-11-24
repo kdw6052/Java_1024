@@ -39,11 +39,14 @@ public class FileStreamEx03 {
 				fis.close();
 				fos.close();
 				dis.close();
+				
 				dos.close();
 			}catch(IOException e) {
 				e.printStackTrace();
 			}
 		}
 	}
+	
 
 }
+	

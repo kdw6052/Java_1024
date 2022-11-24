@@ -282,8 +282,11 @@ lombok은 구글에 검색해서 사용하기
  			-참조형 변수 : null
  		-배열 복사
  			-for문을 이용
- 			-System.arraycopy();//System.arraycopy(arr1,0,arr2,0,arr1.length);
- 			-Arrays.copyOf();//Arrays.copyOf(arr1, arr1.length);
+ 			-System.arraycopy();
+ 				int [] arr2= new int[arr1.length];
+ 				System.arraycopy(arr1,0,arr2,0,arr1.length);
+ 			-Arrays.copyOf();
+ 				int [] arr2 = Arrays.copyOf(arr1, arr1.length);
  		-참조 변수를 복사
  			-얕은 복사
  				-공유 => 다른곳에서 수정하면 영향을 미침
@@ -292,7 +295,7 @@ lombok은 구글에 검색해서 사용하기
  				 => 다른곳에서 수정해도 영향이 없음
  		-배열 초기화
  			-자료형 [] 배열명 = {값1,값2,값3};
- 		-배열 사용범
+ 		-배열 사용법
  			-배열명[번지]
  	@클래스
  		class Person{
