@@ -11,20 +11,19 @@ public class OperatorEx05 {
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("홍길동 학생의 국어 성적은?");//print를 사용했었으면 일일이 움직일 필요가 없었다(다음줄로 넘어갈 필요가 없었으므로)
-		int num1 = scan.nextInt();
-		System.out.println(num1);//필요가 없었다. 내가 썻던 점수가 다시 필요하지않다.
+		int kor = scan.nextInt();
 		
 		System.out.println("홍길동 학생의 영어 성적은?");
-		int num2 = scan.nextInt();
-		System.out.println(num2);
+		int eng = scan.nextInt();
 		
 		System.out.println("홍길동 학생의 수학 성적은?");
-		int num3 = scan.nextInt();
-		System.out.println(num3);
+		int math = scan.nextInt();
 		
+		int sum = kor+eng+math;
+		
+		System.out.println("홍길동 학생의 평균 점수는? "+ ((double)(sum) / 3));
+
 		scan.close();
-		
-		System.out.println("홍길동 학생의 평균 점수는? "+ ((double)(num1+num2+num3) / 3));
 	}
 
 }

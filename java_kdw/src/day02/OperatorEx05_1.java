@@ -30,7 +30,7 @@ public class OperatorEx05_1 {
 		//통과를 알려주는 변수, 실패를 알려주는 변수, 강사님이 짜신 코드
 		boolean isPass = avg>=60;
 		boolean isFail = avg<60;
-		System.out.println("통과입니까? "+ isPass);
+		System.out.println("통과입니까? "+ (avg>=60? "Pass" : "fail"));
 		System.out.println("통과입니까? "+ !isFail);
 	}
 
