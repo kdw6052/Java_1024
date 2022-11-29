@@ -2,7 +2,6 @@ package day26;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class Ex04_ClientMain {
 
@@ -11,7 +10,6 @@ public class Ex04_ClientMain {
 		 * 문자열을 서버에 전송함
 		 * "192.168.10.6"
 		 * */
-		Scanner sc= new Scanner(System.in);
 		Socket socket = null;
 		try {
 			socket = new Socket();
@@ -23,7 +21,6 @@ public class Ex04_ClientMain {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		sc.close();
 	}
 	
 }
