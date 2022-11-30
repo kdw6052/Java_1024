@@ -13,6 +13,7 @@ public class FreeBoard {
 		++count;
 		num=count;
 	}
+	
 	@Override
 	public String toString() {
 		return "[자유게시판 " + num + ". 제목 :" + title +

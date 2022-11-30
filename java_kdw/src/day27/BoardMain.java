@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
 
+
 public class BoardMain {
 	/* 게시글 관리 프로그램
 	 * -회원가입
@@ -33,11 +34,27 @@ public class BoardMain {
 			signUp(list);
 			break;
 		case 2 :// 로그인
-			logIn(list);
-			printSubMenu();
-			ArrayList<Notice> notice = new ArrayList<Notice>();
-			category(notice);
-			//categoryManager();
+			System.out.print("아이디 : ");
+			String id = sc.next();
+			System.out.print("비밀번호 : ");
+			String pw = sc.next();
+			if(checkId(id, list)||checkPw(pw,list)) {
+				System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
+			}
+			System.out.println("로그인 완료");
+			if(!list.get(0).getId().equals(id)) {
+				printSubMenu();
+				ArrayList<Notice> notice = new ArrayList<Notice>();
+				category(notice);
+			}else if(list.get(0).getId().equals(id)) {
+				System.out.println("======관리자 메뉴======");
+				System.out.println("1.카테고리 추가");
+				System.out.println("2.카테고리 수정");
+				System.out.println("3.카테고리 삭제");
+				System.out.println("4.프로그램 종료");
+				System.out.println("=====================");
+				System.out.print("메뉴 선택 : ");
+			}
 			break;
 		case 3 :
 			System.out.println("프로그램 종료");
@@ -48,7 +65,9 @@ public class BoardMain {
 		
 	}
 	private static void category(ArrayList<Notice> notice) {
+		ArrayList<FreeBoard> fb = new ArrayList<FreeBoard>();
 		int subMenu = sc.nextInt();
+		sc.nextLine();
 		switch(subMenu) {
 		case 1 ://공지사항(notice)
 			if(notice == null || notice.size() == 0) {
@@ -58,15 +77,34 @@ public class BoardMain {
 			for(Notice tmp : notice) {
 				System.out.println(tmp);
 			}
+			break; 
+		case 2 ://자유게시판 보기(freeBoard)
+			if(fb == null || fb.size() == 0) {
+				System.out.println("등록된 게시글이 없습니다");
+			}
+			fb.sort((o1,o2)->o2.getNum()-o1.getNum());
+			for(FreeBoard tmp : fb) {
+				System.out.println(tmp);
+			}
 			break;
-		case 2 ://자유게시판(freeBoard)
+		case 3 ://자유게시판 작성(freeBoard)
+			addFreeBoard(fb);
+			
 			break;
-		case 3 :
+		case 4 :
 			System.out.println("프로그램 종료");
 			break;
 		default :
 			System.out.println("잘못된 입력입니다.");
 		}
+		
+	}
+	private static void addFreeBoard(ArrayList<FreeBoard> fb) {
+		System.out.print("제목 : ");
+		String title = sc.next();
+		System.out.println("내용 : ");
+		String content = sc.nextLine();
+		fb.add(new FreeBoard(title, content));
 		
 	}
 	private static void printSubMenu() {
