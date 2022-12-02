@@ -14,6 +14,7 @@ import java.util.Scanner;
 import java.util.function.Predicate;
 
 public class BoardMain {
+	
 	/* 게시글 관리 프로그램
 	 * -회원가입
 	 * 		-처음 가입한 회원이 관리자, 그외 회원인 일반회원
