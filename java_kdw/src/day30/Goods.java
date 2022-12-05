@@ -40,7 +40,7 @@ public class Goods {//분류, 제품명, 수량, 구매가격, 판매가격
 		return result;
 	}
 
-	public void update(String division, String name, int numbers, int buyPrice, int sellPrice) {
+	public Goods(String division, int numbers, int buyPrice, int sellPrice) {
 		this.division = division;
 		this.numbers = numbers;
 		this.buyPrice = buyPrice;

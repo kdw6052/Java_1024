@@ -70,10 +70,13 @@ public class KioskMain {
 		if(list.size()==0) {
 			System.out.println("등록된 제품이 없습니다.");
 		}
+		int index = -1;
 		for(Goods tmp : list) {
 			if(!tmp.getName().equals(name)) {
 				System.out.println("일치하는 제품이 없습니다.");
 				return;
+			}else {
+				index = list.indexOf(tmp);
 			}
 		}
 		System.out.print("분류 : ");
@@ -84,6 +87,7 @@ public class KioskMain {
 		int buyPrice = sc.nextInt();
 		System.out.print("판매가격 : ");
 		int sellPrice = sc.nextInt();
+		list.set(index, new Goods(division, numbers, buyPrice, sellPrice));
 	}
 	private static String insertGoodsName() {
 		System.out.print("제품명 : ");
