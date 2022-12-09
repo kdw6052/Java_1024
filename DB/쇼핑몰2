@@ -1,1 +1,487 @@
-<mxfile host="app.diagrams.net" modified="2022-12-09T06:34:35.101Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.6.2" etag="n5n23883HOjNuYRpVSMg" type="github"><diagram id="J3u868DIfc3060Io4dou">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-12-09T07:51:39.068Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.6.2" etag="Symn9XlP32SU_iOWBTVl" type="github">
+  <diagram id="G9NtrJ9sZGSGWq_TzWDj" name="페이지-1">
+    <mxGraphModel dx="1003" dy="825" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-116" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-114" parent="1" source="pdIXrZuAQNPP2J6TnjIP-62">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="620" as="sourcePoint" />
+            <mxPoint x="560" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-111" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-110" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="985" as="sourcePoint" />
+            <mxPoint x="690" y="1430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-109" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-108" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="920" as="sourcePoint" />
+            <mxPoint x="690" y="1365" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-32" value="논리적 모델&lt;br&gt;&lt;br&gt;-회원(아이디, 비번, 이름, 생년월일, 권한)&lt;br&gt;-게시글 분류(분류 번호, 분류 명)&lt;br&gt;-게시글(게시글 번호, 제목, 내용, 작성자, 작성일, 조회수, 게시글 분류 번호FK, 아이디FK)&lt;br&gt;-문의(문의 번호, 답변, 상태, 비번, 내용, 아이디FK, 제품 번호FK)&lt;br&gt;&lt;br&gt;-제품(제품 번호, 제품 명, 상세, 수량, 가격, 중 분류 번호FK)&lt;br&gt;-제품 대 분류(&lt;u&gt;대 분류 번호&lt;/u&gt;, 대 분류 명)&lt;br&gt;-제품 중 분류(&lt;u&gt;중 분류 번호&lt;/u&gt;, 중 분류 명,대 분류 번호FK)&lt;br&gt;-옵션(&lt;u&gt;옵션 번호&lt;/u&gt;, 옵션 명, 수량, 제품 번호FK)&lt;br&gt;-주소록(&lt;u&gt;주소록 번호&lt;/u&gt;, 기본 주소, 상세주소, 우편번호, 이름, 아이디FK)&lt;br&gt;-주문 내역(&lt;u&gt;주문 번호&lt;/u&gt;, 상태, 총 가격, 적립 포인트, 사용 포인트, 결제 금액, 주소록 번호FK, 아이디FK)&lt;br&gt;-주문 목록(&lt;u&gt;주문 목록 번호&lt;/u&gt;, 수량, 총 가격, 주문 번호FK, 옵션 번호FK)&lt;br&gt;-장바구니(&lt;u&gt;장바구니 번호&lt;/u&gt;, 수량, 옵션 번호FK,아이디FK)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=0;pointerEvents=1;rounded=0;glass=0;sketch=0;fontSize=12;align=left;" vertex="1" parent="1">
+          <mxGeometry x="420" width="400" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-107" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-47" target="pdIXrZuAQNPP2J6TnjIP-53">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="665" y="963.6700000000001" as="sourcePoint" />
+            <mxPoint x="595" y="963.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-1" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;개인이 운영하는 쇼핑몰&lt;/b&gt;&lt;br&gt;&lt;br&gt;- 판매자는 고정으로 운영자, 다른 판매자는 없음&lt;br&gt;- 상품은 대분류, 중분류로 구성&lt;br&gt;- 모든 상품은 대분류, 중분류 순으로 분류가 됨(모든 제품은 분류가 2가지 : 대분류, 중분류를 포함)&lt;br&gt;- 모든 제품은 회원만 구매 가능&lt;br&gt;- 제품을 장바구니에 수량을 선택하여 담을 수 있음&lt;br&gt;- 배송지는 주소록에 등록된 배송지를 선택함. 직접 입력은 불가&lt;br&gt;- 제품 옵션이 한 가지만 가질 수 있고, 옵션 종류는 다양&lt;br&gt;- 제품은 구매, 배송준비, 배송 중, 배송완료, 구매확정, 환불요청, 반품요청, 반품완료, 환불완료를 할 수 있다.&lt;br&gt;- 공지사항과 QnA가 있음&lt;br&gt;- 제품 문의를 할 수 있음&lt;br&gt;- 결제는 카드만 가능(카카오페이 가능)&lt;br&gt;- 할인, 쿠폰 X&lt;br&gt;- 모든 제품은 구매 금액의 10%를 적립하고, 포인트는 제품 구매 시 사용할 수 있음&lt;br&gt;- 장바구니에 있는 여러 제품을 한번에 구매할 수 있음&lt;br&gt;- 부분 환불, 반품은 X&lt;br&gt;- 문의는 공개/비공개를 선택 가능&lt;br&gt;- 배송비는 무료&lt;br&gt;-제품은 1개의 중분류에 포함(A셔츠가 남녀공용 분류에 포함되면 A셔츠는 남성셔츠,여성셔츠에 포함되지 않음)&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;" vertex="1" parent="1">
+          <mxGeometry width="420" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-2" value="회원" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="160" y="875" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-3" value="아이디" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="10" y="810" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-4" value="권한" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="10" y="875" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-5" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-3" target="pdIXrZuAQNPP2J6TnjIP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="1030" as="sourcePoint" />
+            <mxPoint x="290" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-6" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-4" target="pdIXrZuAQNPP2J6TnjIP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="99.99999999999886" y="842.5" as="sourcePoint" />
+            <mxPoint x="170" y="915" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-7" value="제품" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="997.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-8" value="제품번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1000" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-9" value="주문" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="390" y="755" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-10" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-2" target="pdIXrZuAQNPP2J6TnjIP-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="1010" as="sourcePoint" />
+            <mxPoint x="540" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-12" value="수량" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="980" y="660" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-13" value="총 가격" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="510" y="690" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-14" value="주소번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="410" y="420" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-15" value="문의" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="390" y="985" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-16" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-2" target="pdIXrZuAQNPP2J6TnjIP-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="1190" as="sourcePoint" />
+            <mxPoint x="550" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-17" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7" target="pdIXrZuAQNPP2J6TnjIP-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="915" as="sourcePoint" />
+            <mxPoint x="400" y="1035" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-18" value="상태" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1100" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-19" value="비밀번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1100" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-20" value="내용" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="1100" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-21" value="답변" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1100" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-22" value="상태" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420" y="690" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-23" value="주소" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="420" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-24" value="게시글" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-25" value="등록" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="1040" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-26" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-2" target="pdIXrZuAQNPP2J6TnjIP-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="915" as="sourcePoint" />
+            <mxPoint x="400" y="1035" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-27" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-24" target="pdIXrZuAQNPP2J6TnjIP-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="945" as="sourcePoint" />
+            <mxPoint x="140" y="1050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-28" value="게시글 분류" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="10" y="1050" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-29" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-28" target="pdIXrZuAQNPP2J6TnjIP-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="1270" as="sourcePoint" />
+            <mxPoint x="340" y="1220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-30" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7" target="pdIXrZuAQNPP2J6TnjIP-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="1377.5" as="sourcePoint" />
+            <mxPoint x="600" y="1327.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-31" value="결제번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="690" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-33" value="포함" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="850" y="1190" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-35" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-61" target="pdIXrZuAQNPP2J6TnjIP-62">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="890" y="845" as="sourcePoint" />
+            <mxPoint x="970" y="777.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-36" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7" target="pdIXrZuAQNPP2J6TnjIP-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="890" y="1030" as="sourcePoint" />
+            <mxPoint x="890" y="925" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-42" value="제품명" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1067.5" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-43" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-42" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="950" y="1095" as="sourcePoint" />
+            <mxPoint x="600" y="1395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-44" value="상세" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1145" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-45" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-44" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="950" y="1172.5" as="sourcePoint" />
+            <mxPoint x="600" y="1472.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-46" value="제품 대분류" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-47" value="제품 중분류" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-49" value="중분류&lt;br&gt;번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="830" y="1430" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-50" value="중분류명" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="930" y="1430" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-51" value="대분류&lt;br&gt;번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="580" y="1430" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-52" value="대분류명" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1430" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-53" value="대분류&lt;br&gt;번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="1495" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-54" value="포함" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="730" y="1330" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-55" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-54" parent="1" source="pdIXrZuAQNPP2J6TnjIP-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="1370" as="sourcePoint" />
+            <mxPoint x="350" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-56" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="pdIXrZuAQNPP2J6TnjIP-54" parent="1" target="pdIXrZuAQNPP2J6TnjIP-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="1400" as="sourcePoint" />
+            <mxPoint x="690" y="1370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-61" value="포함" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="850" y="902.5" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-62" value="옵션" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="855" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-63" value="옵션번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="1150" y="835" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-64" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-63" parent="1" source="pdIXrZuAQNPP2J6TnjIP-62">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1110" y="797.5" as="sourcePoint" />
+            <mxPoint x="760" y="1097.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-65" value="옵션명" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1150" y="902.5" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-66" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-65" parent="1" source="pdIXrZuAQNPP2J6TnjIP-62">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1100" y="845" as="sourcePoint" />
+            <mxPoint x="760" y="1165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-67" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-7" target="pdIXrZuAQNPP2J6TnjIP-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="830" as="sourcePoint" />
+            <mxPoint x="480" y="1035" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-68" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-47" target="pdIXrZuAQNPP2J6TnjIP-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="900" y="1100" as="sourcePoint" />
+            <mxPoint x="900" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-70" value="주문내역" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="765" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-71" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-70" target="pdIXrZuAQNPP2J6TnjIP-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="915" as="sourcePoint" />
+            <mxPoint x="400" y="805" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-73" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-22" target="pdIXrZuAQNPP2J6TnjIP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="620" as="sourcePoint" />
+            <mxPoint x="460" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-74" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-31" target="pdIXrZuAQNPP2J6TnjIP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="630" as="sourcePoint" />
+            <mxPoint x="470" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-75" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-13" target="pdIXrZuAQNPP2J6TnjIP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="620" as="sourcePoint" />
+            <mxPoint x="460" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-76" value="결제가격" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="605" y="690" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-77" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="pdIXrZuAQNPP2J6TnjIP-76" parent="1" target="pdIXrZuAQNPP2J6TnjIP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="625" y="620" as="sourcePoint" />
+            <mxPoint x="695" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-78" value="사용 포인트" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="690" y="690" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-79" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="pdIXrZuAQNPP2J6TnjIP-78" parent="1" target="pdIXrZuAQNPP2J6TnjIP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="620" as="sourcePoint" />
+            <mxPoint x="780" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-81" value="적립 포인트" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="790" y="690" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-82" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="pdIXrZuAQNPP2J6TnjIP-81" parent="1" target="pdIXrZuAQNPP2J6TnjIP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="810" y="620" as="sourcePoint" />
+            <mxPoint x="700" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-83" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-62" target="pdIXrZuAQNPP2J6TnjIP-84">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="997.5" as="sourcePoint" />
+            <mxPoint x="750" y="925" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-84" value="주문목록" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="920" y="755" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-85" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-70" target="pdIXrZuAQNPP2J6TnjIP-84">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="620" as="sourcePoint" />
+            <mxPoint x="460" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-86" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-84" target="pdIXrZuAQNPP2J6TnjIP-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="620" as="sourcePoint" />
+            <mxPoint x="460" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-87" value="총가격" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="660" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-88" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-87" parent="1" source="pdIXrZuAQNPP2J6TnjIP-84">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1050" y="755" as="sourcePoint" />
+            <mxPoint x="550" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-89" value="주소록" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-90" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="pdIXrZuAQNPP2J6TnjIP-89" parent="1" target="pdIXrZuAQNPP2J6TnjIP-101">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="255" as="sourcePoint" />
+            <mxPoint x="930" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-91" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="pdIXrZuAQNPP2J6TnjIP-89" parent="1" target="pdIXrZuAQNPP2J6TnjIP-95">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="550" as="sourcePoint" />
+            <mxPoint x="470" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-93" value="우편번호" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="630" y="420" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-94" value="이름" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="730" y="420" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-95" value="보유" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="500" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-96" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-2" target="pdIXrZuAQNPP2J6TnjIP-95">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="645" y="943.6700000000001" as="sourcePoint" />
+            <mxPoint x="575" y="943.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-97" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-89" target="pdIXrZuAQNPP2J6TnjIP-94">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="655" y="943.6700000000001" as="sourcePoint" />
+            <mxPoint x="585" y="943.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-98" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-89" target="pdIXrZuAQNPP2J6TnjIP-93">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="665" y="953.6700000000001" as="sourcePoint" />
+            <mxPoint x="595" y="953.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-99" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-89" target="pdIXrZuAQNPP2J6TnjIP-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="675" y="963.6700000000001" as="sourcePoint" />
+            <mxPoint x="605" y="963.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-100" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-89" target="pdIXrZuAQNPP2J6TnjIP-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="685" y="973.6700000000001" as="sourcePoint" />
+            <mxPoint x="615" y="973.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-101" value="배송지" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="610" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-102" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-101" target="pdIXrZuAQNPP2J6TnjIP-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="645" y="943.6700000000001" as="sourcePoint" />
+            <mxPoint x="575" y="943.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-103" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-46" target="pdIXrZuAQNPP2J6TnjIP-52">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="645" y="943.6700000000001" as="sourcePoint" />
+            <mxPoint x="575" y="943.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-104" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-46" target="pdIXrZuAQNPP2J6TnjIP-51">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="655" y="953.6700000000001" as="sourcePoint" />
+            <mxPoint x="585" y="953.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-105" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-47" target="pdIXrZuAQNPP2J6TnjIP-50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="645" y="943.6700000000001" as="sourcePoint" />
+            <mxPoint x="575" y="943.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-106" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-47" target="pdIXrZuAQNPP2J6TnjIP-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="655" y="953.6700000000001" as="sourcePoint" />
+            <mxPoint x="585" y="953.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-108" value="수량" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1090" y="1037.5" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-110" value="가격" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1090" y="1102.5" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-112" value="수량" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1150" y="955" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-113" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-112" parent="1" source="pdIXrZuAQNPP2J6TnjIP-62">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="937.5" as="sourcePoint" />
+            <mxPoint x="760" y="1217.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-114" value="장바구니" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="590" y="845" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-115" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="pdIXrZuAQNPP2J6TnjIP-114" parent="1" source="pdIXrZuAQNPP2J6TnjIP-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="955" as="sourcePoint" />
+            <mxPoint x="665" y="1023.6700000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-117" value="수량" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="590" y="940" width="80" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-118" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-114" target="pdIXrZuAQNPP2J6TnjIP-117">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="805" as="sourcePoint" />
+            <mxPoint x="930" y="805" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-119" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-18" target="pdIXrZuAQNPP2J6TnjIP-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="915" as="sourcePoint" />
+            <mxPoint x="600" y="895" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-120" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-19" target="pdIXrZuAQNPP2J6TnjIP-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="1110" as="sourcePoint" />
+            <mxPoint x="440" y="1075" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-121" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-21" target="pdIXrZuAQNPP2J6TnjIP-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="1110" as="sourcePoint" />
+            <mxPoint x="450" y="1085" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdIXrZuAQNPP2J6TnjIP-122" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdIXrZuAQNPP2J6TnjIP-20" target="pdIXrZuAQNPP2J6TnjIP-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="1110" as="sourcePoint" />
+            <mxPoint x="440" y="1075" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
