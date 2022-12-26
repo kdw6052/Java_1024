@@ -1,5 +1,8 @@
 package day32;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MathEx01 {
 
 	public static void main(String[] args) {
@@ -19,6 +22,12 @@ public class MathEx01 {
 		int num = 4;
 		double pi4_2 = Math.round(pi*Math.pow(10, num-1))/Math.pow(10,num-1);
 		System.out.println(pi4_2);
+		String str = "13.45";
+		Date date = new Date();
+		SimpleDateFormat f = new SimpleDateFormat("yyyy년MM월dd일 hh시mm분ss초");
+
+		String dateser = f.format(date);
+		System.out.println(dateser);
 	}
 
 }
