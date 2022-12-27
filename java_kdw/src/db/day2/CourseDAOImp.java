@@ -104,10 +104,14 @@ public class CourseDAOImp implements CourseDAO {
 			CourseVO dbcou = selectCourseByCo_num(cou.getCo_num());
 			switch(submenu) {
 			case 1 : dbcou.setCo_st_num(cou.getCo_st_num());break;
-			case 2 : 
+			case 2 : dbcou.setCo_le_num(cou.getCo_le_num());break;
+			case 3 : dbcou.setCo_type(cou.getCo_type());break;
+			case 4 : dbcou.setCo_grade(cou.getCo_grade());break;
+			default : return false;
 			}
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, cou.getCo_st_num());
+			pstmt.setString(1, dbcou.getCo_st_num());
+			
 		} catch (SQLException e) {
 			return false;
 		}
