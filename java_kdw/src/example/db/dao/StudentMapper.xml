@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="example.db.vo.StudentVO">
+  <resultMap type="example.db.vo.StudentVO2" id="resultMapStudent">
+  	<id property = "num" column = "st_num"/>
+  	<result property = "name" column = "st_name"/>
+  	<result property = "semester" column = "st_semester"/>
+  	<result property = "state" column = "st_state"/>
+  	<result property = "professorNum" column = "st_pr_num"/>
+  </resultMap>
+  <insert id = "insertStudents">
+  	insert into student(st_num,st_name,st_semester,st_state,st_pr_num)
+  	values(#{st_num},#{st_name},#{st_semester},#{st_state},#{st_pr_num})
+  </insert>
+  <update id = "updateStudents">
+  	update student set st_name = #{st_name}, st_semester = #{st_semester} , 
+  	st_state = #{st_state},st_pr_num = #{st_pr_num} where st_num = #{st_num}
+  </update>
+  <select id = "selectAllStudents" resultType = "StudentVO">
+  	select * from student
+  </select>
+  <select id = "selectStudentName" resultType = "StudentVO">
+  	select * from student where st_name like #{st_name}
+  </select>
+  <select id = "selectStudent" resultType = "StudentVO">
+  	select * from Student where st_num = #{st_num}
+  </select>
+</mapper>
