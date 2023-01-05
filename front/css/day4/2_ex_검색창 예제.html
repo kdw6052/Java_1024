@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>검색창 예제</title>
+	<style>
+		*{	padding: 0; margin: 0;}
+		.container-box{
+			width: 400px; height: 50px; border: 2px solid black;
+		}
+		
+		.text{
+			height: 30px; margin-top: 8px; margin-left: 10px;
+			border-style: none; 
+		}
+		.btn{
+			float: right;  width: 50px; height: calc(100% - 2px);
+			line-height: 100%; box-sizing: content-box; margin: -1px -1px;
+		}
+		.search-container{
+			padding: 10px; border: 2px solid green;
+			padding-right: 62px; width: 400px; position: relative;
+			border-radius: 3px;
+		}
+		.search-input{
+			height: 30px; width: 100%; border: 0; font-size: 18px;
+			outline: 0;
+		}
+		.search-btn{
+			position: absolute; top: -2px; bottom: -2px; right: -2px; width: 50px;
+			background: green; border: 0; color: white; font-weight: bold;
+			border-radius: 0 3px 3px 0; cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form action="" class="search-container">
+		<input type="text" class="search-input">
+		<button type="submit" class="search-btn">검색</button>
+	</form>
+	<br>
+	<div class="container-box">
+		<input type="text" class="text">
+		<button type="submit" class="btn">버튼</button>
+	</div>
+</body>
+</html>
