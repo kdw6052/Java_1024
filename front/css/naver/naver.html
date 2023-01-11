@@ -197,32 +197,32 @@
 				.container-body .inner-container{
 					padding: 20px 30px;
 				}
-				.box-body .box-body-left{
+				.box-body-main .box-body-left{
 					float: left; width: 750px;
 				}
-				.box-body .box-body-right{
+				.box-body-main .box-body-right{
 					float: right; width: 350px;
 					position: relative;
 				}
-				.box-body .box-body-left1{
+				.box-body-main .box-body-left1{
 					height: 135px; position: relative;
 				}
-				.box-body .box-body-left1 .frame{
+				.box-body-main .box-body-left1 .frame{
 					width: 750px; height: 135px;
 				}
-				.box-body .line{
+				.box-body-main .lines{
 					position: absolute; background-color: #000; opacity: .07;
 				}
-				.box-body .line-top{
+				.box-body-main .line-top{
 					height: 1px; bottom: 0; left: 0; right: 0;
 				}
-				.box-body .line-bottom{
+				.box-body-main .line-bottom{
 					height: 1px; top: 0; left: 0; right: 0;
 				}
-				.box-body .line-left{
+				.box-body-main .line-left{
 					width: 1px; top: 0; right: 0; bottom: 0;
 				}
-				.box-body .line-right{
+				.box-body-main .line-right{
 					width: 1px; top: 0; left: 0; bottom: 0;
 				}
 				/* 메인 오른쪽 첫번째 박스 */
@@ -274,7 +274,7 @@
 				
 				/* 왼쪽 뉴스배너 */
 
-				.box-body .box-body-left2{
+				.box-body-main .box-body-left2{
 					width: 750px; margin-top: 12px;
 				}
 				.box-body-left2 .box-head{
@@ -303,18 +303,18 @@
 				.box-body-left2 .item-issue:hover .link-issue{
 					text-decoration: underline;
 				}
-				.box-body-left2 .box-service>*{
-					float: left; line-height: 24px; font-size: 13px; color: #202020; 
-					letter-spacing: -.2px; font-weight: 700; margin: 0 4px 0 7px;
-				}
 				.box-body-left2 .box-service{
 					float: right;
 				}
-				.box-body-left2 .box-service>.link-news-home{
+				.box-body-left2 .box-head .box-service>*{
+					float: left; line-height: 24px; font-size: 13px; color: #202020; 
+					letter-spacing: -.2px; font-weight: 700; margin: 0 4px 0 7px;
+				}
+				.box-body-left2 .box-head .box-service>.link-news-home{
 					margin: 0; color: #3565c9;
 				}
 				
-				.box-body-left2 .box-service>.link-news-home::after{
+				.box-body-left2 .box-head .box-service>.link-news-home::after{
 					background-color: #c8ccd1; display: inline-block; width: 3px; height: 3px;
 					border-radius: 50%; content: ''; margin-left: 8px; vertical-align: 3px;
 				}
@@ -322,42 +322,51 @@
 				.box-body-left2 .box-title{
 					padding: 22px 0 16px; font-size: 14px; line-height: 18px; letter-spacing: -.2px;
 				}
-				.box-body-left2 .link-newsstand{
+				.box-body-left2 .box-title .box-news-stand{
+					float: left;
+				}
+				.box-body-left2 .box-title .box-service{
+					float: right; margin-left: 10px;
+				}
+				.box-body-left2 .link-news-stand{
 					float: left; color: #000; font-weight: 700; text-decoration: none; 
 					white-space: nowrap;
 				}
-				.box-body-left2 .link-newsstand::before{
+				.box-body-left2 .link-news-stand::before{
 					display: inline-block; width: 27px; height: 24px; background-position: -272px -342px;
 					vertical-align: top; content: ''; margin: -6px 1px 0 0;
 				}
-				.box-body-left2 .link-newsstand::after{
+				.box-body-left2 .link-news-stand::after{
 					display: inline-block; width: 7px; height: 11px; background-position: -410px -213px;
 					vertical-align: -1px; content: ''; margin-left: 6px; 
 				}
-				.box-body-left2 .btn-newsarea{
+				.box-body-left2 .box-list{
 					float: left; margin-left: 10px;
 				}
-				.box-body-left2 .btn-gudok{
+				.box-body-left2 .btn-my-list,
+				.box-body-left2 .btn-all-list{
 					color: #505050; font-size: 14px; text-decoration: none;
 				}
-				.box-body-left2 .btn-all{
+				.box-body-left2 .btn-my-list[aria-selected=true],
+				.box-body-left2 .btn-all-list[aria-selected=true]{
 					color: #000; font-weight: 700;
 				}
-				.box-body-left2 .btn-all::before{
+				.box-body-left2 .btn-all-list::before{
 					background-color: #c7ccd1; display: inline-block; width: 4px; height: 4px;
 					border-radius: 50%; content: ''; margin: 0 8px 0 4px; vertical-align: 3px;
+					
 				}
-				.box-body-left2 .set-area{
+				.box-body-left2 .box-title .box-service{
 					float: right;
 				}
 				.box-body-left2 .btn-set{
 					float: left; padding: 0 9px;
 				}
-				.box-body-left2 .icon-list{
+				.box-body-left2 .icon-press-list{
 					display: inline-block; width: 14px; height: 13px; background-position: -244px -310px; 
 					vertical-align: top; opacity: .7;
 				}
-				.box-body-left2 .icon-title{
+				.box-body-left2 .icon-press-thumb{
 					display: inline-block; width: 13px; height: 13px; background-position: -276px -310px; 
 					vertical-align: top; opacity: .7;
 				}
@@ -365,18 +374,135 @@
 					display: inline-block; width: 15px; height: 15px; background-position: -102px -386px; 
 					vertical-align: top; opacity: .7; margin: -1px 0 1px;
 				}
-				.box-body-left2 .icon-list:hover,.box-body-left2 .icon-title:hover,
-				.box-body-left2 .icon-set:hover{
+				.box-body-left2 .box-title .btn-set:hover>i{
 					opacity: 1;
+				}
+				.box-body-left2 .box-title .box-service[aria-selected=true] .icon-press-list:hover{
+					opacity: 1; background-position: -260px -310px;
+				}
+				.box-body-left2 .box-title .box-service[aria-selected=true] .icon-press-thumb:hover{
+					opacity: 1; background-position: -291px -310px;
 				}
 				/* 뉴스 그룹 */
 				.box-body-left2 .box-body{
-					width: 750px;
+					position: relative;
+				}
+				.box-body-left2 .box-body .group-news{
+					position: relative; height: 260px; border: 1px solid #dae1e6; border-width: 1px 0;
+				}
+				.box-body-left2 .box-body .container-box{
+					height: 100%; overflow: hidden;
+				}
+				.box-body-left2 .box-body .container-view{
+					width: 750px; float: left;
+				}
+				.box-body-left2 .box-body .tile-view{
+					position: relative; height: 260px; border: 1px solid #dae1e6; border-width: 0 1px;
+				}
+				.box-body-left2 .box-body .line-area{
+					position: absolute; top: 0; bottom: 0; left: 0; right: 0; display: block;
+				}
+				.box-body-left2 .box-body .line-area .line{
+					position: absolute; background-color: #e4e8eb; z-index: 1;
+				}
+				.box-body-left2 .box-body .bottom1,.box-body-left2 .box-body .bottom2,
+				.box-body-left2 .box-body .bottom3,.box-body-left2 .box-body .bottom4,
+				.box-body-left2 .box-body .bottom5{
+					top: 0; bottom: 0; width: 1px;
+				}
+				.box-body-left2 .box-body .right1,.box-body-left2 .box-body .right2,
+				.box-body-left2 .box-body .right3{
+					left: 0; right: 0; height: 1px;
+				}
+				.box-body-left2 .box-body .bottom1{
+					left: 124px;
+				}
+				.box-body-left2 .box-body .bottom2{
+					left: 248px;
+				}
+				.box-body-left2 .box-body .bottom3{
+					left: 372px;
+				}
+				.box-body-left2 .box-body .bottom4{
+					left: 497px;
+				}
+				.box-body-left2 .box-body .bottom5{
+					left: 622px;
+				}
+				.box-body-left2 .box-body .right1{
+					top: 65px;
+				}
+				.box-body-left2 .box-body .right2{
+					top: 130px;
+				}
+				.box-body-left2 .box-body .right3{
+					top: 195px;
+				}
+				.box-body-left2 .box-body .thumb-box{
+					position: relative; float: left; width: 16.66%; height: 65px;
+				}
+				.box-body-left2 .box-body .thumb{
+					display: block; padding: 23px 0 22px; text-align: center;
+				}
+				.box-body-left2 .box-body .news-logo{
+					vertical-align: top;
+				}
+				.box-body-left2 .box-body .thumb-box:hover .popup-wrap{
+					display: block;
+				}
+				.box-body-left2 .box-body .popup-wrap{
+					position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; overflow: hidden;
+					padding: 19px 0 18px; background-color: #f7f9fa; font-size: 0; line-height: 0;
+					text-align: center;
+				}
+				.box-body-left2 .box-body .btn-popup-my,.box-body-left2 .box-body .link-view-news{
+					display: inline-block; padding: 7px 8px 5px; background-color: #fff; 
+					border: 1px solid #dae1e6; font-size: 12px; line-height: 16px; color: #505050;
+					vertical-align: top; text-align: none;
+				}
+				
+				.box-body-left2 .popup-wrap a+a{
+					margin-left: -.2px;
+				}
+				.box-body-left2 .popup-wrap a:hover{
+					background-color: #bec8d8; position: relative;
+				}
+				.box-body-left2 .btn-prev{
+					position: absolute; left: -27px; z-index: 10;
+				}
+				.box-body-left2 .btn-next{
+					position: absolute; right: -13px; z-index: 10;
+				}
+				.box-body-left2 .btn-prev,
+				.box-body-left2 .btn-next{
+					top: 109px;
+ 				}
+				.box-body-left2 .btn-prev .icon-btn{
+					display: inline-block; width: 44px; height: 44px; background-position: -224px -158px; 
+					vertical-align: top; background-repeat: no-repeat;
+				}
+				.box-body-left2 .btn-next .icon-btn{
+					display: inline-block; width: 44px; height: 44px; background-position: -92px -296px; 
+					vertical-align: top; background-repeat: no-repeat;
+				}
+				.box-body-left2 .btn-prev:hover{
+					background-position: -46px -296px;
+				}
+				.box-body-left2 .btn-next:hover{
+					background-position: 0 -296px;
+				}
+				.box-body-main .box-body-right2{
+					position: relative; margin: 12px 0; height: 47px; border: 1px solid #dae1e6;
+					letter-spacing: -.23px;
+				}
+				.box-body-right2 .card-wrap{
+					overflow: hidden; height: 47px; padding-right: 67px;
 				}
 
 
 
-				
+
+
 				/* 공통 */
 				.clearfix::after{
 					clear: both; content: ''; display: block;
@@ -391,8 +517,10 @@
 				.icon-shopping-live.img1,.icon-tv.img1,.icon-more.img1,
 				.icon-login.img1,.box-body-right1 .box-service::before,
 				.box-body-right1 .link-signup::before,.box-body-left2 .link-media::after,
-				.box-body-left2 .link-newsstand::before,.box-body-left2 .link-newsstand::after,
-				.icon-list.img1,.icon-title.img1,.icon-set.img1{
+				.box-body-left2 .link-news-stand::before,.box-body-left2 .link-news-stand::after,
+				.icon-press-list.img1,.icon-press-thumb.img1,.icon-set.img1,
+				.box-body-left2 .btn-prev .icon-btn,.box-body-left2 .btn-next .icon-btn,
+				.box-body-left2 .btn-prev:hover,.box-body-left2 .btn-next:hover{
 					background-image: url(img/img1.png);
 					background-size: 442px 428px;
 				}
@@ -517,7 +645,7 @@
 		</div>
 		<div class="container-body">
 			<div class="inner-container">
-				<div class="box-body clearfix">
+				<div class="box-body-main clearfix">
 					<div class="box-body-left">
 						<div class="box-body-left1">
 							<iframe src="add1.html" frameborder="0" class="frame"></iframe>
@@ -550,26 +678,273 @@
 								</div>
 							</div>
 							<div class="box-title clearfix">
-								<a href="#" class="link-newsstand">뉴스스탠드</a>
-								<div class="btn-newsarea">
-									<a href="#" class="btn-gudok">구독한 언론사</a>
-									<a href="#" class="btn-all">전체언론사</a>
+								<div class="box-news-stand">
+									<a href="#" class="link-news-stand">뉴스스탠드</a>
+									<div class="box-list">
+										<a href="javascript:void(0)" class="btn-my-list" aria-selected="false">구독한 언론사</a>
+										<a href="#" class="btn-all-list" aria-selected="true">전체언론사</a>
+									</div>
 								</div>
-								<div class="set-area">
+								<div class="box-service">
 									<a href="#" class="btn-set">
-										<i class="icon-list img1"></i>
+										<i class="icon-press-list img1" aria-selected="true"></i>
+										<span class="blind">리스트형</span>
 									</a>
 									<a href="#" class="btn-set">
-										<i class="icon-title img1"></i>
+										<i class="icon-press-thumb img1" aria-selected="false"></i>
+										<span class="blind">썸네일형</span>
 									</a>
 									<a href="#" class="btn-set">
 										<i class="icon-set img1"></i>
+										<span class="blind">설정버튼</span>
 									</a>
 								</div>
 							</div>
 							<div class="box-body">
-								<div class="group-news"></div>
+								<div class="group-news">
+									<a href="#" class="btn-prev">
+										<i class="icon-btn"></i>
+									</a>
+									<a href="#" class="btn-next">
+										<i class="icon-btn"></i>
+									</a>
+									<div class="container-box">
+										<div class="container-view">
+											<div class="tile-view">
+												<div class="line-area">
+													<i class="line right1"></i>
+													<i class="line right2"></i>
+													<i class="line right3"></i>
+													<i class="line bottom1"></i>
+													<i class="line bottom2"></i>
+													<i class="line bottom3"></i>
+														<i class="line bottom4"></i>
+														<i class="line bottom5"></i>
+													</div>
+													<div class="thumb-area">
+														<div class="thumb-box">
+															<a href="" class="thumb">
+																<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+															</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+													<div class="thumb-box">
+														<a href="" class="thumb">
+															<img height="20" src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png" alt="YTN" class="news-logo">
+														</a>
+														<div class="popup-wrap">
+															<a href="#" class="btn-popup-my">구독</a>
+															<a href="#" class="link-view-news">기사보기</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
+							<!-- 뉴스 언론사 섬네일 -->
 						</div>
 						<!-- 메인 왼쪽 2번째 박스 -->
 					</div>
@@ -588,6 +963,16 @@
 							</div>
 						</div>
 						<!-- 메인 오른쪽 첫번째 박스 -->
+						<div class="box-body-right2">
+							<div class="card-wrap">
+								<a href="#" class="card-news">
+									<i class="news-bedge"></i>
+									<span class="news">저녁방송 메인뉴스 보기</span>
+								</a>
+								<a href="#" class="btn-prev"></a>
+								<a href="#" class="btn-next"></a>
+							</div>
+						</div>
 					</div>
 					<!-- 메인 오른쪽 박스 -->
 				</div>
