@@ -197,32 +197,32 @@
 				.container-body .inner-container{
 					padding: 20px 30px;
 				}
-				.box-body-main .box-body-left{
+				.box-body .box-body-left{
 					float: left; width: 750px;
 				}
-				.box-body-main .box-body-right{
+				.box-body .box-body-right{
 					float: right; width: 350px;
 					position: relative;
 				}
-				.box-body-main .box-body-left1{
+				.box-body .box-body-left1{
 					height: 135px; position: relative;
 				}
-				.box-body-main .box-body-left1 .frame{
+				.box-body .box-body-left1 .frame{
 					width: 750px; height: 135px;
 				}
-				.box-body-main .lines{
+				.box-body .lines{
 					position: absolute; background-color: #000; opacity: .07;
 				}
-				.box-body-main .line-top{
+				.box-body .line-top{
 					height: 1px; bottom: 0; left: 0; right: 0;
 				}
-				.box-body-main .line-bottom{
+				.box-body .line-bottom{
 					height: 1px; top: 0; left: 0; right: 0;
 				}
-				.box-body-main .line-left{
+				.box-body .line-left{
 					width: 1px; top: 0; right: 0; bottom: 0;
 				}
-				.box-body-main .line-right{
+				.box-body .line-right{
 					width: 1px; top: 0; left: 0; bottom: 0;
 				}
 				/* 메인 오른쪽 첫번째 박스 */
@@ -274,7 +274,7 @@
 				
 				/* 왼쪽 뉴스배너 */
 
-				.box-body-main .box-body-left2{
+				.box-body .box-body-left2{
 					width: 750px; margin-top: 12px;
 				}
 				.box-body-left2 .box-head{
@@ -491,13 +491,181 @@
 				.box-body-left2 .btn-next:hover{
 					background-position: 0 -296px;
 				}
-				.box-body-main .box-body-right2{
-					position: relative; margin: 12px 0; height: 47px; border: 1px solid #dae1e6;
-					letter-spacing: -.23px;
+				/* 메인 오른쪽 두번째 컨텐츠 박스 */
+				.box-body-right2{
+					position: relative; border: 1px solid #dae1e6;
+					height: 47px; letter-spacing: -.25px; margin: 12px 0;padding-right: 67px;
 				}
-				.box-body-right2 .card-wrap{
-					overflow: hidden; height: 47px; padding-right: 67px;
+				.box-body-right2 .box-in{
+					 height: 100%; overflow: hidden;
 				}
+				.box-body-right2 .list-stock{
+					width: 400%; height: 100%;
+				}
+				.box-body-right2 .item-stock{
+					width: 25%; height: 100%; float: left;
+				}
+				.box-body-right .link-stock{
+					display: block; padding: 14px 0 13px 16px;
+				}
+				.box-body-right2 .icon-badge{
+					float: left; height: 18px; padding: 0 7px; margin-right: 8px;
+					border: 1px solid #202020; border-radius: 10px; font-size: 11px;
+					line-height: 18px; color: #202020; font-weight: 700; font-style: normal;
+				}
+				.box-body-right2 .news{
+					line-height: 20px; font-size: 13px; color: #404040; display: block;
+					overflow: hidden;
+				}
+				.box-body-right2 .box-btn{
+					position: absolute; top: 11px; right: 10px;
+				}
+				.box-body-right2 .box-btn .btn-prev .icon-prev,
+				.box-body-right2 .box-btn .btn-next .icon-next{
+					width: 6px; height: 9px; background-position: -162px -327px; margin: 7px 8px 6px;
+					display: inline-block;
+				}
+				.box-body-right2 .box-btn .btn-next .icon-next{
+					background-position: -146px -327px;
+				}
+				.box-body-right2 .box-btn>*{
+					float: left; background-color: #fff; border: 1px solid #e4e8eb;
+					line-height: 0;
+				}
+				.box-body-right2 .box-btn .btn-next{
+					margin-left: -1px;
+				}
+				/* 메인 오른쪽 3번째 광고 박스 */
+				.box-body-right3{
+					height: 200px; overflow: hidden; position: relative;
+				}
+				/* 메인 왼쪽 3번째 주제 박스 */
+				.box-body-left3{
+					padding: 35px 0 27px; letter-spacing: -.25px;
+					;
+				}
+				.box-body-left3 .box-title{
+					overflow: hidden; padding-bottom: 17px;
+				}
+				.box-body-left3 .area-title{
+					float: left;
+				}
+				.box-body-left3 .area-info{
+					float: right;
+				}
+				.box-body-left3 .title{
+					font-size: 14px; color: #000;
+				}
+				.box-body-left3 .dsc{
+					margin-left: 8px; color: grey; 
+				}
+				.box-body-left3 .info{
+					color: grey;
+				}
+				.box-body-left3 .area-info>a:hover{
+					text-decoration: underline;
+				}
+				.box-body-left3 .btn-set{
+					position: relative; margin-left: 14px; color: #505050;
+				}
+				.box-body-left3 .btn-set:hover::before{
+					opacity: 1;
+				}
+				.box-body-left3 .btn-set::before{
+					display: inline-block; width: 11px; height: 11px; background-position: -358px -310px;
+					vertical-align: -1px; content: ''; margin-right: 4px; opacity: .7;
+				}
+				.box-body-left3 .btn-set::after{
+					position: absolute; top: 2px; left: -8px; content: ''; width: 1px; height: 12px;
+					background-color: #e4e8eb;
+				}
+				.box-body-left3 .new{
+					color: #000;
+				}
+				.box-body-left3 .box-menu{
+					position: relative; background-color: #fff;
+				}
+				.box-body-left3 .box-menu::before{
+					position: absolute; top: 0; left: 0; right: 0; bottom: 0; content: '';
+					border: 1px solid #dae1e6;
+				}
+				.box-body-left3 .box-in{
+					overflow: hidden;
+				}
+				.box-body-left3 .list-menu{
+					font-size: 0; line-height: 0; white-space: nowrap;
+				}
+				.box-body-left3 .item-menu{
+					display: inline-block; width: 94px; line-height: 49px;
+					font-size: 13px;position: relative;
+				}
+				.box-body-left3 .item-menu:nth-child(8n+1){
+					width: 92px;
+				}
+				.box-body-left3 .box-menu .btn-cg-prev{
+					 top: 6px; left: -23px; 
+				}
+				.btn-cg-prev{
+					position: absolute;z-index: 10;
+				}
+				.box-body-left3 .box-menu .btn-cg-next{
+					top: 6px; right: -18px;
+				}
+				.btn-cg-next{
+					position: absolute;  z-index: 10;
+				}
+				.box-body-left3 .icon-prev{
+					display: inline-block; width: 40px; height: 40px; background-position: -128px -342px;
+					vertical-align: top;
+				}
+				.box-body-left3 .icon-next{
+					display: inline-block; width: 40px; height: 40px; background-position: -86px -342px;
+					vertical-align: top;
+				}
+				.box-body-left3 .list-menu::before{
+					position: absolute; top: 0; left: 0; right: 0; bottom: 0; content: '';
+					border: 1px solid #dae1e6;
+				}
+				.box-body-left3 .list-menu::after{
+					content: '';display: table; table-layout: fixed; clear: both;
+				}
+				.box-body-left3 .btn-menu{
+					display: block; border-right: 1px solid #dae1e6; font-size: 13px; font-weight: 700;
+					line-height: 49px; text-align: center; text-decoration: none; color: #000;
+				}
+				.box-body-left3 .icon-middot{
+					width: 2px; height: 2px; display: inline-block; margin: 0 2px;
+					background-color: rgba(32,32,32,.8); border-radius: 50%; vertical-align: 4px;
+				}
+				.box-body-left3 .btn-menu[aria-selected=true]{
+					position: relative; margin: 0 -1px; border-radius: 1px;
+					box-shadow: 0 3px 6px 0 rgb(0, 0, 0 / 16%); color: #fff !important;
+					
+				}
+				
+				.box-body-left3 .item-menu .enter:hover{ color : #e65da0;}
+				.box-body-left3 .item-menu .sports:hover{ color : #0147b5;}
+				.box-body-left3 .item-menu .car:hover{ color : #4a94e1;}
+				.box-body-left3 .item-menu .weptton:hover{ color : #66c971;}
+				.box-body-left3 .item-menu .finance:hover{ color : #35ae5e;}
+				.box-body-left3 .item-menu .myfeed:hover{ color : #5290ff;}
+				.box-body-left3 .item-menu .recipe:hover{ color : #ebaa00;}
+				.box-body-left3 .item-menu .living:hover{ color : #c08d31;}
+				.box-body-left3 .item-menu .book:hover{ color : #42be6f;}
+				.box-body-left3 .item-menu .beauty:hover{ color : #8449ca;}
+				
+				.box-body-left3 .item-menu .enter[aria-selected=true]{ background-color : #e65da0;}
+				.box-body-left3 .item-menu .sports[aria-selected=true]{ background-color : #0147b5;}
+				.box-body-left3 .item-menu .car[aria-selected=true]{ background-color : #4a94e1;}
+				.box-body-left3 .item-menu .weptton[aria-selected=true]{ background-color : #66c971;}
+				.box-body-left3 .item-menu .finance[aria-selected=true]{ background-color : #35ae5e;}
+				.box-body-left3 .item-menu .myfeed[aria-selected=true]{ background-color : #5290ff;}
+				.box-body-left3 .item-menu .recipe[aria-selected=true]{ background-color : #ebaa00;}
+				.box-body-left3 .item-menu .living[aria-selected=true]{ background-color : #c08d31;}
+				.box-body-left3 .item-menu .book[aria-selected=true]{ background-color : #42be6f;}
+				.box-body-left3 .item-menu .beauty[aria-selected=true]{ background-color : #8449ca;}
+
+
 
 
 
@@ -520,7 +688,9 @@
 				.box-body-left2 .link-news-stand::before,.box-body-left2 .link-news-stand::after,
 				.icon-press-list.img1,.icon-press-thumb.img1,.icon-set.img1,
 				.box-body-left2 .btn-prev .icon-btn,.box-body-left2 .btn-next .icon-btn,
-				.box-body-left2 .btn-prev:hover,.box-body-left2 .btn-next:hover{
+				.box-body-left2 .btn-prev:hover,.box-body-left2 .btn-next:hover,
+				.box-body-right2 .box-btn .btn-prev .icon-prev,.box-body-right2 .box-btn .btn-next .icon-next,
+				.box-body-left3 .btn-set::before,.box-body-left3 .icon-prev,.box-body-left3 .icon-next{
 					background-image: url(img/img1.png);
 					background-size: 442px 428px;
 				}
@@ -645,7 +815,7 @@
 		</div>
 		<div class="container-body">
 			<div class="inner-container">
-				<div class="box-body-main clearfix">
+				<div class="box-body clearfix">
 					<div class="box-body-left">
 						<div class="box-body-left1">
 							<iframe src="add1.html" frameborder="0" class="frame"></iframe>
@@ -946,7 +1116,65 @@
 							</div>
 							<!-- 뉴스 언론사 섬네일 -->
 						</div>
-						<!-- 메인 왼쪽 2번째 박스 -->
+						<!-- 메인 왼쪽 2번째 박스 끝-->
+						<div class="box-body-left3">
+							<div class="box-title">
+								<div class="area-title clearfix">
+									<strong class="title">오늘 읽을만한 글</strong><span class="dsc">주제별로 분류된 다양한 글 모음</span>
+								</div>
+								<div class="area-info clearfix">
+									<span class="info">
+										<strong class="new">678</strong> 개의 글
+									</span>
+									<a href="#" class="btn-set">관심주제 설정</a>
+								</div>
+							</div>
+							<div class="box-menu">
+								<a href="" class="btn-cg-prev">
+									<i class="icon-prev"></i>
+								</a>
+								<a href="" class="btn-cg-next">
+									<i class="icon-next"></i>
+								</a>
+								<div class="box-in">
+									<ul class="list-menu">
+										<li class="item-menu">
+											<a href="" class="btn-menu enter" aria-selected="true">엔터</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu sports">스포츠</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu weptton">웹툰</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu car">자동차</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu finance">경제</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu myfeed">추천<span class="icon-middot"></span>구독</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu recipe">레시피</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu book">책방</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu living">리빙</a>
+										</li>
+										<li class="item-menu">
+											<a href="" class="btn-menu beauty">패션뷰티</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="box-contents">
+								<div class="theme-box"></div>
+							</div>
+						</div>
 					</div>
 					<div class="box-body-right">
 						<div class="box-body-right1">
@@ -962,17 +1190,55 @@
 								</div>
 							</div>
 						</div>
-						<!-- 메인 오른쪽 첫번째 박스 -->
+						<!-- 메인 오른쪽 첫번째 박스 끝-->
 						<div class="box-body-right2">
-							<div class="card-wrap">
-								<a href="#" class="card-news">
-									<i class="news-bedge"></i>
-									<span class="news">저녁방송 메인뉴스 보기</span>
-								</a>
-								<a href="#" class="btn-prev"></a>
-								<a href="#" class="btn-next"></a>
+							<div class="box-in">
+								<ul class="list-stock">
+									<li class="item-stock">
+										<a href="#" class="link-stock">
+											<i class="icon-badge">이슈</i>
+											<span class="news">코로나바이러스감염증-19 현황</span>
+										</a>
+									</li>
+									<li class="item-stock">
+										<a href="#" class="link-stock">
+											<i class="icon-badge">이슈</i>
+											<span class="news">코로나바이러스감염증-19 현황</span>
+										</a>
+									</li>
+									<li class="item-stock">
+										<a href="#" class="link-stock">
+											<i class="icon-badge">이슈</i>
+											<span class="news">코로나바이러스감염증-19 현황</span>
+										</a>
+									</li>
+									<li class="item-stock">
+										<a href="#" class="link-stock">
+											<i class="icon-badge">이슈</i>
+											<span class="news">코로나바이러스감염증-19 현황</span>
+										</a>
+									</li>
+								</ul>
+								<div class="box-btn">
+									<a href="#" class="btn-prev">
+										<i class="icon-prev"></i>
+									</a>
+									<a href="#" class="btn-next">
+										<i class="icon-next"></i>
+									</a>
+								</div>
 							</div>
 						</div>
+						<!-- 오른쪽 2번째 박스 끝-->
+						<div class="box-body-right3">
+							<iframe src="add2.html" frameborder="0" width="350" height="200"></iframe>
+							<span class="line line-top"></span>
+							<span class="line line-bottom"></span>
+							<span class="line line-left"></span>
+							<span class="line line-right"></span>
+							<span class="blind">광고</span>
+						</div>
+						<!-- 오른쪽 3번째 박스 끝-->
 					</div>
 					<!-- 메인 오른쪽 박스 -->
 				</div>
