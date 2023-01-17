@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>this 예제</title>
+</head>
+<body>
+	<script>
+		let book = {
+			title : '이것이 자바다',
+			auther : '홍길동',
+		/* 	print : function(){
+				console.log(`제목 : ${this.title}, 저자 : ${this.auther}`);
+			} */
+			print(){
+				console.log(`제목 : ${this.title}, 저자 : ${this.auther}`);
+			}
+		}
+		book.print();
+	</script>
+</body>
+</html>
