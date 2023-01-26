@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.bg-red{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list1">
+		<li onclick="changeBackgroud1()">1</li>
+		<li onclick="changeBackgroud2()">2</li>
+		<li onclick="changeBackgroud3()">3</li>
+	</ul>
+	<ul id="list2">
+		<li onclick="changeBackgroudColor(1)">1</li>
+		<li onclick="changeBackgroudColor(2)">2</li>
+		<li onclick="changeBackgroudColor(3)">3</li>
+	</ul>
+	<ul id="list3">
+		<li >1</li>
+		<li >2</li>
+		<li >3</li>
+	</ul>
+	<script>
+		function changeBackgroud1(){
+			//document.querySelector('#list1>li:nth-child(1)').classList.toggle('bg-red');
+			let li1 = document.querySelector('#list1>li:nth-child(1)');
+			li1.classList.toggle('bg-red');
+		}
+		function changeBackgroud2(){
+			let li2 = document.querySelector('#list1>li:nth-child(2)');
+			li2.classList.toggle('bg-red');
+		}
+		function changeBackgroud3(){
+			let li3 = document.querySelector('#list1>li:nth-child(3)');
+			li3.classList.toggle('bg-red');
+		}
+	</script>
+	<script>
+		function changeBackgroudColor(index){
+			//let list = document.querySelectorAll('#list2>li');
+			//list[index-1].classList.toggle('bg-red');
+
+			let li = document.querySelector(`#list2>li:nth-child(${index})`);
+			li.classList.toggle('bg-red');
+		}
+	</script>
+	<script>
+		let list3 = document.querySelectorAll('#list3>li');
+		list3.forEach((item) =>{
+			item.onclick = ()=>{
+				item.classList.toggle('bg-red');
+			}
+		})
+	</script>
+</body>
+</html>
