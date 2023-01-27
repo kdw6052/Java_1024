@@ -13,14 +13,15 @@
 		.list-menu::after{
 			clear: both; display: block; content: '';
 		}
-		.item-menu{
-			list-style: none; float: left; width: 200px; text-align: center;
+		.item-menu1,.item-menu2,.item-menu3{
+			list-style: none; float: left; width: 200px; text-align: center; height: 50px;
 		}
 		.item-menu+.item-menu{
 			border-left: 1px solid black; margin-left: -1px;
 		}
 		.link-menu{
-			text-decoration: none; line-height: 50px; color: black; height: 100%; display: block;
+			text-decoration: none; line-height: 50px; color: black; display: block;
+			
 		}
 		.box{
 			width: 200px; background-color: aquamarine; height: 48px; border: 1px solid black;
@@ -30,15 +31,15 @@
 </head>
 <body>
 	<ul class="list-menu">
-		<li class="item-menu1">
+		<li class="item-menu1 item-menu">
 			<a href="#" class="link-menu">1</a>
 			<div class="box1 box"></div>
 		</li>
-		<li class="item-menu2">
+		<li class="item-menu2 item-menu">
 			<a href="#" class="link-menu">2</a>
 			<div class="box2 box"></div>
 		</li>
-		<li class="item-menu3">
+		<li class="item-menu3 item-menu">
 			<a href="#" class="link-menu">3</a>
 			<div class="box3 box"></div>
 		</li>
@@ -46,7 +47,13 @@
 	<script>
 		$('.item-menu1').click(function(){
 			$('.box1').slideToggle();
-		})
+		});
+		$('.item-menu2').click(function(){
+			$('.box2').slideToggle();
+		});
+		$('.item-menu3').click(function(){
+			$('.box3').slideToggle();
+		});
 	</script>
 </body>
 </html>

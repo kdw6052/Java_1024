@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.continer-box{
+			width: 300px; height: 100px;
+		}
+		.continer-box::after{
+			content: ''; display: block; clear: both;
+		}
+		.box{
+			width: 100px; height: 100px; border: 2px solid black; text-align: center;line-height: 100px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div>
+
+		<label>
+			<input type="checkbox" name="fruit" value="사과">사과
+		</label>
+			<label>
+			<input type="checkbox" name="fruit" value="바나나">바나나
+		</label>
+		<label>
+			<input type="checkbox" name="fruit" value="오렌지">오렌지
+		</label>
+		<br>
+		<button id="btn">클릭</button>
+	</div>
+
+	
+	
+
+	<script>
+		/* let list = $('[name = fruit]')
+		for(let i=0;i<list.length;i++)
+			console.log(list.eq(i).val())
+		list.each(function(){
+			console.log($(this).val())
+		})	 */
+		
+		$('#btn').click(()=>{
+			/* 
+			$('[name=fruit]').each(function(){
+				if($(this).prop('checked')){
+					alert($(this).val())
+				}
+			}) 
+			*/
+			let arr = [];
+			$('[name=fruit]:checked').each(function(){
+				//이 때 값을 배열에 저장
+				console.log($(this).val())
+				arr.push($(this).val())
+			})
+			//배열에 저장된 값을 ,를 기준으로 하나의 문자열로 생성 후
+			let str = arr.join(',')
+			//원하는 요소에 출력
+			$('.box').text(str)
+		})
+				
+	</script>
+</body>
+</html>

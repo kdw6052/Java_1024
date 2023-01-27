@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.list-menu{
+			width: 600px; border: 1px solid black; height: 50px; padding: 0; margin: 0;
+		}
+		.list-menu::after{
+			clear: both; display: block; content: '';
+		}
+		.item-menu1,.item-menu2,.item-menu3{
+			list-style: none; float: left; width: 200px; text-align: center; height: 50px;
+		}
+		.item-menu+.item-menu{
+			border-left: 1px solid black; margin-left: -1px;
+		}
+		.link-menu{
+			text-decoration: none; line-height: 50px; color: black; display: block;
+			
+		}
+		.box{
+			width: 200px; background-color: aquamarine; height: 48px; border: 1px solid black;
+			margin-left: -1px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="list-menu">
+		<li class="item-menu1 item-menu">
+			<a href="#" class="link-menu">1</a>
+			<div class="box1 box"></div>
+		</li>
+		<li class="item-menu2 item-menu">
+			<a href="#" class="link-menu">2</a>
+			<div class="box2 box"></div>
+		</li>
+		<li class="item-menu3 item-menu">
+			<a href="#" class="link-menu">3</a>
+			<div class="box3 box"></div>
+		</li>
+	</ul>
+	<script>
+		$('.item-menu1').click(function(){
+			$('.box1').slideToggle();
+		});
+		$('.item-menu2').click(function(){
+			$('.box2').slideToggle();
+		});
+		$('.item-menu3').click(function(){
+			$('.box3').slideToggle();
+		});
+	</script>
+</body>
+</html>
