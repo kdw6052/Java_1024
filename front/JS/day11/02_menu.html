@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"></link>
+	<style>
+		
+		.btn-menu{
+		width: 50px; position: absolute; border: none; background-color: #fff;
+		top: 0; right: 0; cursor: pointer; line-height: 50px; padding: 0; outline: 0;
+		font-size: 30px;
+		}
+		.menu-box{
+			position: fixed; right: -202px; bottom: 0; top: 0; width: 200px; border: 1px solid red;
+			background-color: #fff; 
+		}
+		.btn-close{
+			position: absolute; top: 0; right: 0; width: 50px; height: 50px; font-size: 30px;
+			border: 0; background: #fff; outline: 0; cursor: pointer;
+		}
+		nav{
+			border: 1px solid black; position: relative; height: 50px;
+		}
+		nav::after{
+			display: block; clear: both; content: '';
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<button class="btn-menu"><i class="fas fa-bars"></i></button>
+		</nav>
+		<div class="menu-box">
+			<button class="btn-close"><i class="fas fa-times"></i></button>
+		</div>
+	</div>
+	<script>
+		$('.btn-menu').click(function(){
+			$('.menu-box').animate({
+				right : 0
+			},500)
+		})
+		$('.btn-close').click(function(){
+			$('.menu-box').animate({
+				right : '-202px'
+			},500)
+		})
+	</script>
+</body>
+</html>
