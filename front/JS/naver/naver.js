@@ -64,48 +64,46 @@ $(function(){
 		selectNewsList(obj.next());
 	});
 });
-//왼쪽 3번째 컨텐츠 관련 이벤트
+//왼쪽3번째 컨텐츠 관련 이벤트
 $(function(){
 	$('.box-body-left3 .box-menu .btn-menu').click(function(e){
 		e.preventDefault();
 		$('.box-body-left3 .box-menu .item-menu .btn-menu').attr('aria-selected',false);
 		$(this).attr('aria-selected',true);
 		if($(this).parent().prev().length == 0){
-			$('.box-body-left3 .box-menu .btn-prev').hide()
+			$('.box-body-left3 .btn-prev').hide();
 		}else{
-			$('.box-body-left3 .box-menu .btn-prev').show()
+			$('.box-body-left3 .btn-prev').show();
 		}
 		if($(this).parent().next().length == 0){
-			$('.box-body-left3 .box-menu .btn-next').hide()
+			$('.box-body-left3 .btn-next').hide();
 		}else{
-			$('.box-body-left3 .box-menu .btn-next').show()
+			$('.box-body-left3 .btn-next').show();
+		}
+	})
+	$('.box-body-left3 .btn-next').click(function(e){
+		e.preventDefault();
+		let obj = $('.box-body-left3 .box-menu .item-menu .btn-menu').filter('[aria-selected=true]')
+		if(obj.parent().next().length != 0)
+			obj.parent().next().children().click();
+		
+		if(obj.hasClass('living')){
+			obj.parents('.list-menu').animate({
+				marginLeft : '-185px'
+			}, 500);
 		}
 	})
 	$('.box-body-left3 .btn-prev').click(function(e){
 		e.preventDefault();
-		let obj = $('.box-body-left3 .box-menu .item-menu .btn-menu').filter('[aria-selected=true]');
-		if(obj.parent().prev().length !=0){
+		let obj = $('.box-body-left3 .box-menu .item-menu .btn-menu').filter('[aria-selected=true]')
+		if(obj.parent().prev().length != 0)
 			obj.parent().prev().children().click();
-		}
+		
 		if(obj.hasClass('car')){
 			obj.parents('.list-menu').animate({
 				marginLeft : '0px'
-			},500);
+			}, 500);
 		}
-		
-	})
-	$('.box-body-left3 .btn-next').click(function(e){
-		e.preventDefault();
-		let obj = $('.box-body-left3 .box-menu .item-menu .btn-menu').filter('[aria-selected=true]');
-		if(obj.parent().next().length !=0){
-			obj.parent().next().children().click();
-		}
-		if(obj.hasClass('living')){
-			obj.parents('.list-menu').animate({
-				marginLeft : '-186px'
-			},500);
-		}
-
 	})
 });
 //메뉴 관련 이벤트
@@ -115,29 +113,121 @@ $(function(){
 		$(this).toggleClass('fold');
 		$('.container-menu .container-service').toggle();
 		$('.group-menu .box-btn-area').toggle();
-		$('.container-menu .group-weather').toggle();
-	})
-})
-$(function(){
+		setMenuServiceBtn(true);
+	});
 	$('.group-menu .box-btn-area .btn-set').click(function(e){
 		e.preventDefault();
-		//$('.group-menu .btn').show().css('display','inline-block');
-		$('.group-menu .box-btn-area .btn').removeClass('display-none');
-		$('.group-menu .box-btn-area .btn-set').addClass('display-none');
-		$('.group-menu .box-btn-area .btn-favorite-all').addClass('display-none');
+		setMenuServiceBtn();
+	})
+	$('.group-service-check [type=checkbox]').click(function(){
+		//클릭한 요소의 value를 가져옴
+		let val = $(this).val()
+
+		//전역 배열에 value이 있는지 확인 (또는 클릭한 요소의 checked 여부를 확인)
+		let index = tmpMenuArr.indexOf(val);
+		//배열에 value이 있으면 (또는 클릭한 요소가 checked가 해제되면) 
+		if(index >= 0){
+			//배열에 value를 제거
+			tmpMenuArr.splice(index,1)//index 번지부터 1개 삭제
+			//체크박스 이미지를 변경
+		}
+		//없으면 
+		else{
+			//배열의 길이가 4이상이면 현재 선택한 요소를 checked를 해제하고 알림창을 띄운 후 종료
+			if(tmpMenuArr.length >=4){
+				$(this).prop('checked',false);
+				alert('최대 4개까지 설정할 수 있습니다.');
+				return;
+			}
+			//배열에 value를 추가
+			tmpMenuArr.push(val);
+		}
+		//주어진 전역 배열을 기준으로 list-empty-box 요소를 배치(함수로 따로 만듬)
+		drawEmptyboxMenu(tmpMenuArr);
+	})
+	//저장 버튼
+	$('.group-menu .btn-save').click(function(){
+		if(tmpMenuArr.length==0)
+			alert('선택된 메뉴가 없습니다. 초기설정으로 돌아갑니다.');
+		selecterMenuArr = tmpMenuArr.splice(0);
+		init();
+		$('.group-menu .btn-more').click();
+	})
+	//초기화
+	$('.group-menu .btn-reset').click(function(){
+		alert('초기설정으로 돌아갑니다');
+		tmpMenuArr = selecterMenuArr = [];
+		init();
+		$('.group-menu .btn-more').click();
 	})
 })
-function setMenuServiceBtn(){
+//선택된 메뉴에 따른 메뉴박스 관리 및 체크박스 관리하는 함수
+function init(){
+	//선택된 메뉴에 따른 메뉴박스 관리
+	//선택된 메뉴가 없는 경우 => 고정된 메뉴가 출력
+	if(selecterMenuArr.length == 0){
+		$('.list-favority-menu').show();
+		$('.list-select-menu').hide();
+	}
+	//선택된 메뉴가 있는 경우
+	else{
+		$('.list-favority-menu').hide();
+		$('.list-select-menu').show();
+		/* $('.list-select-menu .item-box').text('');
+		for(index in selecterMenuArr){
+			$('.list-select-menu .item-box').eq(index).text(selecterMenuArr[index])
+		} */
+		$('.list-select-menu').html('');
+		for(index in selecterMenuArr){
+			let str = `<li class = "item-box" >${selecterMenuArr[index]}</li>`
+			$('.list-select-menu').append(str);
+		}
+	}
+}
+function drawEmptyboxMenu(tmpMenuArr){
+	//select : 녹색박스, select 클래스를 제거 => 녹색박스 제거
+	//모든 박스에 있는 글자들을 ''(빈 문자열)로 초기화
+	$('.list-empty-box .item-box').removeClass('select').text('');
+	for(index in tmpMenuArr){
+		$('.list-empty-box .item-box').eq(index).text(tmpMenuArr[index])
+	}
+	$('.list-empty-box .item-box').eq(tmpMenuArr.length).addClass('select')
+	//체크박스 관리
+	$('.group-service-check [type=checkbox]').each(function(){
+		let val = $(this).val();
+		if(tmpMenuArr.indexOf(val) != -1){
+			$(this).prop('checked',true);
+		}else{
+			$(this).prop('checked',false);
+		}
+	})
+}
+let tmpMenuArr = [];//선택한 메뉴를 저장할 임시 배열(저장 전)
+let selecterMenuArr = []; //선택한 메뉴를 저장할 배열(저장완료)
+function setMenuServiceBtn(flag){
 	$('.group-menu .box-btn-area .btn').removeClass('display-none');
+	$('.container-service .group-service').removeClass('display-none');
+	$('.container-menu .list-favority-menu').removeClass('display-none');
+	$('.container-menu .list-select-menu').removeClass('display-none');
+	$('.container-menu .list-empty-box').removeClass('display-none');
+	//접기
 	if(flag){
 		$('.group-menu .box-btn-area .btn-reset').addClass('display-none');
 		$('.group-menu .box-btn-area .btn-save').addClass('display-none');
-	}else{
+		$('.container-service .group-service').last().addClass('display-none');
+		$('.container-menu .list-empty-box').addClass('display-none');
+	}
+	//더보기
+	else{
 		$('.group-menu .box-btn-area .btn-set').addClass('display-none');
 		$('.group-menu .box-btn-area .btn-favorite-all').addClass('display-none');
+		$('.container-service .group-service').first().addClass('display-none');
+		$('.container-menu .list-favority-menu').addClass('display-none');
+		$('.container-menu .list-select-menu').addClass('display-none');
+		tmpMenuArr = selecterMenuArr.slice(0);
+		drawEmptyboxMenu(tmpMenuArr);
 	}
 }
-
 
 let liRight2 = '.box-body-right2 .item-stock';
 let ulRight2 = '.box-body-right2 .list-stock';
@@ -214,4 +304,3 @@ function selectNewsList(el){
 		$('.box-body-left2 .btn-next').show();
 	}
 }
-

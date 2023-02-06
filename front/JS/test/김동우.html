@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>포트폴리오 문제</title>
+	<script src="jquery.min.js"></script>
+	
+	<style>
+		
+		.box{
+			margin-bottom: 10px;
+		}
+		.box1{
+			text-align: center;
+		}
+		.title-box{
+			width: 100px;display: inline-block; text-align: left;
+		}
+		
+		*{
+			margin-bottom: 3px;
+		}
+		.red{
+			background-color: red;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<form class="form">
+		<fieldset>
+			<legend>회원 가입 양식</legend>
+			<div class="box">
+				<span class="title-box">아이디</span>
+				<input class="test-id" type="text" name="id">
+				<button class="btn-id">중복확인</button>
+			</div>
+			<div class="box">
+				<span class="title-box">비밀번호</span>
+				<input type="text" name="pw">
+			</div>
+			<div class="box">
+				<span class="title-box">비밀번호확인</span> 
+				<input  type="text" name="pw2">
+			</div>
+			<div class="box">
+				<span class="title-box">지역</span>
+				서울<input type="radio" name="region" value="서울">
+				부산<input type="radio" name="region" value="부산">
+				대구<input type="radio" name="region" value="대구">
+			</div>
+			<div class="box1">
+				<button type="reset" class="btn1">초기화</button>
+				<button type="submit" class="btn2">회원가입</button>
+			</div>
+		</fieldset>
+	</form>
+	<script>
+		$('.btn-id').click(function(e){
+			e.preventDefault();
+			let regex = /^[a-z][a-zA-z0-9!@#]{5,11}$/;
+			let id = $('[name=id]').val();
+			if(!regex.test(id)){
+				$('.test-id').css('background-color','red');
+			}else{
+				$('.test-id').css('background-color','green')
+			}
+		})
+		$('.form').submit(function(){
+			if($('[name=region]:checked').length == 0){
+				alert('지역을 선택해주세요')
+				return false;
+			}
+		})
+		$('.btn1').click(function(){
+			$('.test-id').removeAttr('style','')
+		})
+		
+	</script>
+</body>
+</html>
