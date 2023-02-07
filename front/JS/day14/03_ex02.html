@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.container{
+			content: ''; clear: both; display: block; width: 100%; height: 400px;
+			position: relative; border: 1px solid black;
+			
+		}
+		.box{
+			float: left; width: 100px; height: 100px; border: 1px solid black;
+			margin-left: 20px; text-align: center; line-height: 100px; margin-top: 20px;
+			cursor: pointer;
+		}
+		.box+.box{
+			margin-left: 50px;
+		}
+		.hide-box{
+			width: 500px; height: 300px; border: 1px solid black;
+			position: absolute; background-color: #fff; margin-left: 100px; top: 50px;
+			line-height: 300px; box-sizing: border-box; text-align: center;
+			display: none;
+		}
+		.btn-close{
+			position: absolute; top: 0; right: 0; border: 0; font-size: 30px;
+			background-color: #fff; cursor: pointer;
+		}
+		.opac{
+			background: rgba(0, 0, 0, 0.3);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="menu-box">
+			<div class="box">1번</div>
+			<div class="box">2번</div>
+			<div class="box">3번</div>
+		</div>
+		<div class="hide-box">
+			<div class="text-box"></div>
+			<button class="btn-close">X</button>
+		</div>
+	</div>
+	<script>
+		$('.box').click(function(){
+			let content = $(this).text()
+			$('.hide-box .text-box').text(content);
+			$('.container').css('background-color','gray')
+			$('.menu-box').addClass('opac');
+			$('.hide-box').show()
+		})
+		$('.btn-close').click(function(){
+			$('.menu-box').removeClass('opac')
+			$('.container').css('background-color','#fff')
+			$('.hide-box').hide()
+		})
+	</script>
+</body>
+</html>
