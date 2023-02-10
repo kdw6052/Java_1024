@@ -11,74 +11,108 @@
 		*{
 			padding: 0; margin: 0;
 		}
+		hr{
+			height: 2px; background-color: black;
+		}
+		#body{ 
+			min-width: 1190px;
+			font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+			line-height: 16px; font-size: 12px; color: #202020; 
+			height: 1000px; 
+		}
+		/* 공통 적용 */
 		
 		.header{
-			position: fixed; height: 100px; width: 100%;
+			position: fixed; height: 100px; width: 100%; top: 0;
 			box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);
+			
 		}
 		.head-box{
 			width: 940px; margin: 0 auto; height: 100%;
 			 position: relative;
 		}
-		.head-box::after{
-			content: ''; clear: both; display: block;
-		}
-		.header::after{
-			content: ''; clear: both; display: block;
-		}
+	
 		.menu-box{
 			float: left; width: 100px; height: 100%;
 			
 		}
-		
 		.main-icon-box{
 			float: left; text-align: center; line-height: 100px; width: 318px;
 		}
 		.btn-menu{
-			width: 50px; position: absolute; border: none; background-color: #fff;
-		top: 0; right: 0; cursor: pointer; line-height: 50px; padding: 0; outline: 0;
-		font-size: 30px;
+		width: 100px; position: absolute; border: none; background-color: #fff;
+		top: 0; left: 0; cursor: pointer; padding: 0; outline: 0;
+		font-size: 30px;line-height: 100px;
 		}
 		.search{
-			width: 520px; height: 50px; border: 0;background-color: rgba(0, 0, 0, 0.2);
-			font-size: 15px;
+			width: 520px; height: 50px; border: 0;background-color: rgba(0, 0, 0, 0.1);
+			font-size: 15px; float: left;
 		}
 		.search-containerbox{
-			 padding-top: 25px; padding-bottom: 25px;
+			float: right;  padding-top: 25px; padding-bottom: 25px;
 			
 		}
 		.search-box{
-			border: 1px solid black; position: relative; border-radius: 10px;
-			float: right;
+			position: relative; border-radius: 10px;
+			float: right; 
 		}
 		.search-box>*{
 			border-radius: 10px;
 		}
 		.btn-search{
-			text-decoration: none; color: black; position: absolute; top: 0; right: 0; bottom: 0;
-			line-height: 48px;
+			width: 50px; height: 50px; position: absolute; border: none;
+			top: 0; right: 0; bottom: 0; cursor: pointer; padding: 0; outline: 0;
+			font-size: 30px;line-height: 50px; color: black; text-align: center;
 		}
+		
+		.clearfix::after{
+			content: ''; clear: both; display: block;
+		}
+
+
+		/* 메인 메뉴바 끝 */
 		.contents{
-			height: 1000px;
+			padding-top: 100px; height: 1500px;
 		}
+		.content-box{
+			width: 940px; margin: 0 auto; font-size: 40px;
+		}
+		
 	</style>
 </head>
 <body>
 	<div class="header">
-		<div class="head-box">
+		<div class="head-box clearfix">
 			<div class="menu-box">
 				<button class="btn-menu"><i class="fas fa-bars"></i></button>
 			</div>
 			<div class="main-icon-box">메인아이콘 자리</div>
-			<div class="search-containerbox">
-				<div class="search-box">
+			<div class="search-containerbox clearfix">
+				<div class="search-box clearfix">
 					<input type="text" placeholder="여행을 떠나요" class="search">
-					<a href="#" class="btn-search">검색아이콘</a>
+					<a href="#" class="btn-search"><i class="fas fa-search"></i></a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="contents"></div>
+	<div class="contents">
+		<div class="content-box">
+			<div class="content-top1">인기</div>
+			<hr>
+			<div class="content-top2">지역</div>
+			<div class="content-top3">인기 여행지</div>
+			<div class="content-top4">관리자 추천 여행지</div>
+			<div class="content-top5">인기 검색 여행지</div>
+		</div>
+	</div>
 	<div class="footer"></div>
+	<script>
+		$('.search').focus(function(){
+			$(this).css('background-color','#fff')
+		})
+		$('.search').blur(function(){
+			$(this).css('background-color','rgba(0,0,0,0.1)')
+		})
+	</script>
 </body>
 </html>
