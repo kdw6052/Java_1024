@@ -6,42 +6,50 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>상세 페이지1</title>
 	<script src="/js/jquery.min.js"></script>
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"></link> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"></link>
 	<style>
 		*{
 			padding: 0; margin: 0;
 		}
+		
 		.header{
-			position: fixed; height: 100px; position: relative; width: 100%;
+			position: fixed; height: 100px; width: 100%;
 			box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);
 		}
 		.head-box{
-			position: relative; width: 940px; margin: 0 auto; height: 100%;
-			
+			width: 940px; margin: 0 auto; height: 100%;
+			 position: relative;
+		}
+		.head-box::after{
+			content: ''; clear: both; display: block;
 		}
 		.header::after{
 			content: ''; clear: both; display: block;
 		}
 		.menu-box{
-			float: left; width: 100px; height: 100%; text-align: center; line-height: 100px;
+			float: left; width: 100px; height: 100%;
 			
 		}
+		
 		.main-icon-box{
 			float: left; text-align: center; line-height: 100px; width: 318px;
 		}
 		.btn-menu{
-			width: 100%; height: 100%; border: 0; background-color: #fff;
+			width: 50px; position: absolute; border: none; background-color: #fff;
+		top: 0; right: 0; cursor: pointer; line-height: 50px; padding: 0; outline: 0;
+		font-size: 30px;
 		}
 		.search{
 			width: 520px; height: 50px; border: 0;background-color: rgba(0, 0, 0, 0.2);
+			font-size: 15px;
 		}
 		.search-containerbox{
-			float: right; padding-top: 25px; padding-bottom: 25px;
+			 padding-top: 25px; padding-bottom: 25px;
 			
 		}
 		.search-box{
 			border: 1px solid black; position: relative; border-radius: 10px;
-			
+			float: right;
 		}
 		.search-box>*{
 			border-radius: 10px;
@@ -50,14 +58,16 @@
 			text-decoration: none; color: black; position: absolute; top: 0; right: 0; bottom: 0;
 			line-height: 48px;
 		}
-		
+		.contents{
+			height: 1000px;
+		}
 	</style>
 </head>
 <body>
 	<div class="header">
 		<div class="head-box">
 			<div class="menu-box">
-				<button class="btn-menu">메뉴</button>
+				<button class="btn-menu"><i class="fas fa-bars"></i></button>
 			</div>
 			<div class="main-icon-box">메인아이콘 자리</div>
 			<div class="search-containerbox">
