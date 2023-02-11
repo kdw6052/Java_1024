@@ -18,12 +18,16 @@
 			line-height: 16px; font-size: 12px; color: #202020; 
 			height: 1000px; 
 		}
-	
+		ul,li{
+			list-style: none;
+		}
 		.clearfix::after{
 			content: ''; clear: both; display: block; 
 		}
 		/* 공통 적용 */
 		
+
+
 		.header{
 			position: fixed; height: 100px; width: 100%; top: 0;
 			box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);  z-index: 999;
@@ -67,11 +71,12 @@
 			top: 0; right: 0; bottom: 0; cursor: pointer; padding: 0; outline: 0;
 			font-size: 30px;line-height: 50px; color: black; text-align: center;
 		}
-		
-		
-
-
 		/* 메인 메뉴바 끝 */
+
+
+
+
+
 		.contents{
 			padding-top: 135px; height: 1500px; z-index: 1;
 		}
@@ -93,6 +98,9 @@
 			padding-top: 35px;
 		}
 		/* 콘텐츠 틀 잡기 끝 */
+
+
+
 		.content-tag{
 			overflow: hidden; position: relative; margin-top: 10px;padding-right: 93px;
 		}
@@ -119,6 +127,32 @@
 		}
 		.dis-height{
 			overflow: visible; height: auto;
+		}
+		/* 컨텐츠1 끝 */
+
+		.content-top2{
+			position: relative; width: 100%;
+		}
+		.content-top2 h3{
+			display: inline-block; margin-top: 11px; font-size: 22px; color: #000;
+		}
+		.area-box{
+			width: 100%; margin-top: 15px; border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+		.area-box ul:first-child{
+			border-bottom: 1px solid #ccc;
+		}
+		.area-box li:first-child{
+			border-left: 0;
+		}
+		.item-area{
+			float: left; width: 11.1%; box-sizing: border-box; text-align: center;
+			border-left: 1px solid #ccc;
+		}
+		.link-area{
+			display: block; box-sizing: border-box; padding: 12px 0; font-size: 18px; color: #000;
+			text-decoration: none;
 		}
 	</style>
 </head>
@@ -218,7 +252,69 @@
 					<button type="button" class="btn-more dis-off">닫기</button>
 				</div>
 			</div>
-			<div class="con content-top2">지역</div>
+			<div class="con content-top2">
+				<h3>지역</h3>
+				<div class="area-box">
+					<ul class="list-area clearfix">
+						<li class="item-area">
+							<a href="" class="link-area">서울</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">인천</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">대전</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">대구</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">광주</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">부산</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">울산</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">세종</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">경기</a>
+						</li>
+					</ul>
+					<ul class="list-area clearfix">
+						<li class="item-area">
+							<a href="" class="link-area">강원</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">충북</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">충남</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">경북</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">경남</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">전북</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">전남</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">제주</a>
+						</li>
+						<li class="item-area">
+							<a href="" class="link-area">전체보기</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 			<div class="con content-top3">인기 여행지</div>
 			<div class="con content-top4">관리자 추천 여행지</div>
 			<div class="con content-top5">인기 검색 여행지</div>
