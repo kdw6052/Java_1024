@@ -210,8 +210,8 @@
 						<li class="item-area">
 							<a href="" class="link-area">제주</a>
 						</li>
-						<li class="item-area">
-							<a href="" class="link-area">전체보기</a>
+						<li class="item-area last">
+							<a href="#" class="link-area">전체보기</a>
 						</li>
 					</ul>
 					
@@ -2749,10 +2749,33 @@
 			$('.btn-more').toggleClass('dis-off');
 			$('.inner-tag').toggleClass('dis-height')
 		})
-		$('.item-area').click(function(){
-			let check = $('.list-area').find('.check')
-			console.log(check)
+		
+		$('.item-area').click(function(e){
+			if($(this).hasClass('last')){
+				return lastClick();
+			}
+			e.preventDefault();
+			let check = $(this);
+			$('.item-area').each(function(index){
+				$('.item-area').removeClass('check');
+				check.addClass('check')
+				if($(this).hasClass('check')){
+					selectRegion(index);
+				}
+			})
 		})
+		function lastClick(){
+			$('.last').click();
+		}
+		function selectRegion(index){
+			$('.contents-region').removeClass('checked')
+			$('.contents-region').each(function(i){
+				if(index == i){
+					$(this).addClass('checked')
+				}
+			})
+		}
+		
 	</script>
 </body>
 </html>
