@@ -1,0 +1,260 @@
+
+*{
+  padding: 0; margin: 0;
+}
+
+#body{ 
+  min-width: 1190px;
+  font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+  line-height: 16px; font-size: 12px; color: #202020; 
+  height: 1000px; 
+}
+ul,li{
+  list-style: none;
+}
+.clearfix::after{
+  content: ''; clear: both; display: block; 
+}
+a{
+  text-decoration: none;
+}
+/* 공통 적용 */
+
+
+
+.header{
+  position: fixed; height: 100px; width: 100%; top: 0;
+  box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);  z-index: 998;
+  
+}
+.head-box{
+  width: 940px; margin: 0 auto; height: 100%;
+    position: relative;
+}
+
+.menu-box{
+  float: left; width: 100px; height: 100%; 
+  
+}
+.main-icon-box{
+  float: left; text-align: center; line-height: 100px; width: 318px; background-color: #fff;
+  
+}
+.btn-menu{
+width: 100px; position: absolute; border: none; background-color: #fff;
+top: 0; left: 0; cursor: pointer; padding: 0; outline: 0;
+font-size: 30px;line-height: 100px;
+}
+.search{
+  width: 520px; height: 50px; border: 1px solid black; background-color: rgb(202, 202, 202);
+  font-size: 15px; float: left; 
+}
+.search-containerbox{
+  float: right;  padding-top: 25px; padding-bottom: 23px;  background-color: #fff;
+  
+}
+.search-box{
+  position: relative; border-radius: 10px;
+  float: right; 
+}
+.search-box>*{
+  border-radius: 10px;
+}
+.btn-search{
+  width: 50px; height: 50px; position: absolute; border: none;
+  top: 0; right: 0; bottom: 0; cursor: pointer; padding: 0; outline: 0;
+  font-size: 30px;line-height: 50px; color: black; text-align: center;
+}
+
+.search-keyword{
+  position: absolute; right: 0; top: 85px; width: 520px; border: 1px solid #666; background: #fff;
+  border-radius: 10px; z-index: 999; text-align: left; display: none;
+}
+.search-keyword h2{
+  height: 33px; line-height: 33px; margin-top: 20px; padding: 0 28px; font-weight: 800; 
+  font-size: 20px; color: #333; letter-spacing: -0.5px;
+}
+.list-search{
+  float: left; width: 50%; padding-bottom: 32px;
+}
+.item-search{
+  margin-top: 20px; padding-left: 28px;
+}
+.search-keyword .num{
+  float: left; width: 20px; height: 20px; background: #666; border-radius: 3px; color: #fff;
+  font-size: 13px; text-align: center; vertical-align: middle;
+}
+.link-search{
+  overflow: hidden;line-height: 20px; margin-left: 10px; color: #333;
+  font-size: 15px; font-weight: 700;text-overflow: ellipsis; white-space: nowrap;
+}
+.list-search+.list-search .link-search{
+  font-weight: 400; color: #666;
+}
+.list-search+.list-search .num{
+  background: #949494;
+}
+.close-keyword{
+  width: 100%; overflow: hidden; height: 33px; background: #eef0f2; text-align: right;
+  border-radius: 0 0 10px 10px;
+}
+.search-keyword button{
+  padding: 0 20px; line-height: 33px; font-size: 14px; color: #333; border-radius: 0 0 10px 0;
+  border: 0 none; cursor: pointer;
+}
+/* 메인 메뉴바 끝 */
+
+
+
+
+
+.contents{
+  padding-top: 135px; height: 1500px; z-index: 1;
+}
+.content-box{
+  width: 940px; margin: 0 auto; font-size: 40px;position: relative;
+}
+.content-title{
+  position: relative; border-bottom: 2px solid #000;
+}
+.content-title h2{
+  position: relative; padding: 6px 0 10px 28px;
+  overflow: hidden; font-weight: 800; color: #333; font-size: 30px; letter-spacing: -1px;
+}
+.content-title h2 .icon-good{
+  overflow: hidden; position: absolute; left: 0; top: 4px; width: 26px; height: 24px;
+  background: url(/img/img.jpg) 0 0 no-repeat; background-size: 26px auto; text-indent: -9999px;
+}
+.con+.con{
+  padding-top: 35px;
+}
+/* 콘텐츠 틀 잡기 끝 */
+
+
+
+.content-tag{
+  overflow: hidden; position: relative; margin-top: 10px;padding-right: 93px;
+}
+.inner-tag{
+  height: 72px; overflow: hidden; 
+}
+.btn-more{
+  display: block; position: absolute; bottom: 8px; right: 0; margin-right: 0; padding-right: 14px;
+  color: #666; font-size: 16px; background: url(/img/ico_arrowbtm.jpg) 98% 50%/7px 4px no-repeat; 
+  cursor: pointer; border: 0 none; 
+}
+.list-tag{
+  display: block; margin-left: -25px; padding: 2px 0 0 2px; list-style: none; 
+}
+.item-tag{
+  float: left; margin-left: 25px; line-height: 20px;
+}
+.link-tag{
+  text-decoration: none; position: relative; font-size: 16px;
+  color: #333;
+}
+.dis-off{
+  display: none;
+}
+.dis-height{
+  overflow: visible; height: auto;
+}
+/* 컨텐츠1 인기 해시태그 끝 */
+
+.content-top2{
+  position: relative; width: 100%;
+}
+.content-top2 h3{
+  display: inline-block; margin-top: 11px; font-size: 22px; color: #000;
+}
+.area-box{
+  width: 100%; margin-top: 15px; border-top: 1px solid #ccc; border-left: 1px solid #ccc;
+  box-sizing: border-box; border-right: 1px solid #ccc;
+}
+.area-box li+li{
+  border-bottom: 1px solid #ccc;
+}
+.area-box li:nth-child(10){
+  border-left: 0; 
+}
+.area-box li:first-child{
+  border-left: 0; border-bottom: 1px solid #ccc;
+}
+.area-box li:nth-child(9){
+  width: calc(939px - 88.8%); margin-right: -3px;
+}
+.area-box li:last-child{
+  width: calc(939px - 88.8%); margin-right: -3px;
+}
+.item-area{
+  float: left; width: 11.1%; box-sizing: border-box; text-align: center;
+  border-left: 1px solid #ccc;
+}
+.link-area{
+  display: block; box-sizing: border-box; padding: 12px 0; font-size: 18px; color: #000;
+  text-decoration: none;
+}
+.list-area .check{
+  background: #0a97cd;
+}
+/* 컨텐츠2 지역 구분 끝 */
+
+.content-box .checked{
+  display: block;
+}
+.contents-region{
+  padding-top: 35px; display: none;
+}
+.best-top{
+  position: relative; width: 100%; margin-top: 24px;
+}
+.icon-bar{
+  display: inline-block; margin-top: 11px; font-size: 22px; color: #000;
+  position: relative; padding-left: 15px;
+}
+.icon-bar::before{
+  content: ''; display: inline-block; position: absolute; left: 0; top: 6px;
+  width: 4px; height: 20px; background-color: #0a97cd;
+}
+.best-content{
+  margin-top: 15px;
+}
+.list-best{
+  margin-bottom: 16px;
+}
+.item-best{
+  float: left; position: relative; width: 140px; height: 140px; box-sizing: border-box;
+  margin-left: 20px;
+}
+.item-best:first-child{
+  margin-left: 0;
+}
+.item-best img{
+  width: 100%; height: 100%; vertical-align: middle; border: 0 none;
+}
+.link-best{
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: url(http://cdn.visitkorea.or.kr/resources/images/sub/bg_dim.png) 0 0 repeat;
+}
+.table-best{
+  overflow: hidden; position: absolute; top: 50%; left: 0; width: 100%;
+  height: 47px; margin-top: -24px;
+}
+.link-best .table{
+  display: table; width: 100%;
+}
+.link-best .cell{
+  display: table-cell; height: 47px; vertical-align: middle;
+}
+.link-best .name-best{
+  display: block; padding: 0 10px;  font-size: 18px; color: #fff;
+  font-weight: normal; text-align: center; box-sizing: border-box; text-overflow: ellipsis;
+  line-height: 22px;
+}
+.list-best a{
+  display: block; box-sizing: border-box; padding: 56px 0; font-size: 18px;
+  text-align: center; color: #333;
+}
+.list-best .item-more{
+  border: 1px solid #ccc;
+}

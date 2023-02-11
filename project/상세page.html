@@ -7,154 +7,7 @@
 	<title>상세 페이지1</title>
 	<script src="/js/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"></link>
-	<style>
-		*{
-			padding: 0; margin: 0;
-		}
-		
-		#body{ 
-			min-width: 1190px;
-			font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
-			line-height: 16px; font-size: 12px; color: #202020; 
-			height: 1000px; 
-		}
-		ul,li{
-			list-style: none;
-		}
-		.clearfix::after{
-			content: ''; clear: both; display: block; 
-		}
-		/* 공통 적용 */
-		
-
-
-		.header{
-			position: fixed; height: 100px; width: 100%; top: 0;
-			box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);  z-index: 999;
-			
-		}
-		.head-box{
-			width: 940px; margin: 0 auto; height: 100%;
-			 position: relative;
-		}
-	
-		.menu-box{
-			float: left; width: 100px; height: 100%; 
-			
-		}
-		.main-icon-box{
-			float: left; text-align: center; line-height: 100px; width: 318px; background-color: #fff;
-			
-		}
-		.btn-menu{
-		width: 100px; position: absolute; border: none; background-color: #fff;
-		top: 0; left: 0; cursor: pointer; padding: 0; outline: 0;
-		font-size: 30px;line-height: 100px;
-		}
-		.search{
-			width: 520px; height: 50px; border: 1px solid black; background-color: rgb(202, 202, 202);
-			font-size: 15px; float: left; 
-		}
-		.search-containerbox{
-			float: right;  padding-top: 25px; padding-bottom: 23px;  background-color: #fff;
-			
-		}
-		.search-box{
-			position: relative; border-radius: 10px;
-			float: right; 
-		}
-		.search-box>*{
-			border-radius: 10px;
-		}
-		.btn-search{
-			width: 50px; height: 50px; position: absolute; border: none;
-			top: 0; right: 0; bottom: 0; cursor: pointer; padding: 0; outline: 0;
-			font-size: 30px;line-height: 50px; color: black; text-align: center;
-		}
-		/* 메인 메뉴바 끝 */
-
-
-
-
-
-		.contents{
-			padding-top: 135px; height: 1500px; z-index: 1;
-		}
-		.content-box{
-			width: 940px; margin: 0 auto; font-size: 40px;position: relative;
-		}
-		.content-title{
-			position: relative; border-bottom: 2px solid #000;
-		}
-		.content-title h2{
-			position: relative; padding: 6px 0 10px 28px;
-			overflow: hidden; font-weight: 800; color: #333; font-size: 30px; letter-spacing: -1px;
-		}
-		.content-title h2 .icon-good{
-			overflow: hidden; position: absolute; left: 0; top: 4px; width: 26px; height: 24px;
-			background: url(/img/img.jpg) 0 0 no-repeat; background-size: 26px auto; text-indent: -9999px;
-		}
-		.con+.con{
-			padding-top: 35px;
-		}
-		/* 콘텐츠 틀 잡기 끝 */
-
-
-
-		.content-tag{
-			overflow: hidden; position: relative; margin-top: 10px;padding-right: 93px;
-		}
-		.inner-tag{
-			height: 72px; overflow: hidden; 
-		}
-		.btn-more{
-			display: block; position: absolute; bottom: 8px; right: 0; margin-right: 0; padding-right: 14px;
-			color: #666; font-size: 16px; background: url(/img/ico_arrowbtm.jpg) 98% 50%/7px 4px no-repeat; 
-			cursor: pointer; border: 0 none; 
-		}
-		.list-tag{
-			display: block; margin-left: -25px; padding: 2px 0 0 2px; list-style: none; 
-		}
-		.item-tag{
-			float: left; margin-left: 25px; line-height: 20px;
-		}
-		.link-tag{
-			text-decoration: none; position: relative; font-size: 16px;
-			color: #333;
-		}
-		.dis-off{
-			display: none;
-		}
-		.dis-height{
-			overflow: visible; height: auto;
-		}
-		/* 컨텐츠1 끝 */
-
-		.content-top2{
-			position: relative; width: 100%;
-		}
-		.content-top2 h3{
-			display: inline-block; margin-top: 11px; font-size: 22px; color: #000;
-		}
-		.area-box{
-			width: 100%; margin-top: 15px; border: 1px solid #ccc;
-			box-sizing: border-box;
-		}
-		.area-box ul:first-child{
-			border-bottom: 1px solid #ccc;
-		}
-		.area-box li:first-child{
-			border-left: 0;
-		}
-		.item-area{
-			float: left; width: 11.1%; box-sizing: border-box; text-align: center;
-			border-left: 1px solid #ccc;
-		}
-		.link-area{
-			display: block; box-sizing: border-box; padding: 12px 0; font-size: 18px; color: #000;
-			text-decoration: none;
-		}
-	</style>
+	<link rel="stylesheet" href="/상세page.css">
 </head>
 <body>
 	<div class="header">
@@ -167,6 +20,56 @@
 				<div class="search-box clearfix">
 					<input type="text" placeholder="여행을 떠나요" class="search">
 					<a href="#" class="btn-search"><i class="fas fa-search"></i></a>
+				</div>
+				<div class="search-keyword">
+					<h2>어제의 인기 검색어</h2>
+					<ul class="list-search">
+						<li class="item-search clearfix">
+							<span class="num">1</span>
+							<a href="#" class="link-search">서울</a>
+						</li>
+						<li class="item-search">
+							<span class="num">2</span>
+							<a href="#" class="link-search">부산</a>
+						</li>
+						<li class="item-search">
+							<span class="num">3</span>
+							<a href="#" class="link-search">겨울여행</a>
+						</li>
+						<li class="item-search">
+							<span class="num">4</span>
+							<a href="#" class="link-search">속초</a>
+						</li>
+						<li class="item-search">
+							<span class="num">5</span>
+							<a href="#" class="link-search">여수</a>
+						</li>
+					</ul>
+					<ul class="list-search">
+						<li class="item-search">
+							<span class="num">6</span>
+							<a href="#" class="link-search">경주</a>
+						</li>
+						<li class="item-search">
+							<span class="num">7</span>
+							<a href="#" class="link-search">통영</a>
+						</li>
+						<li class="item-search">
+							<span class="num">8</span>
+							<a href="#" class="link-search">인천</a>
+						</li>
+						<li class="item-search">
+							<span class="num">9</span>
+							<a href="#" class="link-search">제주</a>
+						</li>
+						<li class="item-search">
+							<span class="num">10</span>
+							<a href="#" class="link-search">대전</a>
+						</li>
+					</ul>
+					<div class="close-keyword">
+						<button type="button">닫기</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -256,8 +159,8 @@
 				<h3>지역</h3>
 				<div class="area-box">
 					<ul class="list-area clearfix">
-						<li class="item-area">
-							<a href="" class="link-area">서울</a>
+						<li class="item-area check">
+							<a href="" class="link-area ">서울</a>
 						</li>
 						<li class="item-area">
 							<a href="" class="link-area">인천</a>
@@ -283,8 +186,6 @@
 						<li class="item-area">
 							<a href="" class="link-area">경기</a>
 						</li>
-					</ul>
-					<ul class="list-area clearfix">
 						<li class="item-area">
 							<a href="" class="link-area">강원</a>
 						</li>
@@ -313,24 +214,2544 @@
 							<a href="" class="link-area">전체보기</a>
 						</li>
 					</ul>
+					
 				</div>
 			</div>
-			<div class="con content-top3">인기 여행지</div>
-			<div class="con content-top4">관리자 추천 여행지</div>
-			<div class="con content-top5">인기 검색 여행지</div>
+			<div class="contents-region checked">
+				<div class="best-top">
+					<h3 class="icon-bar">서울 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">인천 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">대전 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">대구 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">광주 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">부산 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">울산 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">세종 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">경기 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">강원 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">충북 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">충남 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">경북 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">경남 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">전북 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">전남 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
+			<div class="contents-region">
+				<div class="best-top">
+					<h3 class="icon-bar">제주 SNS 인기 여행지 Top 11</h3>
+					<div class="best-content">
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="list-best clearfix">
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-best">
+								<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=663bc4c7-2d60-4608-a2da-c6a8f040ecda" alt>
+								<a href="#" class="link-best">
+									<div class="table-best">
+										<div class="table">
+											<div class="cell">
+												<strong class="name-best">아부오름</strong>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="item-more item-best">
+								<a href="#">더보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="con content-top4">관리자 추천 여행지</div>
+				<div class="con content-top5">인기 검색 여행지</div>
+			</div>
 		</div>
 	</div>
 	<div class="footer"></div>
 	<script>
 		$('.search').focus(function(){
 			$(this).css('background-color','#fff')
+			$('.search-keyword').css('display','block')
 		})
 		$('.search').blur(function(){
 			$(this).css('background-color','rgba(0,0,0,0.1)')
+			$('.search-keyword').css('display','none')
 		})
 		$('.btn-more').click(function(){
 			$('.btn-more').toggleClass('dis-off');
 			$('.inner-tag').toggleClass('dis-height')
+		})
+		$('.item-area').click(function(){
+			let check = $('.list-area').find('.check')
+			console.log(check)
 		})
 	</script>
 </body>
