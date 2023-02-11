@@ -11,20 +11,22 @@
 		*{
 			padding: 0; margin: 0;
 		}
-		hr{
-			height: 2px; background-color: black;
-		}
+		
 		#body{ 
 			min-width: 1190px;
 			font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
 			line-height: 16px; font-size: 12px; color: #202020; 
 			height: 1000px; 
 		}
+	
+		.clearfix::after{
+			content: ''; clear: both; display: block; 
+		}
 		/* 공통 적용 */
 		
 		.header{
 			position: fixed; height: 100px; width: 100%; top: 0;
-			box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);
+			box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);  z-index: 999;
 			
 		}
 		.head-box{
@@ -33,11 +35,12 @@
 		}
 	
 		.menu-box{
-			float: left; width: 100px; height: 100%;
+			float: left; width: 100px; height: 100%; 
 			
 		}
 		.main-icon-box{
-			float: left; text-align: center; line-height: 100px; width: 318px;
+			float: left; text-align: center; line-height: 100px; width: 318px; background-color: #fff;
+			
 		}
 		.btn-menu{
 		width: 100px; position: absolute; border: none; background-color: #fff;
@@ -45,11 +48,11 @@
 		font-size: 30px;line-height: 100px;
 		}
 		.search{
-			width: 520px; height: 50px; border: 0;background-color: rgba(0, 0, 0, 0.1);
-			font-size: 15px; float: left;
+			width: 520px; height: 50px; border: 1px solid black; background-color: rgb(202, 202, 202);
+			font-size: 15px; float: left; 
 		}
 		.search-containerbox{
-			float: right;  padding-top: 25px; padding-bottom: 25px;
+			float: right;  padding-top: 25px; padding-bottom: 23px;  background-color: #fff;
 			
 		}
 		.search-box{
@@ -65,19 +68,58 @@
 			font-size: 30px;line-height: 50px; color: black; text-align: center;
 		}
 		
-		.clearfix::after{
-			content: ''; clear: both; display: block;
-		}
+		
 
 
 		/* 메인 메뉴바 끝 */
 		.contents{
-			padding-top: 100px; height: 1500px;
+			padding-top: 135px; height: 1500px; z-index: 1;
 		}
 		.content-box{
-			width: 940px; margin: 0 auto; font-size: 40px;
+			width: 940px; margin: 0 auto; font-size: 40px;position: relative;
 		}
-		
+		.content-title{
+			position: relative; border-bottom: 2px solid #000;
+		}
+		.content-title h2{
+			position: relative; padding: 6px 0 10px 28px;
+			overflow: hidden; font-weight: 800; color: #333; font-size: 30px; letter-spacing: -1px;
+		}
+		.content-title h2 .icon-good{
+			overflow: hidden; position: absolute; left: 0; top: 4px; width: 26px; height: 24px;
+			background: url(/img/img.jpg) 0 0 no-repeat; background-size: 26px auto; text-indent: -9999px;
+		}
+		.con+.con{
+			padding-top: 35px;
+		}
+		/* 콘텐츠 틀 잡기 끝 */
+		.content-tag{
+			overflow: hidden; position: relative; margin-top: 10px;padding-right: 93px;
+		}
+		.inner-tag{
+			height: 72px; overflow: hidden; 
+		}
+		.btn-more{
+			display: block; position: absolute; bottom: 8px; right: 0; margin-right: 0; padding-right: 14px;
+			color: #666; font-size: 16px; background: url(/img/ico_arrowbtm.jpg) 98% 50%/7px 4px no-repeat; 
+			cursor: pointer; border: 0 none; 
+		}
+		.list-tag{
+			display: block; margin-left: -25px; padding: 2px 0 0 2px; list-style: none; 
+		}
+		.item-tag{
+			float: left; margin-left: 25px; line-height: 20px;
+		}
+		.link-tag{
+			text-decoration: none; position: relative; font-size: 16px;
+			color: #333;
+		}
+		.dis-off{
+			display: none;
+		}
+		.dis-height{
+			overflow: visible; height: auto;
+		}
 	</style>
 </head>
 <body>
@@ -97,12 +139,89 @@
 	</div>
 	<div class="contents">
 		<div class="content-box">
-			<div class="content-top1">인기</div>
-			<hr>
-			<div class="content-top2">지역</div>
-			<div class="content-top3">인기 여행지</div>
-			<div class="content-top4">관리자 추천 여행지</div>
-			<div class="content-top5">인기 검색 여행지</div>
+			<div class="con content-top1">
+				<div class="content-title">
+					<h2>
+						<span class="icon-good">All</span>
+						인기
+					</h2>
+				</div>
+				<div class="content-tag">
+					<div class="inner-tag">
+						<ul class="list-tag clearfix">
+							<li class="item-tag">
+								<a href="#" class="link-tag">#전체</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#여행지</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#여행기사</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#레포츠</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#문화시설</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#관광지</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#체험</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#역사</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#자연</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#숙박</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#이색체험</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#음식</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#트레킹</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#비대면안심관광지</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#쇼핑</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#드라이브코스</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#실내여행지</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#겨울눈꽃명소</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#겨울여행</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#겨울스포츠</a>
+							</li>
+							<li class="item-tag">
+								<a href="#" class="link-tag">#겨울방학가볼만한곳</a>
+							</li>
+						</ul>
+					</div>
+					<button type="button" class="btn-more">더보기</button>
+					<button type="button" class="btn-more dis-off">닫기</button>
+				</div>
+			</div>
+			<div class="con content-top2">지역</div>
+			<div class="con content-top3">인기 여행지</div>
+			<div class="con content-top4">관리자 추천 여행지</div>
+			<div class="con content-top5">인기 검색 여행지</div>
 		</div>
 	</div>
 	<div class="footer"></div>
@@ -112,6 +231,10 @@
 		})
 		$('.search').blur(function(){
 			$(this).css('background-color','rgba(0,0,0,0.1)')
+		})
+		$('.btn-more').click(function(){
+			$('.btn-more').toggleClass('dis-off');
+			$('.inner-tag').toggleClass('dis-height')
 		})
 	</script>
 </body>
