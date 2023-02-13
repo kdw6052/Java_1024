@@ -18,6 +18,7 @@ ul,li{
 a{
   text-decoration: none;
 }
+
 /* 공통 적용 */
 
 
@@ -206,7 +207,7 @@ font-size: 30px;line-height: 100px;
   padding-top: 35px; display: none;
 }
 .best-top{
-  position: relative; width: 100%; margin-top: 24px;
+  position: relative; width: 100%;
 }
 .icon-bar{
   display: inline-block; margin-top: 11px; font-size: 22px; color: #000;
@@ -258,7 +259,11 @@ font-size: 30px;line-height: 100px;
 .list-best .item-more{
   border: 1px solid #ccc;
 }
+/* 각 지역 SNS 완료 */
 
+.section-line{
+  margin-top: 30px; border-top: 2px solid #e6e6e6;
+}
 
 
 
