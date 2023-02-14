@@ -47,23 +47,23 @@ top: 0; left: 0; cursor: pointer; padding: 0; outline: 0;
 font-size: 30px;line-height: 100px;
 }
 .search{
-  width: 520px; height: 50px; border: 1px solid black; background-color: rgb(202, 202, 202);
+  width: 100%; height: 50px; border: 1px solid black; background-color: rgb(202, 202, 202);
   font-size: 15px; float: left; 
 }
 .search-containerbox{
-  float: right;  padding-top: 25px; padding-bottom: 23px;  background-color: #fff;
+  float: right; background-color: #fff; height: 100px;
   
 }
 .search-box{
   position: relative; border-radius: 10px;
-  float: right; 
+  float: right; width: 522px; padding-top: 25px;
 }
 .search-box>*{
   border-radius: 10px;
 }
 .btn-search{
-  width: 50px; height: 50px; position: absolute; border: none;
-  top: 0; right: 0; bottom: 0; cursor: pointer; padding: 0; outline: 0;
+  width: 50px; height: 50px; position: absolute; border: none; 
+  top: 25px; right: 0; bottom: 0; cursor: pointer; padding: 0; outline: 0;
   font-size: 30px;line-height: 50px; color: black; text-align: center;
 }
 
