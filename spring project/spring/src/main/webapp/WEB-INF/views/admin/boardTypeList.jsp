@@ -16,10 +16,10 @@
 	      	</tr>
 	    </thead>
 	    <tbody>
-	    	<c:forEach items="${list}" var="bt">
+	    	<c:forEach items="${list}" var="bt" varStatus="vs">
 	      		<tr>
 	      			<form action="<c:url value='/admin/board/type/update'></c:url>" method="post">
-				        <td class="form-group">${bt.bt_num }<input type="hidden" value="${bt.bt_num }" name="bt_num"></td>
+				        <td class="form-group">${vs.count }<input type="hidden" value="${bt.bt_num }" name="bt_num"></td>
 				        <td class="form-group">
 				        	<select class="form-control" name="bt_type">
 				        		<option <c:if test="${bt.bt_type == '일반'}">selected</c:if>>일반</option>
@@ -44,7 +44,7 @@
 				        </td>
 				        <td>
 				        	<button class="btn btn-outline-warning btn-up">수정</button>
-				        	<button class="btn btn-outline-danger btn-del">수정</button>
+				        	<button class="btn btn-outline-danger btn-del">삭제</button>
 				        </td>
 			        </form>
 	      		</tr>
@@ -82,8 +82,23 @@
 	    </tfoot>
   	</table>
 </div>
+<script>
+$('.btn-del').click(function(){
+	let res = confirm('게시글 타입을 삭제하면 해당 게시글 타입에 있는 모든 게시글들이 삭제됩니다.\n삭제하시겠습니까?');
+	if(!res){
+		return false;
+	}
+	//조상 중에 from태그를 찾아서 action부분을 수정
+	let url = '<c:url value="/admin/board/type/delete"></c:url>';
+	$(this).parents('tr').find('form').attr('action',url);
+	
+	
+	
+});
+</script>
 
-<c:url value='/admin/board/type/update'></c:url>
+
+
 <!-- c:forEach를 이용한 1부터 10까지 출력 예제 -->
 <!--
 <c:forEach begin="1" end ="10" step="1" var="i">

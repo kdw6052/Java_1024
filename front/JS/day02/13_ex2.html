@@ -12,7 +12,7 @@
 		- 알림창으로 아이디,비번을 입력받아 회원 객체를 생성하고 
 			회원 객체의 아이디, 비번을 콘솔에 출력하는 코드를 작성하세요.
 		*/
-		function User(id,pw){
+		/* function User(id,pw){
 			this.id = id;
 			this.pw = pw;
 			this.print = function(){
@@ -24,12 +24,22 @@
 		let user1 = new User(id,pw);
 		user1.print();
 		let user2 = {
-			id,pw,
+			id,pw,-
 			print(){
 				console.log(`아이디 : ${this.id}, 비번 : ${this.pw}`);
 			}
 		}
-		user2.print();
+		user2.print(); */
+		let id = prompt('ID입력');
+		let pw = prompt('PW입력');
+		let member = {
+			id ,
+			pw 
+			
+		}
+		console.log(`id : ${member.id} ` + `pw : ${member.pw}`)
+		
+		
 	</script>
 </body>
 </html>
