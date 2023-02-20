@@ -1,4 +1,4 @@
-package kr.kh.spring.vo;
+package kr.kh.test.vo;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,12 +15,15 @@ public class MemberVO {
 	int me_authority;
 	Date me_join_time;
 	
-	public void setMe_birthday(String str) {
+
+	public void setMe_birthday(String me_birthday) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		try {
-			me_birthday=format.parse(str);
+			this.me_birthday=format.parse(me_birthday);
 		} catch (ParseException e) {
-			me_birthday = null;
+			this.me_birthday = null;
 		}
+		
 	}
+	
 }

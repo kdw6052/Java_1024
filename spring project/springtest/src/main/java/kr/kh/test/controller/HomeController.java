@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.kh.test.service.MemberService;
+import kr.kh.test.vo.MemberVO;
 
 /**
  * Handles requests for the application home page.
@@ -17,13 +18,46 @@ public class HomeController {
 	@Autowired
 	MemberService memberService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home(ModelAndView mv, Integer num) {
-		String name = memberService.selectMemberName(num);
-		System.out.println(name);
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public ModelAndView signup(ModelAndView mv) {
 		
-		mv.setViewName("/main/home");
+		mv.setViewName("/member/signup");
 		return mv;
 	}
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public ModelAndView signupPost(ModelAndView mv, MemberVO member) {
+		System.out.println(member);
+		boolean res = memberService.signup(member);
+		
+		if(res) {
+			//성공했다고 알림 메시지(추후 구현 예정)
+			System.out.println("회원가입 완료");
+			mv.setViewName("redirect:/");
+		}else {
+			//실패했다고 알림 메시지(추후 구현 예정)
+			System.out.println("회원가입 실패");
+			mv.setViewName("redirect:/signup");
+		}
+		return mv;
+	}
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView home(ModelAndView mv, MemberVO member) {
+		
+		mv.setViewName("/main/home");
+		
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
