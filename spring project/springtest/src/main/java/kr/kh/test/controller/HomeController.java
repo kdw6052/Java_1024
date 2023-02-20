@@ -27,7 +27,6 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public ModelAndView signupPost(ModelAndView mv, MemberVO member) {
-		System.out.println(member);
 		boolean res = memberService.signup(member);
 		
 		if(res) {
@@ -41,6 +40,34 @@ public class HomeController {
 		}
 		return mv;
 	}
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(ModelAndView mv) {
+		
+		mv.setViewName("/member/login");
+		
+		return mv;
+	}
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView loginPost(ModelAndView mv,MemberVO member) {
+		MemberVO res = memberService.login(member);
+		System.out.println(res);
+		if(res != null) {
+			
+			mv.setViewName("redirect:/");
+		}else {
+			mv.setViewName("redirect:/login");
+		}
+		
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView mv, MemberVO member) {
 		

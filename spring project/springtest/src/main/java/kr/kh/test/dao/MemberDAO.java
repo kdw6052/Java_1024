@@ -9,5 +9,7 @@ public interface MemberDAO {
 	String selectMemberName(@Param("num")Integer num);
 
 	int insertMember(@Param("member")MemberVO member);
+
+	MemberVO loginMember(@Param("member")MemberVO member);
 	
 }
