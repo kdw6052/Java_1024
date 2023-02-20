@@ -17,7 +17,7 @@ public class AdminServiceImp implements AdminService {
 	@Override
 	public ArrayList<BoardTypeVO> getBoardType() {
 		
-		return boardDao.selectAllBoardType();
+		return boardDao.selectAllBoardType(9);
 	}
 
 	@Override
@@ -36,6 +36,13 @@ public class AdminServiceImp implements AdminService {
 		if(bt == null || bt.getBt_name().trim().length() ==0)
 			return false;
 		return boardDao.updateBoardType(bt);
+	}
+
+	@Override
+	public boolean deleteBoardType(int bt_num) {
+		if(bt_num <= 0)
+			return false;
+		return boardDao.deleteBoardType(bt_num);
 	}
 	
 }
