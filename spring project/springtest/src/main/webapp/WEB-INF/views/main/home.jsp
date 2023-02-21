@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <div class="container-fluid">
 	
-  	<a href="/test/signup">회원가입 기능 구현하기</a> <br>
+  	
 	
+	${user}
 </div>

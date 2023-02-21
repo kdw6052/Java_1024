@@ -1,9 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<style>
-label.error{color:red;}
-</style>
 
 <h1>로그인</h1>
 <form action="<c:url value='/login'></c:url>" method="post">
@@ -17,4 +14,6 @@ label.error{color:red;}
 	</div>
 	<button class="btn btn-outline-success col-12">로그인</button>
 </form>
-
+<script>
+$('#id').focus();
+</script>

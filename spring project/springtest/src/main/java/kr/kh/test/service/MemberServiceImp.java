@@ -41,13 +41,23 @@ public class MemberServiceImp implements MemberService {
 
 	@Override
 	public MemberVO login(MemberVO member) {
+		//아이디, 비번 유효성 검사
 		if(member == null) 
 			return null;
-		MemberVO user = memberDao.loginMember(member);
-		if(user != null && passwordEncoder.matches(member.getMe_pw(), user.getMe_pw())) {
-			return user;
-		}else
+		String idRegex="^[a-zA-Z][a-zA-Z0-9!@#$]{4,12}$";
+		String pwRegex="^[a-zA-Z0-9!@#$]{8,20}$";
+		if(member.getMe_id() == null || !Pattern.matches(idRegex, member.getMe_id()))
 			return null;
-	
+		if(member.getMe_pw() == null || !Pattern.matches(pwRegex, member.getMe_pw()))
+			return null;
+		//아이디가 일치하는 회원 정보를 가져옴
+		MemberVO user = memberDao.selectMemberById(member.getMe_id());
+		if(user == null)
+			return null;
+		//입력한 비번과 암호화된 비번이 같은지를 확인
+		if(passwordEncoder.matches(member.getMe_pw(), user.getMe_pw())) 
+			return user;
+		
+		return null;
 	}
 }
