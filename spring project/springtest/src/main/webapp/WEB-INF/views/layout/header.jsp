@@ -22,12 +22,12 @@
 		      	</c:if>
 		      	<c:if test="${user != null }">
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="<c:url value = '/logout'></c:url>">로그아웃</a>
+			        	<form action="<c:url value = '/logout'></c:url>" method="post">
+			        		<button class="nav-link" style="background:transparent;border:0">로그아웃</button>
+			        	</form>
 			      	</li>
 		      	</c:if>
-		      	<li class="nav-item">
-		        	<a class="nav-link" href="#">Link</a>
-		      	</li>    
+		      	  
 	    	</ul>
 		</div> 
 	</div> 
