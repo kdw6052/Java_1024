@@ -34,7 +34,6 @@ public class HomeController {
 		
 		if(res) {
 			//성공했다고 알림 메시지(추후 구현 예정)
-			//memberService.signupEmail(member.getMe_id(),member.getMe_email());
 			System.out.println("회원가입 완료");
 			mv.setViewName("redirect:/");
 		}else {
@@ -44,6 +43,18 @@ public class HomeController {
 		}
 		return mv;
 	}
+	@RequestMapping(value = "/email/authentication", method = RequestMethod.GET)
+	public ModelAndView checkEmail(ModelAndView mv,MemberOKVO mok) {
+		boolean res = memberService.checkEmail(mok);
+		if(res) {
+			System.out.println("인증성공");
+		}else {
+			System.out.println("인증실패");
+		}
+		mv.setViewName("redirect:/");
+		return mv;
+	}
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(ModelAndView mv) {

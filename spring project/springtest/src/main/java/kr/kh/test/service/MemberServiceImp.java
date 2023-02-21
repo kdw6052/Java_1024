@@ -1,5 +1,6 @@
 package kr.kh.test.service;
 
+import java.util.Date;
 import java.util.regex.Pattern;
 
 import javax.mail.internet.MimeMessage;
@@ -99,6 +100,13 @@ public class MemberServiceImp implements MemberService {
 		}
 		
 		return randomStr;
+	}
+	@Override
+	public boolean checkEmail(MemberOKVO mok) {
+		if(memberDao.deleteMok(mok) != 0) {
+			return memberDao.updateMember(mok,1) != 0;
+		}
+		return false;
 	}
 
 	@Override
