@@ -44,11 +44,13 @@ public class HomeController {
 		return mv;
 	}
 	@RequestMapping(value = "/email/authentication", method = RequestMethod.GET)
-	public ModelAndView checkEmail(ModelAndView mv,MemberOKVO mok) {
-		boolean res = memberService.checkEmail(mok);
+	public ModelAndView emailAuthentication(ModelAndView mv,MemberOKVO mok) {
+		boolean res = memberService.emailAuthentication(mok);
 		if(res) {
+			//인증 성공 메시지
 			System.out.println("인증성공");
 		}else {
+			//인증 실패 메세지
 			System.out.println("인증실패");
 		}
 		mv.setViewName("redirect:/");
@@ -65,10 +67,13 @@ public class HomeController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView loginPost(ModelAndView mv,MemberVO member) {
 		MemberVO user = memberService.login(member);
-		mv.addObject("user", user);
-		if(user != null) {
+		if(user != null && user.getMe_authority() > 0) {
+			mv.addObject("user", user);
 			mv.setViewName("redirect:/");
 		}else {
+			if(user != null) {
+				//인증안된 회원이라고 알려주는 메세지
+			}
 			mv.setViewName("redirect:/login");
 		}
 		

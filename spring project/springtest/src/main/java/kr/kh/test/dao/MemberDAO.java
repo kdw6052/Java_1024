@@ -15,8 +15,8 @@ public interface MemberDAO {
 
 	void insertMemberOK(@Param("mok")MemberOKVO mok);
 
-	int deleteMok(@Param("mok")MemberOKVO mok);
+	int deleteMemberOK(@Param("mok")MemberOKVO mok);
 
-	int updateMember(@Param("mok")MemberOKVO mok, @Param("num")int i);
+	int updateMemberAuthority(@Param("me_id")String me_id, @Param("me_authority")int me_authority);
 	
 }

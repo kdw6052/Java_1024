@@ -9,7 +9,7 @@ public interface MemberService {
 
 	MemberVO login(MemberVO member);
 
-	boolean checkEmail(MemberOKVO mok);
+	boolean emailAuthentication(MemberOKVO mok);
 
 	
 
