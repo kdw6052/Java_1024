@@ -33,29 +33,35 @@ public class HomeController {
 		return mv;
 	}
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-	public ModelAndView signupPost(ModelAndView mv, MemberVO member) {
+	public ModelAndView signupPost(ModelAndView mv, MemberVO member,
+			HttpServletResponse response,HttpServletRequest request) {
 		boolean res = memberService.signup(member);
 		
 		if(res) {
 			//성공했다고 알림 메시지(추후 구현 예정)
-			System.out.println("회원가입 완료");
+			MessageUtils.alertAndMovePage(response,"회원가입에 성공했습니다." ,
+					request.getContextPath(), "/");
 			mv.setViewName("redirect:/");
 		}else {
 			//실패했다고 알림 메시지(추후 구현 예정)
-			System.out.println("회원가입 실패");
+			MessageUtils.alertAndMovePage(response,"회원가입에 실패했습니다." ,
+					request.getContextPath(), "/signup");
 			mv.setViewName("redirect:/signup");
 		}
 		return mv;
 	}
 	@RequestMapping(value = "/email/authentication", method = RequestMethod.GET)
-	public ModelAndView emailAuthentication(ModelAndView mv,MemberOKVO mok) {
+	public ModelAndView emailAuthentication(ModelAndView mv,MemberOKVO mok,
+			HttpServletResponse response,HttpServletRequest request) {
 		boolean res = memberService.emailAuthentication(mok);
 		if(res) {
 			//인증 성공 메시지
-			System.out.println("인증성공");
+			MessageUtils.alertAndMovePage(response,"이메일 인증에 성공했습니다." ,
+					request.getContextPath(), "/");
 		}else {
 			//인증 실패 메세지
-			System.out.println("인증실패");
+			MessageUtils.alertAndMovePage(response,"이메일 인증에 실패했습니다." ,
+					request.getContextPath(), "/");
 		}
 		mv.setViewName("redirect:/");
 		return mv;
