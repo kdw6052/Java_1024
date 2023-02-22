@@ -1,5 +1,7 @@
 package kr.kh.test.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.kh.test.service.MemberService;
+import kr.kh.test.utils.MessageUtils;
 import kr.kh.test.vo.MemberOKVO;
 import kr.kh.test.vo.MemberVO;
 
@@ -21,6 +24,7 @@ public class HomeController {
 	@Autowired
 	MemberService memberService;
 	
+	String contextPath = "/test";
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public ModelAndView signup(ModelAndView mv) {
@@ -65,14 +69,22 @@ public class HomeController {
 		return mv;
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView loginPost(ModelAndView mv,MemberVO member) {
+	public ModelAndView loginPost(ModelAndView mv,MemberVO member,
+			HttpServletResponse response,HttpServletRequest request) {
 		MemberVO user = memberService.login(member);
 		if(user != null && user.getMe_authority() > 0) {
 			mv.addObject("user", user);
 			mv.setViewName("redirect:/");
+			MessageUtils.alertAndMovePage(response,"로그인에 성공했습니다." ,
+					request.getContextPath(), "/");
 		}else {
 			if(user != null) {
 				//인증안된 회원이라고 알려주는 메세지
+				MessageUtils.alertAndMovePage(response,"이메일 인증을 완료해야 로그인이 가능합니다." ,
+						request.getContextPath(), "/login");
+			}else {
+				MessageUtils.alertAndMovePage(response,"로그인에 실패했습니다." ,
+						request.getContextPath(), "/login");
 			}
 			mv.setViewName("redirect:/login");
 		}
@@ -80,9 +92,12 @@ public class HomeController {
 		return mv;
 	}
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public ModelAndView logoutPost(ModelAndView mv, HttpSession session) {
+	public ModelAndView logoutPost(ModelAndView mv, HttpSession session,
+			HttpServletResponse response,HttpServletRequest request) {
 		if(session != null)
 			session.removeAttribute("user");
+		MessageUtils.alertAndMovePage(response,"로그아웃에 성공했습니다." ,
+				request.getContextPath(), "/");
 		mv.setViewName("redirect:/");
 		return mv;
 	}
