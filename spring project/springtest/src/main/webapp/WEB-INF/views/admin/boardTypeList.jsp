@@ -17,7 +17,7 @@
 	<tbody>
 		<c:forEach items="${list }" var="bt" varStatus="vs">
 			<tr>
-				<form action="<c:url value=''></c:url>" method="post">
+				<form action="<c:url value='/admin/board/type/update'></c:url>" method="post">
 					<th>${vs.count }<input type="hidden" value="${bt.bt_num }" name="bt_num"></th>
 					<th>
 						<div class="form-group">
@@ -50,8 +50,8 @@
 						</div>
 					</th>
 					<th>
-						<button class="btn btn-outline-warning">수정</button>
-						<button class="btn btn-outline-danger">삭제</button>
+							<button class="btn btn-outline-warning">수정</button>
+							<button class="btn btn-outline-danger">삭제</button>
 					</th>
 				</form>
 			</tr>
@@ -59,7 +59,7 @@
 	</tbody>
 	<tfoot>
 		<tr>
-			<form action="<c:url value=''></c:url>" method="post">
+			<form action="<c:url value='/admin/board/type/insert'></c:url>" method="post">
 				<th></th>
 				<th>
 					<div class="form-group">
@@ -71,7 +71,7 @@
 	  			</th>
 				<th>
 					<div class="form-group">
-	  					<input type="text" class="form-control" name="bt_name" value="">
+	  					<input type="text" class="form-control" name="bt_name" >
 	  				</div>
 				</th>
 				<th>
