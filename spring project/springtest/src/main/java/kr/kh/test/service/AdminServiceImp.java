@@ -14,9 +14,9 @@ public class AdminServiceImp implements AdminService{
 	BoardDAO boardDao;
 	
 	@Override
-	public ArrayList<BoardTypeVO> getBoardType() {
-		
-		return boardDao.AllBoardType();
+	public ArrayList<BoardTypeVO> getBoardTypeListAll() {
+		final int adminAuthority = 9;//관리자 권한
+		return boardDao.selectBoardTypeList(adminAuthority);
 	}
 
 }
