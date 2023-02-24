@@ -46,14 +46,28 @@ public class AdminController {
 		return mv;
 	}
 	@RequestMapping(value = "/admin/board/type/update", method = RequestMethod.POST)
-	public ModelAndView adminBoardTypeUpdate(ModelAndView mv,BoardTypeVO btVo,
+	public ModelAndView adminBoardTypeUpdate(ModelAndView mv,BoardTypeVO bt,
 			HttpServletResponse response, HttpServletRequest request) {
-		boolean isUpdate= adminService.updateBoardType(btVo);
+		boolean isUpdate= adminService.updateBoardType(bt);
 		if(isUpdate) {
 			MessageUtils.alertAndMovePage(response, "게시판을 수정했습니다",
 					request.getContextPath(), "/admin/board/type/list");
 		}else {
 			MessageUtils.alertAndMovePage(response, "게시판을 수정하지 못했습니다",
+					request.getContextPath(), "/admin/board/type/list");
+		}
+		mv.setViewName("redirect:/admin/board/type/list");
+		return mv;
+	}
+	@RequestMapping(value = "/admin/board/type/delete", method = RequestMethod.GET)
+	public ModelAndView adminBoardTypeDelete(ModelAndView mv,Integer bt_num,
+			HttpServletResponse response, HttpServletRequest request) {
+		boolean isDelete= adminService.deleteBoardType(bt_num);
+		if(isDelete) {
+			MessageUtils.alertAndMovePage(response, "게시판을 삭제했습니다",
+					request.getContextPath(), "/admin/board/type/list");
+		}else {
+			MessageUtils.alertAndMovePage(response, "이미 삭제된 게시판이거나 없는 게시판입니다.",
 					request.getContextPath(), "/admin/board/type/list");
 		}
 		mv.setViewName("redirect:/admin/board/type/list");

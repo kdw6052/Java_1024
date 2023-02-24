@@ -42,6 +42,16 @@ public class AdminServiceImp implements AdminService{
 		return res != 0;
 		
 	}
+	@Override
+	public boolean deleteBoardType(Integer bt_num) {
+		//번호 체크
+		if(bt_num < 1 || bt_num == null)
+			return false;
+		//다오에게 게시판 번호 주면서 삭제 요청
+		return boardDao.deleteBoardType(bt_num); 
+	}
+	
+	
 	//BoardTypeVO 체크(bt_num제외)
 	private boolean checkBoardType(BoardTypeVO bt) {
 		//bt null 체크
@@ -72,5 +82,6 @@ public class AdminServiceImp implements AdminService{
 		
 		return true;
 	}
+
 
 }

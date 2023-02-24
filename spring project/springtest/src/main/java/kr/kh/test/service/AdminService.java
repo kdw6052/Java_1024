@@ -11,5 +11,7 @@ public interface AdminService {
 	boolean insertBoardType(BoardTypeVO bt);
 
 	boolean updateBoardType(BoardTypeVO bt);
+
+	boolean deleteBoardType(Integer bt_num);
 	
 }
