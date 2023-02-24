@@ -31,7 +31,10 @@ public class BoardController {
 	
 	@RequestMapping(value = "/board/insert", method = RequestMethod.GET)
 	public ModelAndView boardInsert(ModelAndView mv,HttpServletRequest request) {
+		//세션에서 회원 정보를 가져옴
+		//=> 쓰기 권한잉 있는 게시판을 가져오기 위한 작업
 		MemberVO user = (MemberVO)request.getSession().getAttribute("user");
+		//사용자 권한에 맞는 게시판들을 가져옴
 		ArrayList<BoardTypeVO> btList = boardService.getBoardType(user.getMe_authority());
 		mv.addObject("btList",btList);
 		//작성할 타입이 없으면 작성 페이지로 갈 필요가 없어서 게시글 리스트로 이동시킴
