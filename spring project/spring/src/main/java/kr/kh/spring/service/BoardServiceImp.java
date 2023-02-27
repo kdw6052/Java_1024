@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.kh.spring.dao.BoardDAO;
+import kr.kh.spring.utils.UploadFileUtils;
 import kr.kh.spring.vo.BoardTypeVO;
 import kr.kh.spring.vo.BoardVO;
+import kr.kh.spring.vo.FileVO;
 import kr.kh.spring.vo.MemberVO;
 
 @Service
@@ -15,7 +18,9 @@ public class BoardServiceImp implements BoardService{
 
 	@Autowired
 	BoardDAO boardDao;
-
+	
+	String uploadPath="D:\\uploadfiles";
+	
 	@Override
 	public ArrayList<BoardTypeVO> getBoardType(int authority) {
 		
@@ -23,7 +28,7 @@ public class BoardServiceImp implements BoardService{
 	}
 
 	@Override
-	public boolean insertBoard(BoardVO board, MemberVO user) {
+	public boolean insertBoard(BoardVO board, MemberVO user, MultipartFile[] files) {
 		//회원 정보가 없으면
 		if(user == null)
 			return false;
@@ -34,7 +39,7 @@ public class BoardServiceImp implements BoardService{
 		
 		//게시글 등록
 		boardDao.insertBoard(board);
-		//첨부파일 등록
+		
 		
 		return true;
 	}
@@ -45,5 +50,33 @@ public class BoardServiceImp implements BoardService{
 			return false;
 		
 		return true;
+	}
+	private void uploadFiles(MultipartFile[] files, int bo_num) {
+		if(files == null || files.length == 0)
+			return;
+		//반복문
+		for(MultipartFile file : files) {
+			if(file == null || file.getOriginalFilename().length() == 0)
+				continue;
+			String fileName = "";
+			//첨부파일 서버에 업로드
+			try {
+				fileName = UploadFileUtils.uploadFile(uploadPath, 
+						file.getOriginalFilename(), //파일명 
+						file.getBytes()); //실제 파일 데이터
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+			System.out.println(fileName);
+			//첨부파일 객체를 생성
+			FileVO fileVo = new FileVO(file.getOriginalFilename(), fileName,
+					bo_num);
+			//다오에게 첨부파일 정보를 주면서 추가하라고 요청
+			boardDao.insertFile(fileVo);
+		}
+	}
+	@Override
+	public ArrayList<BoardVO> getBoardList() {
+		return boardDao.selectBoardList();
 	}
 }
