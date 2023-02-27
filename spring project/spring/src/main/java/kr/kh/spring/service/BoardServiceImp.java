@@ -40,6 +40,7 @@ public class BoardServiceImp implements BoardService{
 		//게시글 등록
 		boardDao.insertBoard(board);
 		
+		uploadFiles(files,board.getBo_num());
 		
 		return true;
 	}
@@ -78,5 +79,16 @@ public class BoardServiceImp implements BoardService{
 	@Override
 	public ArrayList<BoardVO> getBoardList() {
 		return boardDao.selectBoardList();
+	}
+
+	@Override
+	public BoardVO getBoard(int bo_num) {
+		
+		return boardDao.selectBoard(bo_num);
+	}
+
+	@Override
+	public ArrayList<FileVO> getFileList(int bo_num) {
+		return boardDao.selectFileList(bo_num);
 	}
 }
