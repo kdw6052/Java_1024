@@ -17,7 +17,9 @@ public interface BoardService {
 
 	ArrayList<BoardVO> getBoardList();
 
-	BoardVO getBoard(int bo_num);
+
 
 	ArrayList<FileVO> getFileList(int bo_num);
+
+	BoardVO getBoard(int bo_num, MemberVO user);
 }
