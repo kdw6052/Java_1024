@@ -5,6 +5,23 @@
  
 <link href="<c:url value='/resources/css/summernote-bs4.min.css'></c:url>" rel="stylesheet">
 <script src="<c:url value='/resources/js/summernote-bs4.min.js'></c:url>"></script>
+<style>
+	.file-box{
+		width : 100px; height:200px;
+		border : 1px solid black; font-size : 50px; text-align : center;
+		line-height : 200px; font-weight:bold; border-radius:5px; 
+		float : left; cursor :pointer;
+	}
+	#image>div::after{
+		display:block; content:''; clear:both;
+	}
+	#image [type=file]{
+		display: none;
+	}
+	#image>div>div{
+		float:left;  margin-right : 20px; cursor :pointer;
+	}
+</style>
 <div class="container">
 	<h1>게시글 수정</h1>
 	<form action="<c:url value='/board/update/${board.bo_num }'></c:url>" method="post" enctype="multipart/form-data">
@@ -41,11 +58,22 @@
 			</div>
 		</div>
 		<div id="image" style="display:none">
+			<label>이미지:</label>
 			<div class="form-group mt-3">
-				<label>첨부파일:</label>
-				<input type="file" class="form-control" name="files" accept="image/*">
-				<input type="file" class="form-control" name="files" accept="image/*">
-				<input type="file" class="form-control" name="files" accept="image/*">
+				<c:forEach items="${files }" var="file">
+					<div>
+						<div class="file-box" style="display:none">+</div>
+						<input type="file" class="form-control" name="files" accept="image/*" onchange="readURL(this);">
+						<img class="preview" height="200" width="auto" src="<c:url value='/download${file.fi_name}'></c:url>">
+					</div>
+				</c:forEach>
+				<c:forEach begin="1" end="${3-files.size() }">
+				<div>
+					<div class="file-box">+</div>
+					<input type="file" class="form-control" name="files" accept="image/*" onchange="readURL(this);">
+					<img class="preview" height="200" width="auto">
+				</div>
+				</c:forEach>
 			</div>
 		</div>
 		<button class="btn btn-outline-success col-12 mt-3">게시글 작성</button>
@@ -109,7 +137,24 @@
 		  $('.files').append('<input type="file" class="form-control" name="files">');
 		  $('.files').append('<input type="hidden" name="filesNums" value ="'+$(this).data('num')+'">');
 		  $(this).parent().remove();
-	  })
+	  });
+	  
+	  $('.file-box, .preview').click(function(){
+		  $(this).siblings('input').click();
+	  });
+	  function readURL(input){
+		  if(!input.files || !input.files[0]){
+			  input.nextElementSibling.src='';
+			  input.previousElementSibling.style.display = 'block';
+			  return;
+		  }
+		  let reader = new FileReader();
+		  reader.onload = function(e){
+			  input.nextElementSibling.src= e.target.result;
+			  input.previousElementSibling.style.display = 'none';
+		  }
+		  reader.readAsDataURL(input.files[0]);
+	  }
 	  
 </script>
 
