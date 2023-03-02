@@ -31,4 +31,8 @@ public interface BoardService {
 	boolean deleteBoard(int bo_num, MemberVO user);
 
 	BoardVO getBoardByWriteAuthority(int bo_num, MemberVO user);
+
+	boolean updateBoard(BoardVO board, MultipartFile[] files, int[] fileNums, MemberVO user);
+
+	void updateBoardByLikes(int bo_num);
 }

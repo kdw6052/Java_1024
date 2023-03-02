@@ -83,4 +83,27 @@
   	<delete id="deleteFile">
   		delete from file where fi_num = #{file.fi_num}
   	</delete>
+  	<update id="updateBoard">
+  		update board
+  			set
+  				bo_title = #{bo.bo_title},
+  				bo_content = #{bo.bo_content},
+  				bo_bt_num = #{bo.bo_bt_num},
+  				bo_update_date = now()
+  			where
+  				bo_num = #{bo.bo_num}
+  	</update>
+  	<select id="selectFile" resultType = "kr.kh.spring.vo.FileVO">
+  		select * from file where fi_num = #{fi_num}
+  	</select>
+  	<update id="updateBoardByLikes">
+  		update board
+  			set
+  				bo_up = (select count(*) from likes 
+  					where li_bo_num = #{bo_num} and li_state = 1),
+  				bo_down =(select count(*) from likes 
+  					where li_bo_num = #{bo_num} and li_state = -1)
+  			where
+  				bo_num = #{bo_num}
+  	</update>
 </mapper>
