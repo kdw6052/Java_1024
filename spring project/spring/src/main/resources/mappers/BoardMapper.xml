@@ -122,4 +122,5 @@
   					and bo_bt_num = #{cri.type}
   				</if>
   	</select>
+  	
 </mapper>

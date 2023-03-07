@@ -18,6 +18,9 @@
 			      	<li class="nav-item">
 			        	<a class="nav-link" href="<c:url value='/login'></c:url>">로그인</a>
 			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link" href="<c:url value='/board/list'></c:url>">게시글</a>
+			      	</li>
 		      	</c:if>
 		      	<c:if test="${user != null}">
 			      	<li class="nav-item">
@@ -25,6 +28,9 @@
 			        		<button class="nav-link" style="background: transparent;border: 0">로그아웃</button>
 			        	</form>
 			      	</li> 
+			      	<li class="nav-item">
+			        	<a class="nav-link" href="<c:url value='/board/list'></c:url>">게시글</a>
+			      	</li>
 		      	</c:if>   
 		      	<li class="nav-item dropdown">
 			      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
