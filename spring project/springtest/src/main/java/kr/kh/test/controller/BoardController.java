@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.kh.test.pagination.Criteria;
+import kr.kh.test.pagination.PageMaker;
 import kr.kh.test.service.BoardService;
-import kr.kh.test.utils.UploadFileUtils;
 import kr.kh.test.vo.BoardTypeVO;
 import kr.kh.test.vo.BoardVO;
 import kr.kh.test.vo.MemberVO;
@@ -48,7 +49,13 @@ public class BoardController {
 		return mv;
 	}
 	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
-	public ModelAndView boardList(ModelAndView mv) {
+	public ModelAndView boardList(ModelAndView mv,Criteria cri) {
+		cri.setPerPageNum(3);
+		ArrayList<BoardVO> list = boardService.getBoardList(cri);
+		int totalCount = boardService.getTotalBoardList(cri);
+		PageMaker pm = new PageMaker(totalCount, cri.getPerPageNum(), cri);
+		mv.addObject("pm", pm);
+		mv.addObject("list",list);
 		mv.setViewName("/board/list");
 		return mv;
 	}

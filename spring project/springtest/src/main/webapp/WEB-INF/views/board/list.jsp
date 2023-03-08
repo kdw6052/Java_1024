@@ -4,7 +4,35 @@
 
 <div class="container">
 	<h1>게시글</h1>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+				<th>추천/비추천</th>
+				<th>조회수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${list }" var="bo">
+				<tr>
+					<td>${bo.bo_num }
+					<td>
+						<a href="<c:url value='/board/detail/${bo.bo_num }'></c:url>">
+							${bo.bo_title }
+						</a>
+					</td>
+					<td>${bo.bo_me_id }
+					<td>${bo.bo_register_date }
+					<td>${bo.bo_up }/${bo.bo_down }
+					<td>${bo.bo_views }
+				</tr>
+			</c:forEach>
+		</tbody>
 	
+	</table>
 	
 	
 </div>
