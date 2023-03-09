@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,6 +17,7 @@ import kr.kh.test.pagination.PageMaker;
 import kr.kh.test.service.BoardService;
 import kr.kh.test.vo.BoardTypeVO;
 import kr.kh.test.vo.BoardVO;
+import kr.kh.test.vo.FileVO;
 import kr.kh.test.vo.MemberVO;
 
 @Controller
@@ -55,9 +57,22 @@ public class BoardController {
 		int totalCount = boardService.getTotalBoardList(cri);
 		int displayPageNum =3;
 		PageMaker pm = new PageMaker(totalCount, displayPageNum, cri);
+		MemberVO user = new MemberVO();
+		user.setMe_authority(10);
+		ArrayList<BoardTypeVO> typeList = boardService.getBoardTypeList(user);
+		mv.addObject("typeList",typeList);
 		mv.addObject("pm", pm);
 		mv.addObject("list",list);
 		mv.setViewName("/board/list");
+		return mv;
+	}
+	@RequestMapping(value = "/board/detail/{bo_num}", method = RequestMethod.GET)
+	public ModelAndView boardDetail(ModelAndView mv, @PathVariable("bo_num") int bo_num) {
+		BoardVO board = boardService.getBoardAndUpdateView(bo_num);
+		ArrayList<FileVO> fList = boardService.getFileList(bo_num);
+		mv.addObject("fList",fList);
+		mv.addObject("board",board);
+		mv.setViewName("/board/detail");
 		return mv;
 	}
 }

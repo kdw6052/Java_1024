@@ -1,6 +1,5 @@
 package kr.kh.test.service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,7 +86,22 @@ public class BoardServiceImp implements BoardService{
 		cri = cri == null ? new Criteria() : cri;
 		return boardDao.selectTotalCountBoard(cri);
 	}
-	
+
+	@Override
+	public BoardVO getBoardAndUpdateView(int bo_num) {
+		
+		int res;
+		res = boardDao.updateViews(bo_num);
+		if(res == 0)
+			return null;
+		return boardDao.selectBoard(bo_num);
+	}
+
+	@Override
+	public ArrayList<FileVO> getFileList(int bo_num) {
+		
+		return boardDao.selectFileList(bo_num);
+	}
 	
 
 	
