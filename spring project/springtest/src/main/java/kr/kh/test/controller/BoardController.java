@@ -50,10 +50,11 @@ public class BoardController {
 	}
 	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
 	public ModelAndView boardList(ModelAndView mv,Criteria cri) {
-		cri.setPerPageNum(3);
+		cri.setPerPageNum(4);
 		ArrayList<BoardVO> list = boardService.getBoardList(cri);
 		int totalCount = boardService.getTotalBoardList(cri);
-		PageMaker pm = new PageMaker(totalCount, cri.getPerPageNum(), cri);
+		int displayPageNum =3;
+		PageMaker pm = new PageMaker(totalCount, displayPageNum, cri);
 		mv.addObject("pm", pm);
 		mv.addObject("list",list);
 		mv.setViewName("/board/list");
