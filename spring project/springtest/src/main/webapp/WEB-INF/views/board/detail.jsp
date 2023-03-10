@@ -44,4 +44,10 @@
 		</c:forEach>
 	</div>
 </c:if>
-<a class="btn btn-success" href="<c:url value='/board/list'></c:url>">목록</a>
+
+<a class="btn btn-success mt-3" href="<c:url value='/board/list'></c:url>">목록</a>
+<c:if test="${user != null && user.me_id == board.bo_me_id }">
+<form action="<c:url value='/board/delete/${board.bo_num }'></c:url>" method="post">
+		<button class="btn btn-outline-danger">삭제하기</button>
+</form>
+</c:if>

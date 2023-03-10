@@ -62,4 +62,7 @@
 			</div> 
 		</div>
 	</form>
+	<c:if test="${user != null }">
+		<a class="btn btn-outline-success" href="<c:url value='/board/insert'></c:url>">글쓰기</a>
+	</c:if>
 </div>
