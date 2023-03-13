@@ -79,5 +79,42 @@
   	<delete id="deleteBoard">
   		delete from board where bo_num = #{bo_num}
   	</delete>
+  	<update id="updateBoard">
+  		update board
+  			set
+  				bo_title = #{board.bo_title},
+  				bo_content = #{board.bo_content},
+  				bo_bt_num = #{board.bo_bt_num}
+  			where
+  				bo_num = #{board.bo_num}
+  	</update>
+  	<select id="selectFile" resultType="kr.kh.test.vo.FileVO">
+  		select * from file where fi_num = #{fi_num}
+  	</select>
+  	<select id="selectLikes" resultType="kr.kh.test.vo.LikesVO">
+  		select * from likes
+  			where li_bo_num = #{li_bo_num} and li_me_id == #{li_me_id}
+  	</select>
+  	<insert id="insertBoardLike">
+  		insert into likes(li_state,li_me_id,li_bo_num)
+  		values(#{li.li_state},#{li.li_me_id},#{li.li_bo_num})
+  	</insert>
+  	<update id="updateBoardLike">
+  		update likes
+  			set
+  				li_state = #{li.li_state}
+  			where
+  				li_bo_num = #{li.li_bo_num} and li_me_id == #{li.li_me_id}
+  	</update>
+  	<update id="updateBoardUpAndDown">
+  		update board
+  			set
+  				bo_up = (select count(*) from 
+  					likes where li_bo_num = #{li_bo_num} and li_state =1),
+  				bo_down = (select count(*) from 
+  					likes where li_bo_num = #{li_bo_num} and li_state =-1)
+  			where
+  				bo_num = #{li_bo_num}
+  	</update>
 </mapper>
 
