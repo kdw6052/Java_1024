@@ -41,4 +41,12 @@ public interface BoardService {
 	int getBoardTotalCount(Criteria cri);
 
 	boolean insertComment(CommentVO comment, MemberVO user);
+
+	ArrayList<CommentVO> getCommentList(Criteria cri, int co_bo_num);
+
+	int getTotalCountCommentList(int co_bo_num);
+
+	boolean deleteComment(CommentVO comment, MemberVO user);
+
+	boolean updateComment(CommentVO comment, MemberVO user);
 }
