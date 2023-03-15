@@ -73,7 +73,7 @@ public class AdminServiceImp implements AdminService{
 			return false;
 		//게시판 중복 체크
 		//다오에게 게시판 명을 주면서 게시판 정보를 가져오라고 시킴
-		BoardTypeVO dbBt = boardDao.seletBoardTypeByName(bt.getBt_name());
+		BoardTypeVO dbBt = boardDao.selectBoardTypeByName(bt.getBt_name());
 		
 		//가져온 게시판이 있는경우
 		//1. 서로 다른 게시판

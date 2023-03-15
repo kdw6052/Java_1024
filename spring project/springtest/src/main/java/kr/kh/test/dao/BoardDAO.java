@@ -14,7 +14,7 @@ public interface BoardDAO {
 
 	ArrayList<BoardTypeVO> selectBoardTypeList(@Param("authority")int adminAuthority);
 
-	BoardTypeVO seletBoardTypeByName(@Param("bt_name")String bt_name);
+	BoardTypeVO selectBoardTypeByName(@Param("bt_name")String bt_name);
 
 	int insertBoardType(@Param("bt")BoardTypeVO bt);
 
@@ -24,19 +24,19 @@ public interface BoardDAO {
 
 	int insertBoard(@Param("bo")BoardVO board);
 
-	void insertFile(@Param("fi")FileVO fileVo);
+	void insertFile(@Param("file")FileVO fileVo);
 
 	ArrayList<BoardVO> selectBoardList(@Param("cri")Criteria cri);
 
 	int selectTotalCountBoard(@Param("cri")Criteria cri);
 
-	BoardVO selectBoard(@Param("bo_num")int bo_num);
-
 	int updateViews(@Param("bo_num")int bo_num);
+
+	BoardVO selectBoard(@Param("bo_num")int bo_num);
 
 	ArrayList<FileVO> selectFileList(@Param("bo_num")int bo_num);
 
-	void deleteFile(@Param("fi")FileVO file);
+	void deleteFile(@Param("fi_num")int fi_num);
 
 	int deleteBoard(@Param("bo_num")int bo_num);
 
@@ -44,12 +44,13 @@ public interface BoardDAO {
 
 	FileVO selectFile(@Param("fi_num")int fileNum);
 
-	LikesVO selectLikes(@Param("li_bo_num")int bo_num, @Param("li_me_id")String me_id);
+	LikesVO selectLikes(@Param("li_bo_num")int li_bo_num, @Param("li_me_id")String me_id);
 
 	void insertLikes(@Param("li")LikesVO likesVo);
 
 	void updateLikes(@Param("li")LikesVO likesVo);
 
 	void updateBoardUpAndDown(@Param("li_bo_num")int li_bo_num);
+	
 
 }

@@ -17,7 +17,6 @@ import kr.kh.test.vo.MemberVO;
 
 @Service
 public class BoardServiceImp implements BoardService{
-	
 	@Autowired
 	BoardDAO boardDao;
 	
@@ -25,7 +24,7 @@ public class BoardServiceImp implements BoardService{
 
 	@Override
 	public ArrayList<BoardTypeVO> getBoardTypeList(MemberVO user) {
-		if(user == null || user.getMe_authority() ==0)
+		if(user == null || user.getMe_authority() == 0)
 			return null;
 		return boardDao.selectBoardTypeList(user.getMe_authority());
 	}
@@ -34,12 +33,16 @@ public class BoardServiceImp implements BoardService{
 	public boolean insertBoard(BoardVO board, MemberVO user, MultipartFile[] files) {
 		if(user == null || user.getMe_authority() == 0)
 			return false;
-		if(board == null || board.getBo_title().trim().length() ==0 ||
-				board.getBo_content().trim().length() ==0 ||
-				board.getBo_bt_num() == 0)
+		if(board == null || 
+			board.getBo_title().trim().length() == 0 ||
+			board.getBo_content().trim().length() == 0 ||
+			board.getBo_bt_num() == 0)
 			return false;
+		
 		board.setBo_me_id(user.getMe_id());
+		
 		int isOk = boardDao.insertBoard(board);
+		
 		if(isOk == 0)
 			return false;
 		//첨부파일 추가
@@ -54,7 +57,7 @@ public class BoardServiceImp implements BoardService{
 	}
 
 	@Override
-	public int getTotalBoardList(Criteria cri) {
+	public int getTotalCountBoard(Criteria cri) {
 		cri = cri == null ? new Criteria() : cri;
 		return boardDao.selectTotalCountBoard(cri);
 	}
@@ -71,7 +74,6 @@ public class BoardServiceImp implements BoardService{
 
 	@Override
 	public ArrayList<FileVO> getFileList(int bo_num) {
-		
 		return boardDao.selectFileList(bo_num);
 	}
 
@@ -80,38 +82,45 @@ public class BoardServiceImp implements BoardService{
 		if(user == null)
 			return false;
 		BoardVO board = boardDao.selectBoard(bo_num);
-		if(!board.getBo_me_id().equals(user.getMe_id()) || board == null)
+		if(board == null || !board.getBo_me_id().equals(user.getMe_id()))
 			return false;
-		ArrayList<FileVO> fList = boardDao.selectFileList(bo_num);
-		deleteFileList(fList);
-		return boardDao.deleteBoard(bo_num) != 0;
+		
+		ArrayList<FileVO> fileList = boardDao.selectFileList(bo_num);
+		deleteFileList(fileList);
+		
+		int res = boardDao.deleteBoard(bo_num);
+		if(res == 0)
+			return false;
+		return true;
 	}
+	
 	private void insertFileList(int bo_num, MultipartFile[] files) {
 		if(files == null || files.length == 0)
 			return;
 		for(MultipartFile file : files) {
-			if(file.getOriginalFilename().length() == 0) 
+			if(file == null || file.getOriginalFilename().length() == 0)
 				continue;
 			try {
-				String path = UploadFileUtils.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes());
-				FileVO fileVo = new FileVO(bo_num,file.getOriginalFilename(), path);
+				String path = UploadFileUtils.uploadFile(uploadPath, 
+						file.getOriginalFilename(), file.getBytes());
+				FileVO fileVo = new FileVO(bo_num, path, 
+						file.getOriginalFilename());
 				boardDao.insertFile(fileVo);
-				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 	
-	private void deleteFileList(ArrayList<FileVO > fileList) {
-		if(fileList == null || fileList.size() == 0) {
+	private void deleteFileList(ArrayList<FileVO> fileList) {
+		if(fileList == null || fileList.size() == 0) 
 			return;
-		}
 		for(FileVO file : fileList) {
 			UploadFileUtils.removeFile(uploadPath, file.getFi_name());
-			boardDao.deleteFile(file);
+			boardDao.deleteFile(file.getFi_num());
 		}
 	}
+
 	@Override
 	public BoardVO getBoard(int bo_num) {
 		return boardDao.selectBoard(bo_num);
@@ -121,9 +130,11 @@ public class BoardServiceImp implements BoardService{
 	public boolean updateBoard(BoardVO board, MemberVO user, MultipartFile[] files, int[] fileNums) {
 		if(user == null)
 			return false;
-		if(board == null || board.getBo_title().trim().length() == 0 || 
-				board.getBo_content().trim().length() == 0 || 
-				board.getBo_bt_num() <= 0)
+		//게시글 유효성 체크
+		if(board == null || 
+			board.getBo_title().trim().length() == 0 || 
+			board.getBo_content().trim().length() == 0 || 
+			board.getBo_bt_num() <= 0)
 			return false;
 		BoardVO dbBoard = boardDao.selectBoard(board.getBo_num());
 		//게시글을 수정하려는데 없는 게시글이면
@@ -132,7 +143,7 @@ public class BoardServiceImp implements BoardService{
 		//게시글 작성자와 로그인한 회원이 다르면
 		if(!dbBoard.getBo_me_id().equals(user.getMe_id()))
 			return false;
-		//게시글 제목, 내용, 게시판 수정
+		//게시글 제목,내용,게시판 수정
 		int res = boardDao.updateBoard(board);
 		if(res == 0)
 			return false;
@@ -143,7 +154,7 @@ public class BoardServiceImp implements BoardService{
 		if(fileNums == null || fileNums.length == 0)
 			return true;
 		//첨부파일을 삭제하는 메소드를 이용하기 위해서
-		//int[]정보를 => ArrayList<FileVO>로 변환하는 작업
+		//int[] 정보를 => ArrayList<FileVO>로 변환하는 작업
 		ArrayList<FileVO> fileList = new ArrayList<FileVO>();
 		for(int fileNum : fileNums) {
 			FileVO fileVo = boardDao.selectFile(fileNum);
@@ -152,33 +163,42 @@ public class BoardServiceImp implements BoardService{
 			fileList.add(fileVo);
 		}
 		//기존 첨부파일 삭제
-		deleteFileList(null);
+		deleteFileList(fileList);
 		return true;
 	}
 
 	@Override
-	public int updateLike(int li_bo_num, MemberVO user, int li_state) {
+	public int updateLike(int li_bo_num, int li_state, MemberVO user) {
 		if(user == null)
 			return -100;
 		int res = 0;
-		LikesVO dblikesVo = boardDao.selectLikes(li_bo_num,user.getMe_id());
-		if(dblikesVo == null) {
+		LikesVO dbLikesVo = boardDao.selectLikes(li_bo_num, user.getMe_id());
+		
+		if(dbLikesVo == null) {
 			LikesVO likesVo = new LikesVO(li_state, user.getMe_id(), li_bo_num);
 			boardDao.insertLikes(likesVo);
-			res= li_state;
-		}else if(dblikesVo.getLi_state() == li_state){
+			res = li_state;
+		}else if(dbLikesVo.getLi_state() == li_state) {
 			//취소
 			LikesVO likesVo = new LikesVO(0, user.getMe_id(), li_bo_num);
 			boardDao.updateLikes(likesVo);
-			res=0;
+			res = 0;
 		}else {
 			//변경
 			LikesVO likesVo = new LikesVO(li_state, user.getMe_id(), li_bo_num);
 			boardDao.updateLikes(likesVo);
-			res=li_state;
+			res = li_state;
 		}
 		boardDao.updateBoardUpAndDown(li_bo_num);
+		
 		return res;
 	}
-	
+
+	@Override
+	public LikesVO getLikes(MemberVO user, int bo_num) {
+		if(user == null)
+			return null;
+		LikesVO likesVo = boardDao.selectLikes(bo_num, user.getMe_id());
+		return likesVo;
+	}
 }

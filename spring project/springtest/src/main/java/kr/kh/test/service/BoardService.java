@@ -8,6 +8,7 @@ import kr.kh.test.pagination.Criteria;
 import kr.kh.test.vo.BoardTypeVO;
 import kr.kh.test.vo.BoardVO;
 import kr.kh.test.vo.FileVO;
+import kr.kh.test.vo.LikesVO;
 import kr.kh.test.vo.MemberVO;
 
 public interface BoardService {
@@ -18,23 +19,20 @@ public interface BoardService {
 
 	ArrayList<BoardVO> getBoardList(Criteria cri);
 
-	int getTotalBoardList(Criteria cri);
+	int getTotalCountBoard(Criteria cri);
 
 	BoardVO getBoardAndUpdateView(int bo_num);
 
 	ArrayList<FileVO> getFileList(int bo_num);
 
 	boolean deleteBoard(int bo_num, MemberVO user);
-	
+
 	BoardVO getBoard(int bo_num);
 
 	boolean updateBoard(BoardVO board, MemberVO user, MultipartFile[] files, int[] fileNums);
 
-	int updateLike(int li_bo_num, MemberVO user, int li_state);
+	int updateLike(int li_bo_num, int li_state, MemberVO user);
 
-
-
-
-	
+	LikesVO getLikes(MemberVO user, int bo_num);
 
 }
