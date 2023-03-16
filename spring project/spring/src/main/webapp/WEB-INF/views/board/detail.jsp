@@ -42,7 +42,7 @@
 	</div>
 	<div class="form-group">
 		<label for="title">작성일:</label>
-		<div class="form-control">${board.bo_register_date}</div>
+		<div class="form-control">${board.bo_register_date_str}</div>
 	</div>
 	<div class="form-group">
 		<label for="title">조회수:</label>

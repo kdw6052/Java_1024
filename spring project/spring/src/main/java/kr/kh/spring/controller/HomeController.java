@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -65,7 +66,13 @@ public class HomeController {
 		return mv;
 	}
 	@RequestMapping(value = "/login", method=RequestMethod.GET)
-	public ModelAndView login(ModelAndView mv) {
+	public ModelAndView login(ModelAndView mv, HttpServletRequest request) {
+		String url = request.getHeader("Referer");
+		//다른 url을 통해 로그인페이지로 온 경우
+		//(단, 로그인 실패로 인해서 login post에서 온 경우는 제외)
+		if(url != null && !url.contains("login")) {
+			request.getSession().setAttribute("prevURL", url);
+		}
 		mv.setViewName("/member/login");
 		return mv;
 	}
@@ -73,10 +80,15 @@ public class HomeController {
 	public ModelAndView loginPost(ModelAndView mv, MemberVO member) {
 		MemberVO user = memberService.login(member);
 		mv.addObject("user", user);
-		if(user != null) 
+		if(user != null) {
 			mv.setViewName("redirect:/");
-		else
+			//자동로그인 체크여부는 화면에서 가져오는 거지 db에서 가져오는게 아님
+			//user는 db에서 가져온 회원정보라 자동 로그인 여부를 알 수가 없음
+			//그래서 화면에서 가져온 member에 있는 자동로그인 여부를 user에 수정
+			user.setAutoLogin(member.isAutoLogin());
+		}else {
 			mv.setViewName("redirect:/login");
+		}
 		return mv;
 	}
 	
@@ -93,6 +105,8 @@ public class HomeController {
 		}
 		//세션에 있는 회원 정보를 삭제
 		session.removeAttribute("user");
+		user.setMe_session_limit(null);
+		memberService.updateMemberBySession(user);
 		mv.setViewName("redirect:/");
 		return mv;
 	}

@@ -139,6 +139,16 @@ public class MemberServiceImp implements MemberService {
 		
 		return null;
 	}
+	@Override
+	public boolean checkId(MemberVO user) {
+		if(user == null || user.getMe_id() == null)
+			return false;
+		String idRegex="^[a-zA-Z][a-zA-Z0-9!@#$]{4,12}$";
+		if(!Pattern.matches(idRegex, user.getMe_id()))
+			return false;
+		MemberVO member = memberDao.selectMemberById(user.getMe_id());
+		return member == null;
+	}
 	
 
 	
