@@ -1,6 +1,5 @@
 package kr.kh.test.service;
 
-import java.util.Date;
 import java.util.regex.Pattern;
 
 import javax.mail.internet.MimeMessage;

@@ -61,6 +61,14 @@
 	</form>
 	<a href="<c:url value='/board/update/${board.bo_num}'></c:url>" class="btn btn-outline-danger">수정</a>
 </c:if>
+<div class="comment-box mt-2">
+		<div class="input-group mb-3">
+			<textarea class="form-control" placeholder="댓글을 입력하세요." name="co_content"></textarea>
+			<div class="input-group-append">
+				<button class="btn btn-success btn-comment-insert" type="submit">댓글등록</button>
+			</div>
+		</div>
+	</div>
 <script>
 $('.btn-up, .btn-down').click(function(){
 	if('${user.me_id}' == ''){
@@ -106,4 +114,46 @@ $('.btn-up, .btn-down').click(function(){
         }
     });
 });
+$('.btn-comment-insert').click(function(){
+	if('${user.me_id}'==''){
+		confirm('로그인한 회원만 댓글을 등록할 수 있습니다\n로그인 화면으로 이동하시겠습니까?');
+		return;
+	}
+	let content = $('[name = co_content]').val();
+	if(content.trim().length == 0){
+		alert('댓글을 입력하세요');
+		return;
+	}
+	let bo_num = ;
+	let comment = {
+			co_content = content,
+			co_bo_num = bo_num
+	}
+	/* ajax('POST', 
+		comment, 
+		'<c:url value="/comment/insert"></c:url>',
+		function(data){
+			if(data.result){
+				alert('댓글을 등록했습니다.');
+				//댓글 조회
+				selectCommentList(1,bo_num);
+			}else{
+				alert('댓글 등록에 실패했습니다.');
+			}
+		}) */
+})
+
+
+
+function ajax(method, obj, url, successFunc, errorFunc){
+	$.ajax({
+		async:false,
+		type: method,
+		data: JSON.stringify(obj),
+		url: url,
+		dataType:"json",
+		contentType:"application/json; charset=UTF-8",
+		success : successFunc
+	});
+}
 </script>
