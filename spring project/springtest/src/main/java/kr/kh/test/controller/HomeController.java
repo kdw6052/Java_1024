@@ -80,8 +80,11 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView login(ModelAndView mv) {
-		
+	public ModelAndView login(ModelAndView mv, HttpServletRequest request) {
+		String url = request.getHeader("Referer");
+		if(url != null && !url.contains("login")) {
+			request.getSession().setAttribute("prevURL", url);
+		}
 		mv.setViewName("/member/login");
 		return mv;
 	}
@@ -116,7 +119,7 @@ public class HomeController {
 		MemberVO user = (MemberVO)session.getAttribute("user");
 		if(session != null) {
 			user.setMe_session_limit(null);
-			memberService.updateMemberByEndSession(user);
+			memberService.updateSession(user);
 			session.removeAttribute("user");
 		}
 		MessageUtils.alertAndMovePage(response,"로그아웃에 성공했습니다." ,

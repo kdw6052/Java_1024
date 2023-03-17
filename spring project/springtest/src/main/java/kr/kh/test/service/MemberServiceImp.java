@@ -149,7 +149,7 @@ public class MemberServiceImp implements MemberService {
 		return member == null;
 	}
 	@Override
-	public void updateMemberBySession(MemberVO user) {
+	public void updateSession(MemberVO user) {
 		if(user == null)
 			return;
 		memberDao.updateMemberBySession(user);
@@ -160,11 +160,7 @@ public class MemberServiceImp implements MemberService {
 		
 		return memberDao.selectMemberBySession(me_session_id);
 	}
-	@Override
-	public void updateMemberByEndSession(MemberVO user) {
-		memberDao.updateMemberByEndSession(user);
-		
-	}
+	
 	
 
 	

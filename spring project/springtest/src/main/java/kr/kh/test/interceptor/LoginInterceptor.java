@@ -46,7 +46,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 	        	user.setMe_session_id(session.getId());
 	        	Date date = new Date(System.currentTimeMillis() + (time)*1000L);
 	        	user.setMe_session_limit(date);
-	        	memberService.updateMemberBySession(user);
+	        	memberService.updateSession(user);
 	        }
 	    }
 	}
