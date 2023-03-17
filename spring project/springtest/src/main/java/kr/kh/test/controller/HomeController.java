@@ -41,18 +41,24 @@ public class HomeController {
 	public ModelAndView signupPost(ModelAndView mv, MemberVO member,
 			HttpServletResponse response,HttpServletRequest request) {
 		boolean res = memberService.signup(member);
-		
+		String msg,url;
 		if(res) {
 			//성공했다고 알림 메시지(추후 구현 예정)
-			MessageUtils.alertAndMovePage(response,"회원가입에 성공했습니다." ,
-					request.getContextPath(), "/");
-			mv.setViewName("redirect:/");
+			//MessageUtils.alertAndMovePage(response,"회원가입에 성공했습니다." ,
+			//		request.getContextPath(), "/");
+			msg="회원가입에 성공했습니다.";
+			url="/";
+			
 		}else {
 			//실패했다고 알림 메시지(추후 구현 예정)
-			MessageUtils.alertAndMovePage(response,"회원가입에 실패했습니다." ,
-					request.getContextPath(), "/signup");
-			mv.setViewName("redirect:/signup");
+			//MessageUtils.alertAndMovePage(response,"회원가입에 실패했습니다." ,
+			//		request.getContextPath(), "/signup");
+			msg="회원가입에 실패했습니다.";
+			url="/signup";
 		}
+		mv.addObject("url",url);
+		mv.addObject("msg", msg);
+		mv.setViewName("/common/message");
 		return mv;
 	}
 	@RequestMapping(value = "/email/authentication", method = RequestMethod.GET)
@@ -83,30 +89,36 @@ public class HomeController {
 	public ModelAndView loginPost(ModelAndView mv,MemberVO member,
 			HttpServletResponse response,HttpServletRequest request) {
 		MemberVO user = memberService.login(member);
+		String msg,url;
 		if(user != null && user.getMe_authority() > 0) {
+			user.setAutoLogin(member.isAutoLogin());
 			mv.addObject("user", user);
-			mv.setViewName("redirect:/");
-			MessageUtils.alertAndMovePage(response,"로그인에 성공했습니다." ,
-					request.getContextPath(), "/");
+			msg="로그인에 성공했습니다.";
+			url="/";
 		}else {
+			url="/login";
 			if(user != null) {
 				//인증안된 회원이라고 알려주는 메세지
-				MessageUtils.alertAndMovePage(response,"이메일 인증을 완료해야 로그인이 가능합니다." ,
-						request.getContextPath(), "/login");
+				msg="이메일 인증을 완료해야 로그인이 가능합니다.";
+				
 			}else {
-				MessageUtils.alertAndMovePage(response,"로그인에 실패했습니다." ,
-						request.getContextPath(), "/login");
+				msg="로그인에 실패했습니다.";
 			}
-			mv.setViewName("redirect:/login");
 		}
-		
+		mv.addObject("url",url);
+		mv.addObject("msg", msg);
+		mv.setViewName("/common/message");
 		return mv;
 	}
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public ModelAndView logoutPost(ModelAndView mv, HttpSession session,
 			HttpServletResponse response,HttpServletRequest request) {
-		if(session != null)
+		MemberVO user = (MemberVO)session.getAttribute("user");
+		if(session != null) {
+			user.setMe_session_limit(null);
+			memberService.updateMemberByEndSession(user);
 			session.removeAttribute("user");
+		}
 		MessageUtils.alertAndMovePage(response,"로그아웃에 성공했습니다." ,
 				request.getContextPath(), "/");
 		mv.setViewName("redirect:/");

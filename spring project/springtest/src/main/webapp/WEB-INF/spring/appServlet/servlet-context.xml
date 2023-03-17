@@ -35,12 +35,18 @@
 	    </beans:property>
 	</beans:bean>
 	<!-- 인터셉터 등록 -->
+	<beans:bean id="autoLoginInterceptor" 
+		class="kr.kh.test.interceptor.AutoLoginInterceptor"></beans:bean>
 	<beans:bean id="loginInterceptor" 
-	class="kr.kh.test.interceptor.LoginInterceptor"></beans:bean>
+		class="kr.kh.test.interceptor.LoginInterceptor"></beans:bean>
 	<beans:bean id="adminInterceptor" 
-	class="kr.kh.test.interceptor.AdminInterceptor"></beans:bean>
+		class="kr.kh.test.interceptor.AdminInterceptor"></beans:bean>
 	
 	<interceptors>
+		<interceptor>
+	        <mapping path="/**"/>
+	        <beans:ref bean="autoLoginInterceptor"/>
+	    </interceptor>
 	    <interceptor>
 	        <mapping path="/login"/>
 	        <beans:ref bean="loginInterceptor"/>
