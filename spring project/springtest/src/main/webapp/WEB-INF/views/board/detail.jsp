@@ -54,6 +54,16 @@
 		</c:forEach>
 	</div>
 </c:if>
+<hr>
+<h4>댓글</h4>
+<hr>
+<div class="input-group mb-3">
+	<textarea class="form-control" placeholder="댓글을 입력하세요." name="co_content"></textarea>
+	<div class="input-group-append">
+		<button class="btn btn-success btn-comment-insert" type="button">댓글등록</button>
+	</div>
+</div>
+
 <a class="btn btn-success" href="<c:url value='/board/list'></c:url>">목록</a>
 <c:if test="${user != null && user.me_id == board.bo_me_id }">
 	<form action="<c:url value='/board/delete/${board.bo_num}'></c:url>" method="post" style="display: inline-block;">
@@ -61,14 +71,52 @@
 	</form>
 	<a href="<c:url value='/board/update/${board.bo_num}'></c:url>" class="btn btn-outline-danger">수정</a>
 </c:if>
-<div class="comment-box mt-2">
-		<div class="input-group mb-3">
-			<textarea class="form-control" placeholder="댓글을 입력하세요." name="co_content"></textarea>
-			<div class="input-group-append">
-				<button class="btn btn-success btn-comment-insert" type="submit">댓글등록</button>
-			</div>
-		</div>
-	</div>
+
+<script>
+//댓글과 관련된 전역변수들
+const bo_num = '${bo_num}';
+$('.btn-comment-insert').click(function(){
+	if('${user.me_id}'==''){
+		if(confirm('로그인한 회원만 댓글을 등록할 수 있습니다\n로그인 화면으로 이동하시겠습니까?')){
+			location.href='<c:url value="/login"></c:url>';
+		}
+		return;
+	}
+	let co_content = $('[name = co_content]').val();
+	if(co_content.trim().length == 0){
+		alert('댓글을 입력하세요');
+		$('[name = co_content]').focus();
+		return;
+	}
+	let comment = {
+			co_bo_num : bo_num,
+			co_content : co_content
+	}
+	ajaxPost(comment,'<c:url value="/comment/insert"></c:url>',insertSuccess)
+})
+function insertSuccess(data){
+	if(data.res){
+		alert('댓글을 등록했습니다.');
+		$('[name=co_content]').val('');
+	}else{
+		alert('댓글을 등록하지 못했습니다.');
+	}
+}
+
+
+function ajaxPost(obj, url, successFunction){
+	$.ajax({
+		async:true,
+		type: 'POST',
+		data: JSON.stringify(obj),
+		url: url,
+		dataType:"json",
+		contentType:"application/json; charset=UTF-8",
+		success : successFunction
+	});
+}
+</script>
+
 <script>
 $('.btn-up, .btn-down').click(function(){
 	if('${user.me_id}' == ''){
@@ -114,46 +162,5 @@ $('.btn-up, .btn-down').click(function(){
         }
     });
 });
-$('.btn-comment-insert').click(function(){
-	if('${user.me_id}'==''){
-		confirm('로그인한 회원만 댓글을 등록할 수 있습니다\n로그인 화면으로 이동하시겠습니까?');
-		return;
-	}
-	let content = $('[name = co_content]').val();
-	if(content.trim().length == 0){
-		alert('댓글을 입력하세요');
-		return;
-	}
-	let bo_num = ;
-	let comment = {
-			co_content = content,
-			co_bo_num = bo_num
-	}
-	/* ajax('POST', 
-		comment, 
-		'<c:url value="/comment/insert"></c:url>',
-		function(data){
-			if(data.result){
-				alert('댓글을 등록했습니다.');
-				//댓글 조회
-				selectCommentList(1,bo_num);
-			}else{
-				alert('댓글 등록에 실패했습니다.');
-			}
-		}) */
-})
 
-
-
-function ajax(method, obj, url, successFunc, errorFunc){
-	$.ajax({
-		async:false,
-		type: method,
-		data: JSON.stringify(obj),
-		url: url,
-		dataType:"json",
-		contentType:"application/json; charset=UTF-8",
-		success : successFunc
-	});
-}
 </script>
