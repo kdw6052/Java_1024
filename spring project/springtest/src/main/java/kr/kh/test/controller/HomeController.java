@@ -82,7 +82,7 @@ public class HomeController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(ModelAndView mv, HttpServletRequest request) {
 		String url = request.getHeader("Referer");
-		if(url != null && !url.contains("login")) {
+		if(url != null && !url.contains("/login")) {
 			request.getSession().setAttribute("prevURL", url);
 		}
 		mv.setViewName("/member/login");

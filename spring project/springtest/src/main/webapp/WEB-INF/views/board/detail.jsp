@@ -75,6 +75,12 @@
 <script>
 //댓글과 관련된 전역변수들
 const bo_num = '${bo_num}';
+
+let cri = {
+	page : 1,
+	perPageNum : 5
+};
+
 $('.btn-comment-insert').click(function(){
 	if('${user.me_id}'==''){
 		if(confirm('로그인한 회원만 댓글을 등록할 수 있습니다\n로그인 화면으로 이동하시겠습니까?')){
@@ -93,6 +99,7 @@ $('.btn-comment-insert').click(function(){
 			co_content : co_content
 	}
 	ajaxPost(comment,'<c:url value="/comment/insert"></c:url>',insertSuccess)
+	//ajaxPost(Criteria cri,'<c:url value="/comment/list/bo_num"></c:url>',listSuccess)
 })
 function insertSuccess(data){
 	if(data.res){
@@ -103,6 +110,18 @@ function insertSuccess(data){
 	}
 }
 
+ajaxPost(cri,'<c:url value="/comment/list/'+bo_num+'"></c:url>',listSuccess);
+
+function listSuccess(data){
+	addCommentList(data.list);
+	addPagination(data.pm);
+}
+function addCommentList(list){
+	
+}
+function addPagination(pm){
+	
+}
 
 function ajaxPost(obj, url, successFunction){
 	$.ajax({
