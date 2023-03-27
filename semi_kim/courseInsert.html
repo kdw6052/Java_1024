@@ -130,7 +130,7 @@
   }
   .cos-list .cos-item .cos-photo{
     position: absolute;
-    left: 0;
+    left: 20px;
     top: 20px;
     width: 140px;
     height: 94px;
@@ -213,6 +213,9 @@
   .input-group{
   	width:1190px;
   }
+  .btn_remove_list{
+    float: right; position: absolute; top: 0; right: 0;
+  }
   </style>
 </head>
 <body>
@@ -262,9 +265,9 @@
       </div>
       <ul class="cos-list" id="sortable">
         <li class="cos-item ui-state-default">
+          <em class="numbering">1</em>
           <div class="cos-photo">
             <a href="#">
-              <em class="numbering">1</em>
               <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=83804651-01e0-4809-bde0-13bb26a33618" alt="궁리포구">
             </a>
           </div>
@@ -280,11 +283,12 @@
               <span>#해쉬태그 들어갈거임2</span>
             </p>
           </div>
+          <button type="button" class="btn btn-outline-danger btn_remove_list">X</button>
         </li>
         <li class="cos-item ui-state-default">
+          <em class="numbering">2</em>
           <div class="cos-photo">
             <a href="#">
-              <em class="numbering">2</em>
               <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=83804651-01e0-4809-bde0-13bb26a33618" alt="궁리포구">
             </a>
           </div>
@@ -300,6 +304,49 @@
               <span>#해쉬태그 들어갈거임2</span>
             </p>
           </div>
+          <button type="button" class="btn btn-outline-danger btn_remove_list">X</button>
+        </li>
+        <li class="cos-item ui-state-default">
+          <em class="numbering">3</em>
+          <div class="cos-photo">
+            <a href="#">
+              <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=83804651-01e0-4809-bde0-13bb26a33618" alt="궁리포구">
+            </a>
+          </div>
+          <div class="cos_text">
+            <p style="display:none" id="pd_num">2</p>
+            <div class="title-area clearfix">
+              <a href="#">상품 이름(클릭시 상품으로)2</a>
+              <p>지역들어갈거임</p>
+            </div>
+            <p class="sub_content">상품 간단소개 들어갈거임</p>
+            <p class="tag">
+              <span>#해쉬태그 들어갈거임1</span>
+              <span>#해쉬태그 들어갈거임2</span>
+            </p>
+          </div>
+          <button type="button" class="btn btn-outline-danger btn_remove_list">X</button>
+        </li>
+        <li class="cos-item ui-state-default">
+          <em class="numbering">4</em>
+          <div class="cos-photo">
+            <a href="#">
+              <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=83804651-01e0-4809-bde0-13bb26a33618" alt="궁리포구">
+            </a>
+          </div>
+          <div class="cos_text">
+            <p style="display:none" id="pd_num">2</p>
+            <div class="title-area clearfix">
+              <a href="#">상품 이름(클릭시 상품으로)2</a>
+              <p>지역들어갈거임</p>
+            </div>
+            <p class="sub_content">상품 간단소개 들어갈거임</p>
+            <p class="tag">
+              <span>#해쉬태그 들어갈거임1</span>
+              <span>#해쉬태그 들어갈거임2</span>
+            </p>
+          </div>
+          <button type="button" class="btn btn-outline-danger btn_remove_list">X</button>
         </li>
       </ul>
       <form class="input-group mb-3" action="">
@@ -308,6 +355,24 @@
           <button class="btn btn-success" type="submit">검색</button>
         </div>
       </form>
+      <table class="table table-hover search_table">
+        <thead>
+          <tr>
+            <th style="width:200px;">상품 카테고리</th>
+            <th style="width:200px;">상품</th>
+            <th>상세</th>
+          </tr>
+        </thead>
+        <tbody class="search_productList">
+            <tr class="select_product">
+              <td>1
+              <td>1
+              <td>1
+              <td style="display:none;">1
+            </tr>
+        </tbody>
+        
+      </table>
       <div class="mapIntoduce">
         <div class="introduce_text">
           <textarea name="csdesc" id="csdesc" maxlength="2000" class="cos_textarea" title="코스소개" placeholder="코스에 대한 간략한 설명을 작성할 수 있습니다."></textarea>
@@ -333,11 +398,82 @@
     		  });
         }
       });
+      $(document).on('click','.btn_remove_list',function(){
+        $(this).parent().remove();
+        if($('.numbering').length){
+          $('.numbering').each(function(i,box){
+            $(box).text(i + 1);
+          })
+        }
+      })
+     
+        
+    
     function reorder() {
       $('.numbering').each(function(i, box) {
         $(box).text(i + 1);
       });
     }
+  </script>
+  <script>
+    var mapContainer = document.getElementById('map');
+var mapOption = {
+  center: new kakao.maps.LatLng(33.450701, 126.570667),
+  level: 8
+};
+
+var map = new kakao.maps.Map(mapContainer, mapOption);
+var geocoder = new kakao.maps.services.Geocoder();
+
+var addresses = ['서울특별시 성북구 정릉로 77',
+                '서울특별시 노원구 공릉로 264',
+                '서울특별시 동대문구 회기로 106',
+                '서울특별시 마포구 양화로 45',
+                '서울특별시 강남구 도산대로 327',
+                '서울특별시 중구 세종대로 136'];
+
+var markers = [];
+var lines = [];
+    
+async function addMarkers() {
+  for (var i = 0; i < addresses.length; i++) {
+    await new Promise(function(resolve, reject) {
+      geocoder.addressSearch(addresses[i], function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+          var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+          var marker = new kakao.maps.Marker({
+            position: coords
+          });
+
+          marker.setMap(map);
+          markers.push(marker);
+
+          if (markers.length > 1) {
+            var linePath = [markers[markers.length - 2].getPosition(), coords];
+            var line = new kakao.maps.Polyline({
+              path: linePath,
+              strokeWeight: 3,
+              strokeColor: '#db4040',
+              strokeOpacity: 0.7,
+              strokeStyle: 'solid'
+            });
+            line.setMap(map);
+            lines.push(line);
+          }
+
+          map.setCenter(coords);
+          resolve();
+        } else {
+          reject();
+        }
+      });
+    });
+  }
+}
+
+addMarkers();
+
   </script>
 </body>
 </html>
