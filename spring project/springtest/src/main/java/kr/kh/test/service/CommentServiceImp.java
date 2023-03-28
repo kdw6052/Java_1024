@@ -35,9 +35,9 @@ public class CommentServiceImp implements CommentService{
 	}
 
 	@Override
-	public int getTotalComment(int bo_num) {
+	public int getTotalCountCommentList(int bo_num) {
 		
-		return commentDao.selectTotalComment(bo_num);
+		return commentDao.selectTotalCountCommentList(bo_num);
 	}
 
 	
