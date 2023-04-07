@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/js/jquery-ui.min.css">
+	<link rel="stylesheet" href="/js/bootstrap.min.css">
+	<script src="/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery-ui.min.js"></script>
+	<title>Document</title>
+	<style>
+		*{
+	  padding: 0; margin: 0;
+    }
+    #body{ 
+      min-width: 1190px; 
+      font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+      line-height: 16px; font-size: 12px; color: #202020; 
+    }
+    ul,li{
+      list-style: none;
+    }
+    
+    .clearfix::after{
+      content: ''; clear: both; display: block; 
+    }
+    a{
+      text-decoration: none;
+    }
+    .contents {
+	    width: 1190px;
+	    margin: 0 auto;
+	    padding: 0 20px 27px 20px;
+	  }
+    .option_list{
+      float: left; border: 1px solid black; width: 750px; padding: 20px;
+      margin-top: 100px; border-radius: 10px;
+    }
+    .option_item{
+      position: relative; padding: 20px 0; border-bottom: 1px solid #e6e6e6;
+	    border-top: 1px solid #e6e6e6;
+    }
+		.select_item{
+			position: absolute; right: 20px; top: 20px;
+		}
+    .option_title{
+      position: absolute; font-size: 30px; font-weight: 700;
+    }
+		.option_photo{
+			position: absolute;
+		}
+		.option_item_img{
+			width: 200px; height: 205px;
+		}
+		.option_select_box{
+			min-height: 164px; padding-left: 240px; padding-right: 20px;
+		}
+		.option_select_box1,.option_select_box2{
+			margin-top: 10px;
+		}
+		.option_select{
+			margin-left: 10px; width: 150px; height: 25px;
+
+		}
+		.option_detail{
+			display: block;
+			overflow: hidden;
+	    width: 490px;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+		}
+
+    .select_product_box{
+      float: right; border: 1px solid black; width: 380px; padding: 20px;
+      margin-top: 100px; border-radius: 10px;
+    }
+    .addOrder{
+      text-align: center; width: 100%; font-size: 20px; height: 50px; margin-top: 20px;
+    }
+    .product_list{
+      
+    }
+    .product_item{
+      margin-bottom: 10px; border: 1px; border-radius: 10px; background-color: antiquewhite;
+    }
+	</style>
+</head>
+<body>
+	<div class="contents clearfix">
+    <label class="option_title">옵션 선택</label>
+    <ul class="option_list">
+      <li class="option_item">
+        <div class="option_photo">
+          <img src="" alt="" class="option_item_img">
+        </div>
+        <div class="option_select_box">
+					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">음식점</span></label>
+					<button class="select_item btn btn-outline-success" type="button">선택</button>
+					<div class="option_select_box1">
+						<label>메뉴 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label class="ml-1">날짜 : </label>
+						<input type="text" id="datepicker" class="datepicker1" style="height: 20px;">
+					</div>
+					<div class="option_select_box2">
+						<label>수량 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label class="ml-1">가격 : </label>
+						<span>10000</span>
+						<span>원</span>
+					</div>
+					<div class="option_select_box2">
+						<label>상세설명 : </label>
+						<span class="option_detail">상품 상세 설명</span>
+					</div>
+				</div>
+      </li>
+			<li class="option_item">
+        <div class="option_photo">
+          <img src="" alt="" class="option_item_img">
+        </div>
+        <div class="option_select_box">
+					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">축제</span></label>
+					<button class="select_item btn btn-outline-success" type="button">선택</button>
+					<div class="option_select_box1">
+						<label>연령 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label>날짜 : </label>
+						<input type="text" id="datepicker" class="datepicker2" style="height: 20px;">
+					</div>
+					<div class="option_select_box2">
+						<label>수량 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label class="ml-1">가격 : </label>
+						<span>10000</span>
+						<span>원</span>
+					</div>
+					<div class="option_select_box2">
+						<label>상세설명 : </label>
+						<span class="option_detail">상품 상세 설명</span>
+					</div>
+				</div>
+      </li>
+			<li class="option_item">
+        <div class="option_photo">
+          <img src="" alt="" class="option_item_img">
+        </div>
+        <div class="option_select_box">
+					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">여행지</span></label>
+					<button class="select_item btn btn-outline-success" type="button">선택</button>
+					<div class="option_select_box1">
+						<label>연령 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label>날짜 : </label>
+						<input type="text" id="datepicker" class="datepicker3" style="height: 20px;">
+					</div>
+					<div class="option_select_box2">
+						<label>수량 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label class="ml-1">가격 : </label>
+						<span>10000</span>
+						<span>원</span>
+					</div>
+					<div class="option_select_box2">
+						<label>상세설명 : </label>
+						<span class="option_detail">상품 상세 설명</span>
+					</div>
+				</div>
+      </li>
+			<li class="option_item">
+        <div class="option_photo">
+          <img src="" alt="" class="option_item_img">
+        </div>
+        <div class="option_select_box">
+					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">숙박</span></label>
+					<button class="select_item btn btn-outline-success" type="button">선택</button>
+					<div class="option_select_box1">
+						<label>메뉴선택 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label>날짜 : </label>
+						<input type="text" id="datepicker" class="datepicker4" style="height: 20px;">
+					</div>
+					<div class="option_select_box2">
+						<label>수량 : </label>
+						<select class="option_select" name="" id="option_select">
+							<option value="">옵션1</option>
+							<option value="">옵션2</option>
+							<option value="">옵션3</option>
+							<option value="">옵션4</option>
+						</select>
+						<label class="ml-1">가격 : </label>
+						<span>10000</span>
+						<span>원</span>
+					</div>
+					<div class="option_select_box2">
+						<label>상세설명 : </label>
+						<span class="option_detail">상품 상세 설명</span>
+					</div>
+				</div>
+      </li>
+    </ul>
+    <div class="select_product_box">
+      <ul class="product_list">
+        <li class="product_item">
+					<label>상품명</label>
+					<span class="pr_option">옵션명</span>
+					<div class="pr_content">
+						수량 : <span class="pr_amount">1</span>
+						날짜 : <span class="pr_date">2023/04/07</span>
+						가격 : <span class="pr_price">20000</span>원
+					</div>
+				</li>
+        <li class="product_item">상품 1 : <span>가격1</span></li>
+        <li class="product_item">상품 1 : <span>가격1</span></li>
+      </ul>
+      <label style="font-size: 20px;">총가격 : </label>
+      <span style="float: right;">원</span>
+      <button class="addOrder btn btn-outline-danger">장바구니 담기</button>
+    </div>
+  </div>
+  <script>
+		$.datepicker.setDefaults({
+			dateFormat: 'yy-mm-dd',
+			prevText: '이전 달',
+			nextText: '다음 달',
+			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+			dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+			dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+			minDate : 1,
+			maxDate : '1M'
+ 		});
+		$(function(){
+			for(var i =1; i<=10;i++){
+				$('.datepicker'+i).datepicker({
+				})
+
+			}
+
+					
+			
+		})
+	</script>
+</body>
+</html>
