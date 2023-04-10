@@ -84,7 +84,19 @@
     }
     .product_item{
       margin-bottom: 10px; border: 1px; border-radius: 10px; background-color: antiquewhite;
+			position: relative;
     }
+		.close_list{
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			width: 20px;
+			height: 20px;
+			padding: 0;
+			line-height: 0;
+		}
+
+	
 	</style>
 </head>
 <body>
@@ -107,7 +119,7 @@
 							<option value="">옵션4</option>
 						</select>
 						<label class="ml-1">날짜 : </label>
-						<input type="text" id="datepicker" class="datepicker1" style="height: 20px;">
+						<input type="text" id="datepicker1" class="datepicker1" style="height: 20px;">
 					</div>
 					<div class="option_select_box2">
 						<label>수량 : </label>
@@ -143,7 +155,7 @@
 							<option value="">옵션4</option>
 						</select>
 						<label>날짜 : </label>
-						<input type="text" id="datepicker" class="datepicker2" style="height: 20px;">
+						<input type="text" id="datepicker2" class="datepicker2" style="height: 20px;">
 					</div>
 					<div class="option_select_box2">
 						<label>수량 : </label>
@@ -179,7 +191,7 @@
 							<option value="">옵션4</option>
 						</select>
 						<label>날짜 : </label>
-						<input type="text" id="datepicker" class="datepicker3" style="height: 20px;">
+						<input type="text" id="datepicker3" class="datepicker" style="height: 20px;">
 					</div>
 					<div class="option_select_box2">
 						<label>수량 : </label>
@@ -215,7 +227,7 @@
 							<option value="">옵션4</option>
 						</select>
 						<label>날짜 : </label>
-						<input type="text" id="datepicker" class="datepicker4" style="height: 20px;">
+						<input type="text" id="datepicker4" class="datepicker4" style="height: 20px;">
 					</div>
 					<div class="option_select_box2">
 						<label>수량 : </label>
@@ -239,19 +251,44 @@
     <div class="select_product_box">
       <ul class="product_list">
         <li class="product_item">
-					<label>상품명</label>
-					<span class="pr_option">옵션명</span>
-					<div class="pr_content">
+					<div class="pr_content1">
+						<label>상품명</label> -
+						<span class="pr_option">옵션명</span>
+					</div>
+					<button class="close_list btn btn-outline-danger">&times;</button>
+					<div class="pr_content2">
 						수량 : <span class="pr_amount">1</span>
 						날짜 : <span class="pr_date">2023/04/07</span>
 						가격 : <span class="pr_price">20000</span>원
 					</div>
 				</li>
-        <li class="product_item">상품 1 : <span>가격1</span></li>
-        <li class="product_item">상품 1 : <span>가격1</span></li>
+        <li class="product_item">
+					<div class="pr_content1">
+						<label>상품명</label> -
+						<span class="pr_option">옵션명</span>
+					</div>
+					<button class="close_list btn btn-outline-danger">&times;</button>
+					<div class="pr_content2">
+						수량 : <span class="pr_amount">1</span>
+						날짜 : <span class="pr_date">2023/04/07</span>
+						가격 : <span class="pr_price">20000</span>원
+					</div>
+				</li>
+        <li class="product_item">
+					<div class="pr_content1">
+						<label>상품명</label> -
+						<span class="pr_option">옵션명</span>
+					</div>
+					<button class="close_list btn btn-outline-danger">&times;</button>
+					<div class="pr_content2">
+						수량 : <span class="pr_amount">1</span>
+						날짜 : <span class="pr_date">2023/04/07</span>
+						가격 : <span class="pr_price">20000</span>원
+					</div>
+				</li>
       </ul>
       <label style="font-size: 20px;">총가격 : </label>
-      <span style="float: right;">원</span>
+      <span style="float: right;"><em class="allPrice">0</em> 원</span>
       <button class="addOrder btn btn-outline-danger">장바구니 담기</button>
     </div>
   </div>
@@ -270,14 +307,27 @@
  		});
 		$(function(){
 			for(var i =1; i<=10;i++){
-				$('.datepicker'+i).datepicker({
+				$('#datepicker'+i).datepicker({
 				})
-
 			}
-
-					
-			
+		});
+		$('.select_item').click(function(){
+			console.log(1);
 		})
+		$('.close_list').click(function(){
+			$(this).parent().remove();
+			priceAll();
+		})
+		priceAll();
+		function priceAll(){
+			let allprice = 0;
+			$('.pr_price').each(function(){
+				let price = $(this).text();
+				allprice = Number(allprice) + Number(price);
+
+			})
+			$('.allPrice').text(allprice);
+		}
 	</script>
 </body>
 </html>
