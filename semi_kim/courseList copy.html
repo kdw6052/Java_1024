@@ -4,330 +4,378 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/js/jquery-ui.min.css">
-	<link rel="stylesheet" href="/js/bootstrap.min.css">
-	<script src="/js/bootstrap.bundle.min.js"></script>
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/jquery-ui.min.js"></script>
-	<title>Document</title>
 	<style>
 		*{
-	  padding: 0; margin: 0;
-    }
-    #body{ 
-      min-width: 1190px; 
-      font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
-      line-height: 16px; font-size: 12px; color: #202020; 
-    }
-    ul,li{
-      list-style: none;
-    }
-    
-    .clearfix::after{
-      content: ''; clear: both; display: block; 
-    }
-    a{
-      text-decoration: none;
-    }
-    .contents {
-	    width: 1190px;
-	    margin: 0 auto;
-	    padding: 0 20px 27px 20px;
-	  }
-    .option_list{
-      float: left; border: 1px solid black; width: 750px; padding: 20px;
-      margin-top: 100px; border-radius: 10px;
-    }
-    .option_item{
-      position: relative; padding: 20px 0; border-bottom: 1px solid #e6e6e6;
-	    border-top: 1px solid #e6e6e6;
-    }
-		.select_item{
-			position: absolute; right: 20px; top: 20px;
+	  	padding: 0; margin: 0;
+	    }
+	    #body{ 
+	      min-width: 1190px; 
+	      font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+	      line-height: 16px; font-size: 12px; color: #202020; 
+	    }
+	    ul,li{
+	      list-style: none;
+	    }
+	    table{
+			border-spacing: 0; border-collapse: collapse; font-size: 100%;
 		}
-    .option_title{
-      position: absolute; font-size: 30px; font-weight: 700;
-    }
-		.option_photo{
-			position: absolute;
+	    .clearfix::after{
+	      content: ''; clear: both; display: block; 
+	    }
+	    a{
+	      text-decoration: none;
+	    }
+		button{
+			background: 0; cursor: pointer;
 		}
-		.option_item_img{
-			width: 200px; height: 205px;
+		th{
+			display: table-cell;
 		}
-		.option_select_box{
-			min-height: 164px; padding-left: 240px; padding-right: 20px;
+		div{
+			margin: 0; padding: 0; font-size: 13px; color: #333;
 		}
-		.option_select_box1,.option_select_box2{
+	    .contents {
+		    width: 1190px;
+		    margin: 0 auto;
+		    padding: 0 20px 27px 20px;
+		    height:auto;
+		  }
+	    .option_item{
+	      position: relative; padding: 20px 0; border-bottom: 1px solid #e6e6e6;
+		    border-top: 1px solid #e6e6e6;
+	    }
+	    .option_title{
+	      position: absolute; font-size: 30px; font-weight: 700;
+	    }
+	    .order_step{
+	    	float:right; margin-top:20px;
+	    }
+	    .title_box{
+	    	height: 70px; overflow: hidden; border-bottom: 3px solid #777;
+	    }
+	    .order_step > em{
+	    	font-weight:700; color:#346aff; font-style:normal;
+	    }
+		/*구매자 정보*/
+		.buyer_inner_box{
+			margin-top: 30px;
+		}
+		.buyer_title{
+			padding-left: 2px; margin-bottom: 8px; font-size: 20px; font-weight: 700; color: #333;
+		}
+		.buyer_table{
+			width: 100%; border-top: 2px solid #cecece;
+		}
+		.buyer_col,.user_th{
+			width: 104px; border: solid #e4e4e4; border-width: 0 1px 1px 0; padding: 7px 10px 7px 15px;
+    		text-align: right; background: #f4f4f4; font-weight: 500;
+		}
+		.buyer_col2,.user_td{
+			border-bottom: 1px solid #e4e4e4; padding: 10px 16px;
+		}
+		.user_title{
+			padding-left: 2px; margin: 30px 0 8px; text-align: left; font-size: 20px; font-weight: 700;
+		}
+		.btn_buyer{
+			padding: 4px 8px; border: 1px solid #999; color: #333; border-radius: 2px; box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset;
+    		font-size: 11px; vertical-align: bottom; margin-left: 5px;
+		}
+		.button{
+			padding: 4px 8px; border: 1px solid #999; color: #333; border-radius: 2px; box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset;
+    		font-size: 11px;
+		}
+		.user_table{
+			border-top: 2px solid #cecece; width: 100%;
+		}
+		.item_content_box{
+			position: relative;
+		}
+		.item_list_info{
+			margin-top: 8px;
+		}
+		.item_title,.price_title{
+			padding-left: 2px; margin: 30px 0 8px; text-align: left; font-size: 20px; font-weight: 700;
+		}
+		.item_list_box{
+			border: 1px solid #ccc; border-radius: 3px;
+		}
+		.item_menu{
+			padding: 10px 15px 10px 20px!important; line-height: 26px!important; background-color: #eee;
+		}
+		.item_name{
+			float: left; line-height: 26px; font-size: 15px;
+		}
+		.item_list{
+			overflow: hidden; zoom: 1; margin-left: 0; margin-right: 0; padding: 0 15px 0 20px;
+		}
+		.inner_item_list{
+			position: relative; zoom: 1; overflow: hidden; padding-top: 8px; margin-bottom: 5px; color: #333;
+			border-bottom: 1px solid #f6f6f6; padding-top: 10px; padding-bottom: 10px;
+		}
+		.product_name{
+			float: left; width: 50%; padding-right: 40px; font-size: 12px; color: #555;
+		}
+		.product_name >p{
+			font-size: 16px; color: #111;
+		}
+		.product_option,.item_option{
+			position: absolute; left: 50%; width: 34%; padding: 0; border: 0; font-size: 12px; clear: both; float: left;
+		}
+		.product_date,.item_date{
+			float: right; text-align: right; font-size: 14px; color: #888;
+		}
+		.pay_price{
+			width: 100%; border-top: 2px solid #cecece;
+		}
+		.pay_price .pay_title{
+			vertical-align: top; text-align: right; border-right: 1px solid #e4e4e4; background: #f4f4f4;
+		}
+		.pay_price th{
+			padding: 10px 15px 0 0; border-bottom: 1px solid #e4e4e4;
+		}
+		.pay_price td{
+			padding: 10px 0 0 0; border-bottom: 1px solid #e4e4e4;
+		}
+		.pay_price .price{
+			display: inline-block; width: 100px; padding-left: 15px; padding-bottom: 10px;
+		}
+		#totalPrice{
+			color: #333;
+		}
+		.pay_price .price .unit{
+			color: #111; font-size: 13px; font-weight: 400;
+		}
+		.pay_price .user_mile{
+			display: inline-block; padding-right: 10px;
+		}
+		.mile_insert{
+			padding: 10px 0 10px 115px; border-top: 1px solid #eee; background-color: #f8f8f8;
+		}
+		.pay_price input[type=text]{
+			height: 22px; padding: 0 0 0 5px; border: 1px solid #ddd; font-size: 15px; color: #333;
+		}
+		.mile_insert .delimiter{
+			display: inline-block; padding: 0 5px; color: #aaa;
+		}
+		label{
+			cursor: pointer;
+		}
+		.mile_insert .button_box{
 			margin-top: 10px;
 		}
-		.option_select{
-			margin-left: 10px; width: 150px; height: 25px;
-
+		.apply_active{
+			border: 1px solid #0085da; color: #0085da;
 		}
-		.option_detail{
-			display: block;
-			overflow: hidden;
-	    width: 490px;
-	    text-overflow: ellipsis;
-	    white-space: nowrap;
+		.payPrice{
+			color: #333; font-size: 20px;
+		}
+		.payPrice_benefit{
+			display: inline; margin-right: 12px;
 		}
 
-    .select_product_box{
-      float: right; border: 1px solid black; width: 380px; padding: 20px;
-      margin-top: 100px; border-radius: 10px;
-    }
-    .addOrder{
-      text-align: center; width: 100%; font-size: 20px; height: 50px; margin-top: 20px;
-    }
-    .product_list{
-      
-    }
-    .product_item{
-      margin-bottom: 10px; border: 1px; border-radius: 10px; background-color: antiquewhite;
-			position: relative;
-    }
-		.close_list{
-			position: absolute;
-			top: 5px;
-			right: 5px;
-			width: 20px;
-			height: 20px;
-			padding: 0;
-			line-height: 0;
-		}
-
-	
-	</style>
+  </style>
 </head>
 <body>
 	<div class="contents clearfix">
-    <label class="option_title">옵션 선택</label>
-    <ul class="option_list">
-      <li class="option_item">
-        <div class="option_photo">
-          <img src="" alt="" class="option_item_img">
-        </div>
-        <div class="option_select_box">
-					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">음식점</span></label>
-					<button class="select_item btn btn-outline-success" type="button">선택</button>
-					<div class="option_select_box1">
-						<label>메뉴 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label class="ml-1">날짜 : </label>
-						<input type="text" id="datepicker1" class="datepicker1" style="height: 20px;">
+		<div class="title_box clearfix">
+	    	<label class="option_title">주문/결제</label>
+	    	<span class="order_step">장바구니><em>주문결제 ></em>결제완료</span>
+		</div>
+		<div class="buyer_box">
+			<div class="buyer_inner_box">
+				<h2 class="buyer_title"> 구매자 정보 </h2>
+				<table class="buyer_table">
+					<tbody>
+						<tr>
+							<td class="buyer_col">이름</td>
+							<td class="buyer_col2">홍길동</td>
+						</tr>
+						<tr>
+							<td class="buyer_col">이메일</td>
+							<td class="buyer_col2">qwe@naver.com</td>
+						</tr>
+						<tr>
+							<td class="buyer_col">휴대폰 번호</td>
+							<td class="buyer_col2">010-1234-5678</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="user_box">
+			<h2 class="user_title">이용자 정보
+				<button class="btn_buyer button">구매자와 동일</button>
+			</h2>
+			<table class="user_table">
+				<tbody>
+					<tr>
+						<th class="user_th">이름</th>
+						<td class="user_td">홍길동</td>
+					</tr>
+					<tr>
+						<td class="user_th">이메일</td>
+						<td class="user_td">qwe@naver.com</td>
+					</tr>
+					<tr>
+						<td class="user_th">휴대폰 번호</td>
+						<td class="user_td">010-1234-5678</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="item_content_box">
+			<div class="item_list_info">
+				<h2 class="item_title">상품리스트</h2>
+				<div class="item_list_box">
+					<div class="item_menu clearfix">
+						<span class="item_name">상품명</span>
+						<div class="item_option" style="margin-left: 30px;">
+							<span>상품 옵션 / 수량</span>
+						</div>
+						<div class="item_date" style="margin-right: 25px;">
+							<p>예약날짜</p>
+						</div>
 					</div>
-					<div class="option_select_box2">
-						<label>수량 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label class="ml-1">가격 : </label>
-						<span>10000</span>
-						<span>원</span>
-					</div>
-					<div class="option_select_box2">
-						<label>상세설명 : </label>
-						<span class="option_detail">상품 상세 설명</span>
-					</div>
-				</div>
-      </li>
-			<li class="option_item">
-        <div class="option_photo">
-          <img src="" alt="" class="option_item_img">
-        </div>
-        <div class="option_select_box">
-					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">축제</span></label>
-					<button class="select_item btn btn-outline-success" type="button">선택</button>
-					<div class="option_select_box1">
-						<label>연령 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label>날짜 : </label>
-						<input type="text" id="datepicker2" class="datepicker2" style="height: 20px;">
-					</div>
-					<div class="option_select_box2">
-						<label>수량 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label class="ml-1">가격 : </label>
-						<span>10000</span>
-						<span>원</span>
-					</div>
-					<div class="option_select_box2">
-						<label>상세설명 : </label>
-						<span class="option_detail">상품 상세 설명</span>
-					</div>
-				</div>
-      </li>
-			<li class="option_item">
-        <div class="option_photo">
-          <img src="" alt="" class="option_item_img">
-        </div>
-        <div class="option_select_box">
-					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">여행지</span></label>
-					<button class="select_item btn btn-outline-success" type="button">선택</button>
-					<div class="option_select_box1">
-						<label>연령 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label>날짜 : </label>
-						<input type="text" id="datepicker3" class="datepicker" style="height: 20px;">
-					</div>
-					<div class="option_select_box2">
-						<label>수량 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label class="ml-1">가격 : </label>
-						<span>10000</span>
-						<span>원</span>
-					</div>
-					<div class="option_select_box2">
-						<label>상세설명 : </label>
-						<span class="option_detail">상품 상세 설명</span>
+					<div class="item_list">
+						<div class="inner_item_list">
+							<div class="product_name">
+								<p>상품이름입니다.</p>
+							</div>
+							<div class="product_option">
+								<span>상품 옵션입니다.</span>/
+								<span>수량입니다.</span>
+							</div>
+							<div class="product_date">
+								<p>예약날짜입니다.</p>
+							</div>
+						</div>
+						<div class="inner_item_list">
+							<div class="product_name">
+								<p>상품이름입니다.</p>
+							</div>
+							<div class="product_option">
+								<span>상품 옵션입니다.</span>/
+								<span>수량입니다.</span>
+							</div>
+							<div class="product_date">
+								<p>예약날짜입니다.</p>
+							</div>
+						</div>
+						<div class="inner_item_list">
+							<div class="product_name">
+								<p>상품이름입니다.</p>
+							</div>
+							<div class="product_option">
+								<span>상품 옵션입니다.</span>/
+								<span>수량입니다.</span>
+							</div>
+							<div class="product_date">
+								<p>예약날짜입니다.</p>
+							</div>
+						</div>
 					</div>
 				</div>
-      </li>
-			<li class="option_item">
-        <div class="option_photo">
-          <img src="" alt="" class="option_item_img">
-        </div>
-        <div class="option_select_box">
-					<label style="font-size: 30px; font-weight: 500;">상품이름 <span style="font-size: 20px; font-weight: 100;">숙박</span></label>
-					<button class="select_item btn btn-outline-success" type="button">선택</button>
-					<div class="option_select_box1">
-						<label>메뉴선택 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label>날짜 : </label>
-						<input type="text" id="datepicker4" class="datepicker4" style="height: 20px;">
-					</div>
-					<div class="option_select_box2">
-						<label>수량 : </label>
-						<select class="option_select" name="" id="option_select">
-							<option value="">옵션1</option>
-							<option value="">옵션2</option>
-							<option value="">옵션3</option>
-							<option value="">옵션4</option>
-						</select>
-						<label class="ml-1">가격 : </label>
-						<span>10000</span>
-						<span>원</span>
-					</div>
-					<div class="option_select_box2">
-						<label>상세설명 : </label>
-						<span class="option_detail">상품 상세 설명</span>
-					</div>
-				</div>
-      </li>
-    </ul>
-    <div class="select_product_box">
-      <ul class="product_list">
-        <li class="product_item">
-					<div class="pr_content1">
-						<label>상품명</label> -
-						<span class="pr_option">옵션명</span>
-					</div>
-					<button class="close_list btn btn-outline-danger">&times;</button>
-					<div class="pr_content2">
-						수량 : <span class="pr_amount">1</span>
-						날짜 : <span class="pr_date">2023/04/07</span>
-						가격 : <span class="pr_price">20000</span>원
-					</div>
-				</li>
-        <li class="product_item">
-					<div class="pr_content1">
-						<label>상품명</label> -
-						<span class="pr_option">옵션명</span>
-					</div>
-					<button class="close_list btn btn-outline-danger">&times;</button>
-					<div class="pr_content2">
-						수량 : <span class="pr_amount">1</span>
-						날짜 : <span class="pr_date">2023/04/07</span>
-						가격 : <span class="pr_price">20000</span>원
-					</div>
-				</li>
-        <li class="product_item">
-					<div class="pr_content1">
-						<label>상품명</label> -
-						<span class="pr_option">옵션명</span>
-					</div>
-					<button class="close_list btn btn-outline-danger">&times;</button>
-					<div class="pr_content2">
-						수량 : <span class="pr_amount">1</span>
-						날짜 : <span class="pr_date">2023/04/07</span>
-						가격 : <span class="pr_price">20000</span>원
-					</div>
-				</li>
-      </ul>
-      <label style="font-size: 20px;">총가격 : </label>
-      <span style="float: right;"><em class="allPrice">0</em> 원</span>
-      <button class="addOrder btn btn-outline-danger">장바구니 담기</button>
-    </div>
-  </div>
-  <script>
-		$.datepicker.setDefaults({
-			dateFormat: 'yy-mm-dd',
-			prevText: '이전 달',
-			nextText: '다음 달',
-			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-			dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-			dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-			minDate : 1,
-			maxDate : '1M'
- 		});
-		$(function(){
-			for(var i =1; i<=10;i++){
-				$('#datepicker'+i).datepicker({
-				})
-			}
-		});
-		$('.select_item').click(function(){
-			console.log(1);
-		})
-		$('.close_list').click(function(){
-			$(this).parent().remove();
-			priceAll();
-		})
-		priceAll();
-		function priceAll(){
-			let allprice = 0;
-			$('.pr_price').each(function(){
-				let price = $(this).text();
-				allprice = Number(allprice) + Number(price);
-
-			})
-			$('.allPrice').text(allprice);
-		}
-	</script>
+			</div>
+		</div>
+		<div class="price_section" style="margin-top: 30px;">
+			<h2 class="price_title">결제정보</h2>
+			<table class="pay_price">
+				<colgroup>
+					<col width="144">
+				</colgroup>
+				<tbody>
+					<tr class="pay_allPrice">
+						<th class="pay_title">총상품가격</th>
+						<td>
+							<div class="order_allPrice">
+								<strong class="price">
+									<span id="totalPrice">1531</span>
+									<span class="unit">원</span>
+								</strong>
+							</div>
+						</td>
+					</tr>
+					<tr class="pay_mileage">
+						<th class="pay_title">마일리지</th>
+						<td style="padding-top:0;">
+							<div>
+								<strong class="price" style="padding-top: 10px;">
+									<span class="use_mile">0</span>
+									<span class="unit">원</span>
+								</strong>
+								<span class="user_mile">
+									<span class="usable">
+										보유 : 
+										<strong class="value">0</strong>
+										<span class="unit">원</span>
+									</span>
+								</span>
+								<button class="insert_mile_toggle button">마일리지 사용하기</button>
+							</div>
+							<div class="mile_insert">
+								<div class="insert">
+									<input type="text" class="using" value placeholder="0" title="사용할 마일리지">
+									<span class="unit">원</span>
+									<span class="delimiter">|</span>
+									<input class type="checkbox" id="mileAllUsing">
+									<label for="mileAllUsing" class>모두사용</label>
+								</div>
+								<div class="button_box">
+									<button class="button apply_active">마일리지 적용</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th class="pay_title">총결제가격</th>
+						<td>
+							<div class="payPrice">
+								<strong class="price">
+									<span id="totalPayPrice">1531</span>
+									<span class="unit">원</span>
+								</strong>
+								<div class="payPrice_benefit">
+									<span class="txt_savingMile" style="font-weight: 400;">
+										<span>
+											마일리지적립 예정 
+											<strong>15</strong>
+											원
+										</span>
+									</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr id="paySel" class="payType_sector">
+						<th class="pay_title">결제방법</th>
+						<td class="payType">
+							<div class="pay_box" id="payBox">
+								<div class="pay_type_selector">
+									<div class="type_selector_list">
+										<ul id="payTypeList">
+											<li class="type_selector_li">
+												<input type="radio" class="type_selector_radio" name="payType" id="payType1">
+												<label for="payType1" class="type_selector_label" style="font-weight: normal;">
+													<span class="type_selector_label_txt">계좌이체</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	
+	
+	</div>
+   	<script>
+  		
+  
+  	</script>
+  
+ 
 </body>
 </html>
