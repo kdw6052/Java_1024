@@ -175,6 +175,16 @@
 		.type_selector{
 			width: 845px; position: relative; padding-top: 4px;
 		}
+		.type_selector_li{
+			display: block; float: left; margin-right: 9px; padding: 0 0 0 2px; font-size: 12px; line-height: 39px;
+    		letter-spacing: -1px;
+		}
+		.type_selector_radio{
+			margin-right: 1px; vertical-align: -1px;
+		}
+		.type_selector_label_txt{
+			display: inline-block; line-height: 39px; vertical-align: middle;
+		}
   </style>
 </head>
 <body>
@@ -351,19 +361,25 @@
 					<tr id="paySel" class="payType_sector">
 						<th class="pay_title">결제방법</th>
 						<td class="payType" style="padding:0 15px;">
-							<div class="pay_box" id="payBox">
-								<div class="pay_type_selector">
-									<div class="type_selector_list" style="width: 845px;">
+							<div class="pay_box" id="payBox" style="width: 845px;">
+								
+									
 										<ul id="payTypeList" class="type_selector">
 											<li class="type_selector_li">
 												<input type="radio" class="type_selector_radio" name="payType" id="payType1">
-												<label for="payType1" class="type_selector_label" style="font-weight: normal;">
+												<label for="payType1" class="type_selector_label type_selector_label_bank" style="font-weight: normal; position: relative;">
 													<span class="type_selector_label_txt">계좌이체</span>
 												</label>
 											</li>
+											<li class="type_selector_li">
+												<input type="radio" class="type_selector_radio" name="payType" id="payType2">
+												<label for="payType2" class="type_selector_label type_selector_card" style="font-weight: normal;">
+													<span class="type_selector_label_txt">신용/체크카드</span>
+												</label>
+											</li>
 										</ul>
-									</div>
-								</div>
+									
+								
 							</div>
 						</td>
 					</tr>
