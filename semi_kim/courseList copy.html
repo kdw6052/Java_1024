@@ -172,7 +172,9 @@
 		.payPrice_benefit{
 			display: inline; margin-right: 12px;
 		}
-
+		.type_selector{
+			width: 845px; position: relative; padding-top: 4px;
+		}
   </style>
 </head>
 <body>
@@ -348,11 +350,11 @@
 					</tr>
 					<tr id="paySel" class="payType_sector">
 						<th class="pay_title">결제방법</th>
-						<td class="payType">
+						<td class="payType" style="padding:0 15px;">
 							<div class="pay_box" id="payBox">
 								<div class="pay_type_selector">
-									<div class="type_selector_list">
-										<ul id="payTypeList">
+									<div class="type_selector_list" style="width: 845px;">
+										<ul id="payTypeList" class="type_selector">
 											<li class="type_selector_li">
 												<input type="radio" class="type_selector_radio" name="payType" id="payType1">
 												<label for="payType1" class="type_selector_label" style="font-weight: normal;">
